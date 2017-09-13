@@ -1,0 +1,27 @@
+** GFatca: Generate Fatca required XML.
+** Prequisition: 1. User prepare the data in GFATPF
+**               2. GFATPARM is updated to the fatca schema maually
+** 
+{
+    location: ymyles1/qgfatcasrc    **
+    cl:   [GFATPGMCL] 
+    rpg:  [GFATPGM
+           ]
+    pf:   [GFATACCT (input- dynamic)
+           GFATCUST (input- dynamic)
+           GFATREL  (input- dynamic)
+           GFATPAY  (input- dynamic)
+           GFATPOOL (input- dynamic)
+           GFATBK   (input- static)
+           GFATPARM (input- static)
+           GFATXML  (output)
+          ]
+    libl:[YMYLES1
+          *ICBS
+          ]
+}
+
+
+# Testing guidance:
+
+#
