@@ -1,0 +1,17 @@
+1.00 160301       ************************************************************************  
+2.00 160622       *   REFERENCE     : CHG-0200-16 (D6200)                                *  
+3.00 160301       *   USER ID       : BI77PGM                                            *  
+4.00 160301       *   CHANGED BY    : MYLES IEONG                                        *  
+5.00 160301       *   CHANGED DATE  : 22 FEB 2016                                        *  
+6.00 160301       *   REASON        : LOAN TYPE 161-164 REVIEW RECORD MASTER FILE        *  
+7.00 160301       *                                                                      *  
+8.00 160301       *   REMARK        :                                                    *  
+9.00 160301       *                                                                      *  
+10.00 160301       ************************************************************************  
+11.00 160301      A          R RLNSTPARM                                                     
+12.00 160301      A            LNPMLNTYP      3  0       TEXT('REVIEW LOAN TYPE')            
+13.00 160301      A            LNPMUSR1      10A         TEXT('USER DEFINED FIELD1')         
+14.00 160301      A            LNPMUSR2      10A         TEXT('USER DEFINED FIELD2')         
+15.00 160301      A            LNPMUSR3      10A         TEXT('USER DEFINED FIELD3')         
+16.00 160301      A            LNPMUSR4      10A         TEXT('USER DEFINED FIELD4')         
+17.00 160302      A          K LNPMLNTYP                                                     

@@ -1,0 +1,23 @@
+1.00 90505       *******************************************************************       
+2.00 160504       *   FILE          : LNSTTRAN                                      *       
+3.00 160622       *   IT REF. NO.   : CHG-200-16                                    *       
+4.00 160504       *   AUTHOR        : MYLES IEONG (BI77PGM)                         *       
+5.00 160504       *   DATE          : 04/05/2016                                    *       
+6.00 160118       *   PROGRAM DESC  : Monthly Security Transaction                  *       
+7.00 90505       *******************************************************************       
+8.00 160504      A          R RLNSTTRAN                                                     
+9.00 160504      A            LTRSEQNO       9S 0       TEXT('Seq. No.')                    
+10.00 160504      A            LTRCIF        10A         TEXT('CIF')                         
+11.00 160504      A            LTRACTCIDE     3A         TEXT('Action Code')                 
+12.00 160504      A            LTRACCT       12S 0       TEXT('Account No.')                 
+13.00 160504      A            LTRBNKACCT    12S 0       TEXT('Bank Account No.')            
+14.00 160504      A            LTRACCY        3A         TEXT('Currency')                    
+15.00 160504      A            LTRIBSSREF    24A         TEXT('Deal Reference')              
+16.00 160504      A            LTRMKTCDE      6A         TEXT('Market Code')                 
+17.00 160504      A            LTRSTKCDE     10A         TEXT('Stock Code')                  
+18.00 160504      A            LTRTXNAMT     13S 2       TEXT('Txn. Amount')                 
+19.00 160504      A            LTREFFDATE     8S 0       TEXT('Effective Date')              
+20.00 160504      A            LTRSIGN        1A         TEXT('Net Amount Sign')             
+21.00 160504      A            LTRNETAMT     13S 2       TEXT('Net Amount')                  
+22.00 160504      A            LTRASNMN       6S 0       TEXT('ASSIGN MONTH')                
+23.00 160504      A          K LTRACCT                                                       

@@ -1,0 +1,162 @@
+1.00 160421     /************************************************************************/  
+2.00 160421     /*   DESCRIPTION   : Send Security loan penalty charging SMS alert      */  
+3.00 160620     /*   REFERENCE     : CHG-200-16 (D6200)                                 */  
+4.00 160421     /*   AUTHOR        : Myles Ieong                                        */  
+5.00 160421     /*   USER ID       : BI77PGM                                            */  
+6.00 160421     /*   DATE WRITTEN  : 21/04/2016                                         */  
+7.00 160421     /************************************************************************/  
+8.00 160620                                                                                 
+9.00 160620 /************************************************************************/      
+10.00 160620 /*            Send SMS with valid number and sole owner                 */      
+11.00 160620 /************************************************************************/      
+13.00 160811 /* Insert record to SMS queue for chinese language */                           
+14.00 160811 INSERT INTO BCM_SMSQ (GROUPID,IDUSER,EVENTID,LANGID,CHAN,CHANPR,                
+15.00 160811         LASTUPD,S0,S1,S2,S3,S4,S5,S6,S7)                                        
+16.00 160811 SELECT '3',CUNBR, 303, 'ZH', 2, 0, TIMESTAMP(NOW()), '', '', '', '', '', '',    
+18.00 160811 /*D6200   '', CHAR(CUCLPH)                               */                     
+18.01 160811 /*D6200*/ '', TRIM(SUBSTR(CUTHI3,7,6))||CHAR(CUCLPH)                            
+19.00 160811 /*D6200   FROM LNSTPF A, CUP00901 B, CUP00301 C          */                     
+19.01 160811 /*D6200*/ FROM LNSTPF A, CUP00901 B, CUP00301 C, CUP02701 D                     
+20.00 160811 /*D6200   WHERE A.LNSTLNNOTE=B.CUX1AC AND B.CUX1CS=C.CUNBR */                   
+20.01 160811 /*D6200*/ WHERE A.LNSTLNNOTE=B.CUX1AC AND B.CUX1CS=C.CUNBR AND C.CUNBR=D.CUNBR  
+21.00 160811 /*D6200    AND A.LNSTFSMS = '' AND B.CUXREL='SOW'        */                     
+22.00 160811 /*D6200*/  AND A.LNSTFSMS = 'X' AND B.CUXREL IN ('SOW','OWN','JAF','JOF')       
+22.01 160811       AND C.CUCLPH BETWEEN 60000000 AND 69999999                                
+23.00 160811       AND C.CUCLNG = 'C';                                                       
+23.01 160811                                                                                 
+23.02 160811 /* Insert record to SMS queue for english(non-chinese) language */              
+23.03 160811 INSERT INTO BCM_SMSQ (GROUPID,IDUSER,EVENTID,LANGID,CHAN,CHANPR,                
+23.04 160811         LASTUPD,S0,S1,S2,S3,S4,S5,S6,S7)                                        
+23.05 160811 SELECT '3',CUNBR, 303, 'EN', 2, 0, TIMESTAMP(NOW()), '', '', '', '', '', '',    
+23.06 160811 /*D6200   '', CHAR(CUCLPH)                               */                     
+23.07 160811 /*D6200*/ '', TRIM(SUBSTR(CUTHI3,7,6))||CHAR(CUCLPH)                            
+23.08 160811 /*D6200   FROM LNSTPF A, CUP00901 B, CUP00301 C            */                   
+23.09 160811 /*D6200*/ FROM LNSTPF A, CUP00901 B, CUP00301 C, CUP02701 D                     
+23.10 160811 /*D6200   WHERE A.LNSTLNNOTE=B.CUX1AC AND B.CUX1CS=C.CUNBR */                   
+23.11 160811 /*D6200*/ WHERE A.LNSTLNNOTE=B.CUX1AC AND B.CUX1CS=C.CUNBR AND C.CUNBR=D.CUNBR  
+23.12 160811 /*D6200    AND A.LNSTFSMS = '' AND B.CUXREL='SOW'        */                     
+23.13 160811 /*D6200*/  AND A.LNSTFSMS = 'X' AND B.CUXREL IN ('SOW','OWN','JAF','JOF')       
+23.14 160811       AND C.CUCLPH BETWEEN 60000000 AND 69999999                                
+23.15 160811       AND C.CUCLNG <> 'C';                                                      
+23.16 160811                                                                                 
+23.17 160811 INSERT INTO BCM_SMSQ (GROUPID,IDUSER,EVENTID,LANGID,CHAN,CHANPR,                
+23.18 160811         LASTUPD,S0,S1,S2,S3,S4,S5,S6,S7)                                        
+23.19 160811 SELECT '3',CUNBR, 304, 'EN', 2, 0, TIMESTAMP(NOW()), '', '', '', '', '', '',    
+23.20 160811 /*D6200   '', CHAR(CUCLPH)                               */                     
+23.21 160811 /*D6200*/ '', TRIM(SUBSTR(CUTHI3,7,6))||CHAR(CUCLPH)                            
+23.22 160811 /*D6200   FROM LNSTPF A, CUP00901 B, CUP00301 C            */                   
+23.23 160811 /*D6200*/ FROM LNSTPF A, CUP00901 B, CUP00301 C, CUP02701 D                     
+23.24 160811 /*D6200   WHERE A.LNSTLNNOTE=B.CUX1AC AND B.CUX1CS=C.CUNBR */                   
+23.25 160811 /*D6200*/ WHERE A.LNSTLNNOTE=B.CUX1AC AND B.CUX1CS=C.CUNBR AND C.CUNBR=D.CUNBR  
+23.26 160811 /*D6200   AND A.LNSTFSMS = '' AND B.CUXREL='SOW'         */                     
+23.27 160811 /*D6200*/ AND A.LNSTFSMS = 'X' AND B.CUXREL IN ('SOW','OWN','JAF','JOF')        
+23.28 160811       AND C.CUCLPH BETWEEN 60000000 AND 69999999                                
+23.29 160811       AND C.CUCLNG <> 'C';                                                      
+23.30 160811                                                                                 
+24.00 160620  /* Valid numebrs: Write log for success */                                     
+25.00 160811 INSERT INTO LNSTLOG (LNLGDTE, LNLGTIM, LNLGLNNOTE, LNLGRWDTE, LNLGACT,          
+25.01 160811        LNLGLNCMCN, LNLGLNCPET, LNLGCHG, LNLGSTS, LNLGRSN, LNLGFLD1,             
+25.02 160811        LNLGFLD2, LNLGFLD3, LNLGFLD4, LNLGFLD5)                                  
+26.00 160811 SELECT YEAR(CURDATE())*10000+MONTH(CURDATE())*100+DAY(CURDATE()),               
+27.00 160811        HOUR(CURTIME())*10000+MINUTE(CURTIME())*100+SECOND(CURTIME()),           
+28.00 160811        LNSTLNNOTE, LNSTRWDTE, 'S', LNSTLNCMCN, '', LNSTPNT, 'P',                
+29.00 160811        'SUCCESS', '', '', 0, 0, 0                                               
+30.00 160811 FROM LNSTPF A, CUP00901 B, CUP00301 C                                           
+31.00 160811 WHERE A.LNSTLNNOTE=B.CUX1AC AND B.CUX1CS=C.CUNBR                                
+32.00 160811 /*D6200   AND A.LNSTFSMS = '' AND B.CUXREL='SOW'       */                       
+33.00 160811 /*D6200*/ AND A.LNSTFSMS = 'X' AND B.CUXREL IN ('SOW','OWN','JAF','JOF')        
+34.00 160811       AND C.CUCLPH BETWEEN 60000000 AND 69999999;                               
+34.01 160811                                                                                 
+35.00 160620  /* Valid numebrs: Update SMS flag in master file for failure */                
+36.00 160811  UPDATE LNSTPF                                                                  
+37.00 160811  SET LNSTFSMS = 'C'                                                             
+38.00 160811  /*D6200   WHERE LNSTFSMS = '' AND LNSTLNNOTE IN (       */                     
+39.00 160811  /*D6200*/ WHERE LNSTFSMS = 'X' AND LNSTLNNOTE IN (                             
+40.00 160811      SELECT LNSTLNNOTE                                                          
+41.00 160811      FROM LNSTPF A, CUP00901 B, CUP00301 C                                      
+42.00 160811      WHERE A.LNSTLNNOTE=B.CUX1AC AND B.CUX1CS=C.CUNBR                           
+43.00 160811  /*D6200   AND A.LNSTFSMS = '' AND B.CUXREL='SOW'       */                      
+44.00 160811  /*D6200*/ AND A.LNSTFSMS = 'X' AND B.CUXREL IN ('SOW','OWN','JAF','JOF')       
+45.00 160811            AND C.CUCLPH BETWEEN 60000000 AND 69999999                           
+45.01 160811  );                                                                             
+45.02 160811                                                                                 
+46.00 160811 /************************************************************************/      
+47.00 160620 /*            Log failure with invalid no and not sole owner            */      
+48.00 160620 /************************************************************************/      
+49.00 160620                                                                                 
+50.00 160620 /* Invalid numebrs: Write log for failure */                                    
+51.00 160811 INSERT INTO LNSTLOG (LNLGDTE, LNLGTIM, LNLGLNNOTE, LNLGRWDTE, LNLGACT,          
+51.01 160811        LNLGLNCMCN, LNLGLNCPET, LNLGCHG, LNLGSTS, LNLGRSN, LNLGFLD1,             
+51.02 160811        LNLGFLD2, LNLGFLD3, LNLGFLD4, LNLGFLD5)                                  
+52.00 160811 SELECT YEAR(CURDATE())*10000+MONTH(CURDATE())*100+DAY(CURDATE()),               
+53.00 160811        HOUR(CURTIME())*10000+MINUTE(CURTIME())*100+SECOND(CURTIME()),           
+54.00 160811        LNSTLNNOTE, LNSTRWDTE, 'S', LNSTLNCMCN, '', LNSTPNT, 'E',                
+55.00 160811        'NOT SOLE OWNER', '', '', 0, 0, 0                                        
+56.00 160811 FROM LNSTPF A, CUP00901 B, CUP00301 C                                           
+57.00 160811 WHERE A.LNSTLNNOTE=B.CUX1AC AND B.CUX1CS=C.CUNBR                                
+58.00 160811 /*D6200   AND A.LNSTFSMS = '' AND B.CUXREL<>'SOW'          */                   
+59.00 160811 /*D6200*/ AND A.LNSTFSMS = 'X' AND B.CUXREL NOT IN ('SOW','OWN','JAF','JOF')    
+60.00 160811       AND C.CUCLPH BETWEEN 60000000 AND 69999999;                               
+60.01 160811                                                                                 
+61.00 160811 INSERT INTO LNSTLOG (LNLGDTE, LNLGTIM, LNLGLNNOTE, LNLGRWDTE, LNLGACT,          
+61.01 160811        LNLGLNCMCN, LNLGLNCPET, LNLGCHG, LNLGSTS, LNLGRSN, LNLGFLD1,             
+61.02 160811        LNLGFLD2, LNLGFLD3, LNLGFLD4, LNLGFLD5)                                  
+62.00 160811 SELECT YEAR(CURDATE())*10000+MONTH(CURDATE())*100+DAY(CURDATE()),               
+63.00 160811        HOUR(CURTIME())*10000+MINUTE(CURTIME())*100+SECOND(CURTIME()),           
+64.00 160811        LNSTLNNOTE, LNSTRWDTE, 'S', LNSTLNCMCN, '', LNSTPNT, 'E',                
+65.00 160811        'NUMBER NOT VALID', '', '', 0, 0, 0                                      
+66.00 160811 FROM LNSTPF A, CUP00901 B, CUP00301 C                                           
+67.00 160811 WHERE A.LNSTLNNOTE=B.CUX1AC AND B.CUX1CS=C.CUNBR                                
+68.00 160811 /*D6200   AND A.LNSTFSMS = '' AND B.CUXREL='SOW'          */                    
+69.00 160811 /*D6200*/ AND A.LNSTFSMS = 'X' AND B.CUXREL IN ('SOW','OWN','JAF','JOF')        
+70.00 160811       AND C.CUCLPH NOT BETWEEN 60000000 AND 69999999;                           
+70.01 160811                                                                                 
+71.00 160811 INSERT INTO LNSTLOG (LNLGDTE, LNLGTIM, LNLGLNNOTE, LNLGRWDTE, LNLGACT,          
+71.01 160811        LNLGLNCMCN, LNLGLNCPET, LNLGCHG, LNLGSTS, LNLGRSN, LNLGFLD1,             
+71.02 160811        LNLGFLD2, LNLGFLD3, LNLGFLD4, LNLGFLD5)                                  
+72.00 160811 SELECT YEAR(CURDATE())*10000+MONTH(CURDATE())*100+DAY(CURDATE()),               
+73.00 160811        HOUR(CURTIME())*10000+MINUTE(CURTIME())*100+SECOND(CURTIME()),           
+74.00 160811        LNSTLNNOTE, LNSTRWDTE, 'S', LNSTLNCMCN, '', LNSTPNT, 'E',                
+75.00 160811        'NOT SOLE OWNER, NUMBER NOT VALID', '', '', 0, 0, 0                      
+76.00 160811 FROM LNSTPF A, CUP00901 B, CUP00301 C                                           
+77.00 160811 WHERE A.LNSTLNNOTE=B.CUX1AC AND B.CUX1CS=C.CUNBR                                
+78.00 160811 /*D6200   AND A.LNSTFSMS = '' AND B.CUXREL<>'SOW'        */                     
+79.00 160811 /*D6200*/ AND A.LNSTFSMS = 'X' AND B.CUXREL NOT IN ('SOW','OWN','JAF','JOF')    
+80.00 160811       AND C.CUCLPH NOT BETWEEN 60000000 AND 69999999;                           
+80.01 160811                                                                                 
+81.00 160620 /* Invalid numebrs: Update SMS flag in master file */                           
+82.00 160811 UPDATE LNSTPF                                                                   
+83.00 160811 SET LNSTFSMS = 'E'                                                              
+84.00 160811 /*D6200   WHERE LNSTFSMS = '' AND LNSTLNNOTE IN (       */                      
+85.00 160811 /*D6200*/ WHERE LNSTFSMS = 'X' AND LNSTLNNOTE IN (                              
+86.00 160811     SELECT LNSTLNNOTE                                                           
+87.00 160811     FROM LNSTPF A, CUP00901 B, CUP00301 C                                       
+88.00 160811     WHERE A.LNSTLNNOTE=B.CUX1AC AND B.CUX1CS=C.CUNBR                            
+89.00 160811 /*D6200   AND A.LNSTFSMS = '' AND B.CUXREL<>'SOW'       */                      
+90.00 160811 /*D6200*/ AND A.LNSTFSMS = 'X' AND B.CUXREL NOT IN ('SOW','OWN','JAF','JOF')    
+91.00 160811           AND C.CUCLPH BETWEEN 60000000 AND 69999999                            
+91.01 160811 );                                                                              
+91.02 160811                                                                                 
+92.00 160811 UPDATE LNSTPF                                                                   
+93.00 160811 SET LNSTFSMS = 'E'                                                              
+94.00 160811 /*D6200   WHERE LNSTFSMS = '' AND LNSTLNNOTE IN (      */                       
+95.00 160811 /*D6200*/ WHERE LNSTFSMS = 'X' AND LNSTLNNOTE IN (                              
+96.00 160811     SELECT LNSTLNNOTE                                                           
+97.00 160811     FROM LNSTPF A, CUP00901 B, CUP00301 C                                       
+98.00 160811     WHERE A.LNSTLNNOTE=B.CUX1AC AND B.CUX1CS=C.CUNBR                            
+99.00 160811 /*D6200   AND A.LNSTFSMS = '' AND B.CUXREL='SOW'       */                       
+100.00 160811 /*D6200*/ AND A.LNSTFSMS = 'X' AND B.CUXREL IN ('SOW','OWN','JAF','JOF')        
+101.00 160811           AND C.CUCLPH NOT BETWEEN 60000000 AND 69999999                        
+102.00 160811 );                                                                              
+102.01 160811                                                                                 
+103.00 160811 UPDATE LNSTPF                                                                   
+104.00 160811 SET LNSTFSMS = 'E'                                                              
+105.00 160811 /*D6200   WHERE LNSTFSMS = '' AND LNSTLNNOTE IN (         */                    
+106.00 160811 /*D6200*/ WHERE LNSTFSMS = 'X' AND LNSTLNNOTE IN (                              
+107.00 160811     SELECT LNSTLNNOTE                                                           
+108.00 160811     FROM LNSTPF A, CUP00901 B, CUP00301 C                                       
+109.00 160811     WHERE A.LNSTLNNOTE=B.CUX1AC AND B.CUX1CS=C.CUNBR                            
+110.00 160811 /*D6200   AND A.LNSTFSMS = '' AND B.CUXREL<>'SOW'         */                    
+111.00 160811 /*D6200*/ AND A.LNSTFSMS = 'X' AND B.CUXREL NOT IN ('SOW','OWN','JAF','JOF')    
+112.00 160811           AND C.CUCLPH NOT BETWEEN 60000000 AND 69999999                        
+113.00 160811 );                                                                              

@@ -1,0 +1,44 @@
+1.00 160222       ************************************************************************  
+2.00 160622       *   REFERENCE     : CHG-0200-16 (D6200)                                *  
+3.00 160222       *   USER ID       : BI77PGM                                            *  
+4.00 160222       *   CHANGED BY    : MYLES IEONG                                        *  
+5.00 160222       *   CHANGED DATE  : 22 FEB 2016                                        *  
+6.00 160222       *   REASON        : LOAN TYPE 161-164 REVIEW RECORD MASTER FILE        *  
+7.00 160222       *                                                                      *  
+8.00 160222       *   REMARK        :                                                    *  
+9.00 160222       *                                                                      *  
+10.00 160222       ************************************************************************  
+11.00 160223      A          R RLNSTPF                                                       
+12.00 160308      A            LNSTLNNOTE    12  0       TEXT('LOAN NOTE')                   
+13.00 160421      A            LNSTLNSHRT    18A         TEXT('CUSTOMER SHORT NAME')         
+14.00 160308      A            LNSTLNNTDT     8  0       TEXT('LOAN NOTE DATE')              
+15.00 160308      A            LNSTLNMTDT     8  0       TEXT('LOAN MATURE DATE')            
+16.00 160421      A            LNSTLNACAP    15  0       TEXT('LOAN AUTO CHARGE APPL/ACCT')  
+17.00 160504      A            LNSTPACNBR    10  0       TEXT('PAYMENT ACCOUNT NUMBER')      
+18.00 160504      A            LNSTPACTYP     2  0       TEXT('PAYMENT ACCOUNT TYPE')        
+19.00 160421      A            LNSTRWDTE      8  0       TEXT('DATE OF SYSTEM REVIEW')       
+20.00 160223      A            LNSTRWSTR      8  0       TEXT('REVIEW PERIOD START DATE')    
+21.00 160223      A            LNSTRWEND      8  0       TEXT('REVIEW PERIOD END DATE')      
+22.00 160415      A            LNSTFFR        1A         TEXT('FLAG OF FIRST REVIEW')        
+23.00 160422      A            LNSTFCHG       1A         TEXT('FLAG OF CHARGE OR NOT')       
+24.00 160421      A            LNSTFAPV       1A         TEXT('FLAG OF USER APPROVE FLAG')   
+25.00 160421      A            LNSTFPSTF      1A         TEXT('FLAG OF POSTING FEE')         
+26.00 160421      A            LNSTFPSTGL     1A         TEXT('FLAG OF POSTING G/L')         
+27.00 160413      A            LNSTFSMS       1A         TEXT('FLAG OF SMS STATUS')          
+28.00 160329      A            LNSTTSNQTY    10  0       TEXT('TRANSACTION QUANTITY')        
+29.00 160413      A            LNSTTSNAMT    13  2       TEXT('TRANSACTION AMOUNT')          
+30.00 160421      A            LNSTLNCMCN     3  0       TEXT('CURRENCY CODE')               
+31.00 160418      A            LNSTPNT       13  2       TEXT('PENALTY AMOUNT')              
+32.00 160421      A            LNSTSPTDTE     8  0       TEXT('DATE OF PROCESS SUPPORTING')  
+33.00 160421      A            LNSTAPVDTE     8  0       TEXT('DATE OF USER APPROVAL')       
+34.00 160421      A            LNSTCHGDTE     8  0       TEXT('DATE OF PENALTY FEE CHARGE')  
+35.00 160421      A            LNSTPSTFDT     8  0       TEXT('DATE OF POSTING PENALTY FEE') 
+36.00 160421      A            LNSTPSTGLD     8  0       TEXT('DATE OF POSTING GL')          
+37.00 160421      A            LNSTSMSDTE     8  0       TEXT('DATE OF SENDING SMS')         
+38.00 160413      A            LNSTUSRFL1     1A         TEXT('USER DEFINED FIELD 1')        
+39.00 160413      A            LNSTUSRFL2     3A         TEXT('USER DEFINED FIELD 2')        
+40.00 160413      A            LNSTUSRFL3     8  0       TEXT('USER DEFINED FIELD 3')        
+41.00 160413      A            LNSTUSRFL4    13  2       TEXT('USER DEFINED FIELD 4')        
+42.00 160413      A            LNSTUSRFL5    30A         TEXT('USER DEFINED FIELD 5')        
+43.00 160308      A          K LNSTLNNOTE                                                    
+44.00 160414      A          K LNSTRWDTE                                                     

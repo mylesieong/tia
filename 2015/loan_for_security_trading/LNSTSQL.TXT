@@ -1,0 +1,28 @@
+1.00 160622     /************************************************************************/  
+2.00 160622     /*   DESCRIPTION   : Support master file extraction                     */  
+3.00 160622     /*   REFERENCE     : CHG-200-16 (D6200)                                 */  
+4.00 160622     /*   AUTHOR        : Myles Ieong                                        */  
+5.00 160622     /*   USER ID       : BI77PGM                                            */  
+6.00 160622     /*   DATE WRITTEN  : 21/04/2016                                         */  
+7.00 160622     /************************************************************************/  
+8.00 160329 /* Insert file LNSTLCIF with records need to be review */                       
+9.00 160329 INSERT INTO LNSTLCIF                                                            
+10.00 160415 SELECT LNSTLNNOTE, LNSTRWDTE, LNSTRWSTR, LNSTRWEND, CUX1CS, CUXREL              
+11.00 160405 FROM LNSTPF, CUP00901                                                           
+12.00 160421 WHERE LNSTLNNOTE=CUX1AC AND LNSTFAPV=' ';                                       
+13.00 160329                                                                                 
+14.00 160324 /* Insert file LNSTSCIF */                                                      
+15.00 160324 INSERT INTO LNSTSCIF                                                            
+16.00 160324 SELECT RACC, LLCCUNBR, LLCCUXREL                                                
+17.00 160324 FROM LNSTLCIF, CUP00901, ISTKACC                                                
+18.00 160324 WHERE LLCCUNBR=CUX1CS AND RACC=substr(digits(cux1ac),3,10);                     
+19.00 160324                                                                                 
+20.00 160329 /* Insert file LNSTLSACC with distinct left join above 2 files */               
+21.00 160329 INSERT INTO LNSTLSACC                                                           
+22.00 160415 SELECT DISTINCT LLCLNNOTE, LSCRACC, LLCRWDTE, LLCRWSTR, LLCRWEND, 0, 0          
+23.00 160329 FROM LNSTLCIF LEFT JOIN LNSTSCIF ON LLCCUNBR=LSCCUNBR;                          
+24.00 160405                                                                                 
+25.00 160405 /* Update null field in LNSTLSACC */                                            
+26.00 160405 UPDATE LNSTLSACC                                                                
+27.00 160405 SET LLSRACC = 0                                                                 
+28.00 160405 WHERE LLSRACC is NULL;                                                          
