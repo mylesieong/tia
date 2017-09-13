@@ -1,0 +1,37 @@
+1.00 60608      A**************************************************************************                     
+2.00 160825      A*  REF. NO : CHG-262-16 (D6262)                                                                
+3.00 160825      A*  USER ID : BI77PGM                                                                           
+4.00 160825      A*  AUTHOR  : MYLES IEONG                                                                       
+5.00 160825      A*  DATE    : 2016-08-22                                                                        
+6.00 160825      A*  DESC.   : AML REPORT PARAMETER CHANGING AND REVOKING                                        
+7.00 60608      A**************************************************************************                     
+8.00 161014      A          R RCT1S                                                                              
+9.00 60602      A            CTMARK         4A         TEXT('MARKET SEGMENT')                                   
+10.00 60602      A            CTBRN          3P 0       TEXT('BRANCH NO')                                        
+11.00 60602      A            CTOFF          3A         TEXT('OFFICER CODE')                                     
+12.00 60602      A            CTCIF         10A         TEXT('CIF')                                              
+13.00 60602      A            CTNAME        40A         TEXT('CUSTOMER NAME')                                    
+14.00 60605      A            CTACCNO       12S 0       TEXT('ACCOUNT NO')                                       
+15.00 60602      A            CTDATE         8S 0       TEXT('TXN DATE')                                         
+16.00 60602      A            CTTYPE         3A         TEXT('TXN TYPE')                                         
+17.00 60602      A            CTINOUT        3A         TEXT('TXN IN/OUT')                                       
+18.00 60602      A            CTCCYN         3A         TEXT('TXN CCY NAME')                                     
+19.00 60602      A            CTCCY          3P 0       TEXT('TXN CCY')                                          
+20.00 60602      A            CTDSC         40A         TEXT('TXN NARRATIVE')                                    
+21.00 60602      A            CTTXNAMT      13S 2       TEXT('TXN AMOUNT')                                       
+22.00 60602      A            CTMAMT        13S 2       TEXT('MOP TXN AMOUNT')                                   
+23.00 60602      A            CTMCRAMT      13S 2       TEXT('TOTAL CREDIT TXN AMT IN DAY')                      
+24.00 60602      A            CTMDRAMT      13S 2       TEXT('TOTAL DEBIT TXN AMT IN DAY')                       
+25.00 60602      A            CTMTTLAMT     13S 2       TEXT('TOTAL CR & DR TXN AMT IN DAY')                     
+26.00 60603      A            CTCNYAMT      13S 2       TEXT('TOTAL CR & DR CNY TXN AMT ')                       
+27.00 60602      A            CTNOTXN        4S 0       TEXT('TTL NO OF TXN')                                    
+28.00 60615      A            CTREL          3A         TEXT('RELATIONSHIP')                                     
+29.00 60620      A            CTTXNBRN       3A         TEXT('TRANSACTION BRANCH')                               
+30.00 60621      A            CTOB          40A         TEXT('OCCUPATION TITL/BUSI ACTI')                        
+31.00 160825      A*                                                                                              
+32.00 60602      A          K CTMARK                                                                             
+33.00 60602      A          K CTBRN                                                                              
+34.00 60602      A          K CTOFF                                                                              
+35.00 60602      A          K CTCIF                                                                              
+36.00 60602      A          K CTTYPE                                                                             
+37.00 160825      A*                                                                                              
