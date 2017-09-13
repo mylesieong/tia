@@ -1,5 +1,5 @@
-* MTFX: 
-* |c--------#|
+# Exchange Group Rate Enabling (GRPRATE) and Transaction Monitoring (MTFX)
+
 * A list of program and screen which input from PST00101 to 3 pfs about transaction
 * Screen to present that 3 pfs
 * All screen action are inquiry 
@@ -34,55 +34,9 @@
 				 ]
 	}
 	
-	dependency-file: {
-		pf:	[pst00101, 
-			CUP009LT 
-			CFP753   
-			],
-	}
-	
-	lible: [YMYLES       *pst00101 and pst001im put here
-			ZUSRLIB
-			I700BCM      *CUP009LT is in it for mtfxexttx 
-			BCMGPL    
-			DBU10     
-			QGPL      
-			QTEMP     
-			IMODULE   
-			ICBSBCMDB1 ]
-	** set data area to a valid time stamp: CHGDTAARA DTAARA(I700BCM/MTFXCP *ALL) VALUE('2016-07-22-00.00.00.000000') 
-	** YMYLES has the updated PST00101#1 (2016-7-22), PST00101#2 (2016-7-25)
-	
 }
 
-#
-How to run the scheduled job in the batch system:
-Initiate-steps:
-1. Addlible ymyles1
-2. strsql prepare ymyles1/pst00101
-
-CLRPFM i700bcm/mtfxccy
-CLRPFM i700bcm/mtfxpos
-CLRPFM i700bcm/mtfxtxpf
-CLRPFM i700bcm/mtfxaltpf
-CHGDTAARA DTAARA(I700BCM/MTFXCP *ALL) VALUE('2015-01-01-00.00.00.000000') 
-CHGDTAARA DTAARA(I700BCM/MTFXCPMOV *ALL) VALUE('2015-01-01-00.00.00.000000') 
-CHGDTAARA DTAARA(I700BCM/MTFXCPCCY *ALL) VALUE('2015-01-01-00.00.00.000000') 
-CHGDTAARA DTAARA(I700BCM/MTFXCPALT *ALL) VALUE('2015-01-01-00.00.00.000000') 
-CHGDTAARA DTAARA(I700BCM/MTFXLOOP (1 14)) VALUE('160000 174500 ')
-CHGDTAARA DTAARA(I700BCM/MTFXLOOP (15 28)) VALUE('000300 000015 ')
-CHGDTAARA DTAARA(I700BCM/MTFXLOOP (29 15)) VALUE('READY SS       ')  
-
- 
-WRKSYSSTS
-DSPDTAARA I700BCM/MTFXLOOP
-dspfd i700bcm/mtfxtxpf 
-SBMJOB CMD(CALL PGM(I700BCM/MTFXLOOP))
-#
-
-
-* GGRPRATECL:
-* |c#--------|
+## GGRPRATECL:
 * A imodule rewrite simliar to GCRDRATE which is added with GROUP and CHANNEL parms
 {
 	source-file: {
@@ -121,9 +75,8 @@ h. no cif, group CORP and No Channel, doing C from MOP to USD, result should be:
 i. no cif, no group and ECHAN, doing C from MOP to USD, result should be: 0000124839269
 j. no cif, no group and no channel, doing C from MOP to USD, result should be: 00001248393
 k. a cif 0000125695, group RET and ECHAN doing C from MOP to USD, result should be: 00001248003
-#
 
-* GEXCIFGPCL:
+## GEXCIFGPCL:
 * A RPG wrapped with a CL that tells the group of a CIF
 * RET/CORP/VIP
 {
@@ -159,10 +112,8 @@ c. a cif 0000010944 should be CORP
 **not found output cases:
 a. a cif 0000012174 should be not found
    verify: Y
-#
 
-* RTGAPP:
-* |c--#------|
+## RTGAPP:
 {
 	source-file: {
 		location:	i700bcm/qexrtesrc,
@@ -176,16 +127,9 @@ a. a cif 0000012174 should be not found
 			RTGGRPLST  
 			]
 	}
-	lible: [i700bcm
-			imodule
-			icbsbcmdb1
-			bcmgpl
-			QGPL
-			QTEMP      ]
 }
 
-* CRTEINQ(G)
-* |c-----#---|
+## CRTEINQ(G)
 {
 	source-file: {
 		OLD-location: ymyles1/qrtgvarsrc
@@ -202,42 +146,5 @@ a. a cif 0000012174 should be not found
 		rpg/dds: [CRTEINQ x CRTEINQD] *moved to i700bcm 
 		dtaara: [CRTERPTDTA]
 	}
-	1. move CRTECCYLST from ZCHEXAPP to I700BCM
-	2. Declare move for source in ZCHEXAPP
-	3. Remove PGMs and FIlEs in ZCHEXAPP
-	4. Remove PGMs in ZIHD
-			
-	NEW-lible: [I700BCM   
-			DBU10     
-			QGPL      
-			QTEMP     
-			BCMGPL    
-			IMODULE   
-			ICBSBCMDB1]
 }
 
-
-* ETRAPP: E-Channel Time deposit Campaign
-* 
-{
-	source-file: {
-		location:	i700bcm/qexrtesrc,
-		pf-source:	[i700bcm/mup027log
-					 i700bcm/cftmfrq**]
-		cl:         [etrappcl]
-		rpg/dds:	[etrapp:etrappd]        *main screen
-	}
-	
-	pf:[ymyles/mup027,                      *source at ZCSERVICE/QDDSSRC             
-		i700bcm/mup027log],                             
-		
-	lible: [I700BCM   
-			IMODULE   
-			ICBSBCMDB1
-			YMYLES    
-			BCMGPL    
-			DBU10     
-			QGPL      
-			QTEMP     ]
-	
-}
