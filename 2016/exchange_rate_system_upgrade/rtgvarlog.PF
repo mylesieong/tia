@@ -1,0 +1,69 @@
+1.00 130801       ************************************************************************  
+2.00 160920       *   REFERENCE     : CHG-0250-16 (D6250)                                *  
+3.00 130801       *   USER ID       : BG09PGM                                            *  
+4.00 130801       *   CHANGED BY    : ALBERT AU                                          *  
+5.00 160510       *   CHANGED DATE  : 10 May 2016                                        *  
+6.00 160729       *   REASON        : GROUP EXCHANGE RATE ARRANGEMENT HISTORY LOG FILE   *  
+7.00 130801       ************************************************************************  
+8.00 160510      A          R RRTGVARLOG                                                    
+9.00 160510      A            LRTGDTE        8P 0       TEXT('Log Date                 ')   
+10.00 160510      A            LRTGTIME       6P 0       TEXT('Log Time                 ')   
+11.00 160510      A            LRTGUSER      10A         TEXT('Log User                 ')   
+12.00 160729      A*                                                                         
+13.00 160512      A            LRTGBBANK      3P 0       TEXT('BANK NUMBER              ')   
+14.00 160729      A            LRTGSTAT       1A         TEXT('Status                   ')   
+15.00 160729       *                                     1-ACTIVE                            
+16.00 160729       *                                     0-SUSPEND                           
+17.00 160729      A            LRTGCHN        6A         TEXT('Channel                  ')   
+18.00 160729      A            LRTGROUP       6A         TEXT('Group                    ')   
+19.00 160729      A            LRTGTXTYP      4A         TEXT('FUNCTION')                    
+20.00 160729      A            LRTGAMT1      13P 2       TEXT('FRPM AMOUNT')                 
+21.00 160729      A            LRTGAMT2      13P 2       TEXT('TO AMOUNT')                   
+22.00 160729      A            LRTGCIF       10A         TEXT('CIF')                         
+23.00 160512      A            LRTGBCODE      3P 0       TEXT('CURRENCY CODE            ')   
+24.00 160512      A            LRTGBBKXR     11P 7       TEXT('BOOK EXCHANGE RATE       ')   
+25.00 160729       *                                     LEAVE BLANK FOR FUTURE USE          
+26.00 160512      A            LRTGBVAR      11P 7       TEXT('ALLOWABLE VAR TO BOOK RAT')   
+27.00 160729       *                                     LEAVE BLANK FOR FUTURE USE          
+28.00 160512      A            LRTGBTNBS     11P 7       TEXT('FX TRANSFER BUY SPREAD TO')   
+29.00 160512      A            LRTGBTNSS     11P 7       TEXT('FX TRANSFER SELL SPREAD T')   
+30.00 160512      A            LRTGBNOBS     11P 7       TEXT('FX NOTES BUY SPREAD TO BO')   
+31.00 160512      A            LRTGBNOSS     11P 7       TEXT('FX NOTES SELL SPREAD TO B')   
+32.00 160512      A            LRTGBCKBS     11P 7       TEXT('FX CHECKS BUY SPREAD TO B')   
+33.00 160512      A            LRTGBCKSS     11P 7       TEXT('FX CHECKS SELL SPREAD TO ')   
+34.00 160512      A            LRTGBREVR     11P 7       TEXT('REVALUATION RATE         ')   
+35.00 160512      A            LRTGBLRXR     11P 7       TEXT('LOCAL REPORT EXCHANGE RAT')   
+36.00 160512      A            LRTGBUPDT      7P 0       TEXT('TABLE UPDATE DATE        ')   
+37.00 160512      A            LRTGBUPTM      6P 0       TEXT('TABLE TIME STAMP         ')   
+38.00 160512      A            LRTGBTERM     10A         TEXT('TERMINAL ID              ')   
+39.00 160512      A            LRTGBOK1      10A         TEXT('AUTHORIZER 1             ')   
+40.00 160512      A            LRTGBOK2      10A         TEXT('AUTHORIZER 2             ')   
+41.00 160512      A            LRTGBOBLT     15P 2       TEXT('OVERBOUGHT LIMIT         ')   
+42.00 160512      A            LRTGBOSLT     15P 2       TEXT('OVERSOLD LIMIT           ')   
+43.00 160512      A            LRTGBLTDT      6P 0       TEXT('LIMIT DATE               ')   
+44.00 160512      A            LRTGBEFDT      7P 0       TEXT('DATE EFFECTIVE           ')   
+45.00 160512      A            LRTGBEFTM      6P 0       TEXT('TIME EFFECTIVE           ')   
+46.00 160512      A            LRTGBCPFC     15P 2       TEXT('FOREIGN CURRENCY POSITION')   
+47.00 160512      A            LRTGBCPLC     15P 2       TEXT('LOCAL CURRENCY POSITION  ')   
+48.00 160512      A            LRTGBATBS     11P 7       TEXT('Appl Transfer Buy Rate   ')   
+49.00 160512      A            LRTGBATSS     11P 7       TEXT('Appl Transfer Sell Rate  ')   
+50.00 160512      A            LRTGBFCBS     11P 7       TEXT('F/F Non-Note Buy Rate    ')   
+51.00 160512      A            LRTGBFCSS     11P 7       TEXT('F/F Non-Note Sell Rate   ')   
+52.00 160512      A            LRTGBFTBS     11P 7       TEXT('F/F Appl Transfer Buy Rat')   
+53.00 160512      A            LRTGBFTSS     11P 7       TEXT('F/F Appl Transfer Sell Ra')   
+54.00 160512      A            LRTGBCULM     15P 2       TEXT('Currency Transaction Limi')   
+55.00 160729      A*                                                                         
+56.00 160510      A            LRTUSRC01      1A         TEXT('User field C1            ')   
+57.00 160510      A            LRTUSRC02      3A         TEXT('User field C2            ')   
+58.00 160510      A            LRTUSRC03     10A         TEXT('User field C3            ')   
+59.00 160510      A            LRTUSRN01     11P 7       TEXT('User field N1            ')   
+60.00 160510      A            LRTUSRN02     11P 7       TEXT('User field N2            ')   
+61.00 160510      A            LRTUSRN03     13P 2       TEXT('User field N3            ')   
+62.00 160510      A            LRTUSRN04     13P 2       TEXT('User field N4            ')   
+63.00 160729      A*                                                                         
+64.00 160729      A          K LRTGBBANK                                                     
+65.00 160729      A          K LRTGBCODE                                                     
+66.00 160729      A          K LRTGROUP                                                      
+67.00 160729      A          K LRTGCHN                                                       
+68.00 160729      A          K LRTGBEFDT                                                     
+69.00 160729      A          K LRTGBEFTM                                                     

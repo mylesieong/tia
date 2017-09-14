@@ -1,0 +1,19 @@
+1.00 130801       ************************************************************************  
+2.00 160729       *   REFERENCE     : CHG-0250-16 (D6250)                                *  
+3.00 160601       *   USER ID       : BI77PGM                                            *  
+4.00 160601       *   CHANGED BY    : MYLES IEONG                                        *  
+5.00 160729       *   CHANGED DATE  : 29 JUL 2016                                        *  
+6.00 160729       *   REASON        : GROUP EXHCNAGE RATE ARRANGEMENT                    *  
+7.00 130801       ************************************************************************  
+8.00 130801                                                                                 
+9.00 160601      A          R RRTGCHNLST                                                    
+9.01 160729      A*                                                                         
+10.00 160601      A            RTGCCHN        6A         TEXT('CHNANNEL')                    
+10.01 160729      A            RTGCUSR1       1A         TEXT('USER DEFINED FIELD1')         
+10.02 160729      A            RTGCUSR2       3S 0       TEXT('USER DEFINED FIELD2')         
+10.03 160729      A            RTGCUSR3       6S 0       TEXT('USER DEFINED FIELD3')         
+10.04 160729      A            RTGCUSR4       8S 0       TEXT('USER DEFINED FIELD4')         
+10.05 160729      A            RTGCUSR5       6A         TEXT('USER DEFINED FIELD5')         
+10.06 160729      A            RTGCUSR6      11S 7       TEXT('USER DEFINED FIELD6')         
+10.07 160729      A*                                                                         
+11.00 160601      A          K RTGCCHN                                                       

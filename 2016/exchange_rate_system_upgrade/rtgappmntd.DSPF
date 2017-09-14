@@ -1,0 +1,253 @@
+1.00 160526      A*%%TS  SD  20160526  150814  BI77PGM     REL-V7R1M0  5770-WDS             
+2.00 160525      A************************************************************************  
+3.00 160525      A*   File ID.      : RTGAPPMNTD                                         *  
+4.00 160525      A*   Description   : Exchange Rate for Customer Group MAINTENANCE Scn   *  
+5.00 160728      A*   Reference     : CHG-250-16 (D6250)                                 *  
+6.00 160525      A*   Written by    : BI77PGM MYLES IEONG                                *  
+7.00 160525      A*   Date written  : 25 May 2016                                        *  
+8.00 160527      A*                                                                      *  
+9.00 160601      A*              INQUIRY SCRN        : *IN61                             *  
+10.00 160601      A*              MODIFY SCRN         : *IN62                             *  
+11.00 160601      A*              SUSPEND SCRN        : *IN63                             *  
+11.01 160601      A*              REACTIVATE SCRN     : *IN64                             *  
+11.02 160601      A*              CREATE SCRN         : *IN65                             *  
+12.00 160527      A*              ERROR INDICATOR     : *IN60                             *  
+12.01 160531      A*              FILE READ ERROR     : *IN80                             *  
+12.03 160601      A*              FIELD ERROR         : SRTGBCODE  *IN77                  *  
+12.04 160601      A*                                    SRTGROUP   *IN78                  *  
+12.05 160601      A*                                    SRTGCHN    *IN79                  *  
+12.07 160601      A*                                    NOBS, NOSS *IN71                  *  
+12.08 160601      A*                                    CKBS, CKSS *IN72                  *  
+12.09 160531      A*                                    TNBS, TNSS *IN73                  *  
+12.10 160531      A*                                    FCBS, FCSS *IN74                  *  
+12.11 160531      A*                                    ATBS, ATSS *IN75                  *  
+12.12 160531      A*                                    FTBS, FTSS *IN76                  *  
+13.00 160531      A*                                                                      *  
+14.00 160525      A************************************************************************  
+15.00 160526      A*%%EC                                                                     
+16.00 160526      A                                      DSPSIZ(24 80 *DS3)                  
+17.00 160530      A*******************************************************************       
+18.00 160531      A*             MAIN SCREEN OF MAINTENANCE/ WO SUB-FILE             *       
+19.00 160530      A*******************************************************************       
+20.00 160526      A          R RRTGMNT01                                                     
+21.00 160526      A*%%TS  SD  20160526  150814  BI77PGM     REL-V7R1M0  5770-WDS             
+22.00 160527      A                                      CF03(03 'Exit')                     
+23.00 160527      A                                      CF10(10 'Confirm')                  
+24.00 160527      A                                      CF12(12 'Cancel')                   
+25.00 160527      A                                      ROLLUP(26 'Rollup')                 
+26.00 160527      A                                      ROLLDOWN(27 'Rolldown')             
+27.00 160526      A                                      OVERLAY                             
+28.00 160525      A*                                                                         
+29.00 160526      A* HEADER LINES                                                            
+30.00 160525      A*                                                                         
+31.00 160526      A                                  1  2'BCMGPL-EXCRTE'                     
+32.00 160526      A                                  1 30'BANCO COMERCIAL DE MACAU'          
+33.00 160526      A                                      DSPATR(HI)                          
+34.00 160527      A                                  1 66'Date :'                            
+35.00 160526      A                                  1 73DATE                                
+36.00 160526      A                                      EDTWRD('  /  /  ')                  
+37.00 160526      A                                  2  2USER                                
+38.00 160527      A                                  2 20'Exchange Rate For Customer Group A-
+39.00 160527      A                                      pplication'                         
+40.00 160527      A                                      DSPATR(HI)                          
+41.00 160527      A                                  2 66'Time :'                            
+42.00 160526      A                                  2 73TIME                                
+43.00 160526      A                                      EDTWRD('  :  :  ')                  
+43.01 160601      A  61                              3 36'Inquiry'                           
+43.02 160531      A  61                                  DSPATR(HI)                          
+43.03 160601      A  62                              3 37'Modify'                            
+43.04 160531      A  62                                  DSPATR(HI)                          
+43.05 160601      A  63                              3 36'Suspend'                           
+43.06 160531      A  63                                  DSPATR(HI)                          
+43.07 160601      A  64                              3 35'Reactivate'                        
+43.08 160531      A  64                                  DSPATR(HI)                          
+43.09 160601      A  65                              3 37'Create'                            
+43.10 160601      A  65                                  DSPATR(HI)                          
+44.00 160525      A*                                                                         
+45.00 160526      A* CURRENCY CODE AND GROUP/CHANNEL                                         
+46.00 160525      A*                                                                         
+47.00 160531      A                                  5  2'Currency code :'                   
+48.00 160601      A            SRTGBCODE      3S 0B  5 18                                    
+48.01 160601      A  65N77                               DSPATR(HI)                          
+48.02 160601      A  65                                  DSPATR(UL)                          
+48.03 160601      A  65                                  DSPATR(PC)                          
+48.04 160601      A N65                                  DSPATR(PR)                          
+48.05 160601      A  77                                  DSPATR(RI)                          
+49.00 160728 MYLESA            SGBPET         3A  O  5 23                                    
+50.00 160531      A                                  5 30'Group :'                           
+51.00 160601      A            SRTGROUP       6A  B  5 38                                    
+51.01 160601      A  65N78                               DSPATR(HI)                          
+51.02 160601      A  65                                  DSPATR(UL)                          
+51.03 160601      A  65                                  DSPATR(PC)                          
+51.04 160601      A N65                                  DSPATR(PR)                          
+51.05 160601      A  78                                  DSPATR(RI)                          
+52.00 160531      A                                  5 55'Channel :'                         
+53.00 160601      A            SRTGCHN        6A  B  5 65                                    
+53.01 160601      A  65N79                               DSPATR(HI)                          
+53.02 160601      A  65                                  DSPATR(UL)                          
+53.03 160601      A  65                                  DSPATR(PC)                          
+53.04 160601      A N65                                  DSPATR(PR)                          
+53.05 160601      A  79                                  DSPATR(RI)                          
+54.00 160525      A*                                                                         
+55.00 160526      A* STATUS AND LAST CHANGE                                                  
+56.00 160525      A*                                                                         
+57.00 160531      A                                  7  3'Status  . . . . . . . . :'         
+58.00 160531      A            SRTGSTAT       8A  O  7 30                                    
+59.00 160531      A                                  8  3'Last rate change  . . . :'         
+60.00 160729      A            SEFFDATE       8  0O  8 30EDTWRD('    /  /  ')                
+61.00 160729      A            SEFFTIME       6  0O  8 41EDTWRD('  :  :  ')                  
+62.00 160729      A            SRTGBTERM     10A  O  8 50                                    
+63.00 160525      A*                                                                         
+64.00 160526      A* BOOK RATE                                                               
+65.00 160525      A*                                                                         
+66.00 160531      A                                 10  4'Book rate  . . . . . . . . . . . .-
+67.00 160530      A                                       :'                                 
+68.00 160601      A            SRTGBBKXR     11Y00O 10 43EDTWRD('0           -')             
+69.00 160531      A                                 11  4'Book rate variance . . . . . . . .-
+70.00 160531      A                                       :'                                 
+71.00 160601      A            SRTGBVAR      11Y00O 11 43EDTWRD('0           -')             
+72.00 160525      A*                                                                         
+73.00 160526      A* RATE SPREAD TO BOOK RATE                                                
+74.00 160525      A*                                                                         
+75.00 160531      A                                 13  4'Rate spread to book rate          -
+76.00 160526      A                                         '                                
+77.00 160531      A                                 13 48'Buy'                               
+78.00 160531      A                                 13 62'Sell'                              
+79.00 160531      A                                 14  6'Note . . . . . . . . . . . . . . .-
+80.00 160531      A                                       :'                                 
+81.00 160601      A            SRTGBNOBS     11Y00B 14 43EDTWRD('0           -')             
+82.00 160531      A N61N71                               DSPATR(HI)                          
+83.00 160601      A  62                                                                      
+83.01 160601      AO 65                                  DSPATR(UL)                          
+83.02 160601      A  62                                                                      
+84.00 160601      AO 65                                  DSPATR(PC)                          
+84.01 160601      A N62                                                                      
+85.00 160601      AAN65                                  DSPATR(PR)                          
+86.00 160601      A  71                                  DSPATR(RI)                          
+87.00 160601      A            SRTGBNOSS     11Y00B 14 58EDTWRD('0           -')             
+88.00 160601      A N61N71                               DSPATR(HI)                          
+89.00 160601      A  62                                                                      
+90.00 160601      AO 65                                  DSPATR(UL)                          
+91.00 160601      A  62                                                                      
+92.00 160601      AO 65                                  DSPATR(PC)                          
+92.01 160601      A N62                                                                      
+92.02 160601      AAN65                                  DSPATR(PR)                          
+92.03 160601      A  71                                  DSPATR(RI)                          
+93.00 160531      A                                 15  6'Cheque . . . . . . . . . . . . . .-
+94.00 160531      A                                       :'                                 
+95.00 160601      A            SRTGBCKBS     11Y00B 15 43EDTWRD('0           -')             
+95.01 160601      A N61N72                               DSPATR(HI)                          
+95.02 160601      A  62                                                                      
+95.03 160601      AO 65                                  DSPATR(UL)                          
+96.00 160601      A  62                                                                      
+97.00 160601      AO 65                                  DSPATR(PC)                          
+98.00 160601      A N62                                                                      
+99.00 160601      AAN65                                  DSPATR(PR)                          
+100.00 160601      A  72                                  DSPATR(RI)                          
+101.00 160601      A            SRTGBCKSS     11Y00B 15 58EDTWRD('0           -')             
+101.01 160601      A N61N72                               DSPATR(HI)                          
+101.02 160601      A  62                                                                      
+101.03 160601      AO 65                                  DSPATR(UL)                          
+102.00 160601      A  62                                                                      
+103.00 160601      AO 65                                  DSPATR(PC)                          
+104.00 160601      A N62                                                                      
+105.00 160601      AAN65                                  DSPATR(PR)                          
+106.00 160601      A  72                                  DSPATR(RI)                          
+107.00 160531      A                                 16  6'F/F Note . . . . . . . . . . . . .-
+108.00 160531      A                                       :'                                 
+109.00 160601      A            SRTGBTNBS     11Y00B 16 43EDTWRD('0           -')             
+109.01 160601      A N61N73                               DSPATR(HI)                          
+109.02 160601      A  62                                                                      
+109.03 160601      AO 65                                  DSPATR(UL)                          
+110.00 160601      A  62                                                                      
+111.00 160601      AO 65                                  DSPATR(PC)                          
+112.00 160601      A N62                                                                      
+113.00 160601      AAN65                                  DSPATR(PR)                          
+114.00 160601      A  73                                  DSPATR(RI)                          
+115.00 160601      A            SRTGBTNSS     11Y00B 16 58EDTWRD('0           -')             
+115.01 160601      A N61N73                               DSPATR(HI)                          
+115.02 160601      A  62                                                                      
+115.03 160601      AO 65                                  DSPATR(UL)                          
+116.00 160601      A  62                                                                      
+117.00 160601      AO 65                                  DSPATR(PC)                          
+118.00 160601      A N62                                                                      
+119.00 160601      AAN65                                  DSPATR(PR)                          
+120.00 160601      A  73                                  DSPATR(RI)                          
+121.00 160531      A                                 17  6'F/F Non-note . . . . . . . . . . .-
+122.00 160531      A                                       :'                                 
+123.00 160601      A            SRTGBFCBS     11Y00B 17 43EDTWRD('0           -')             
+123.01 160601      A N61N74                               DSPATR(HI)                          
+123.02 160601      A  62                                                                      
+123.03 160601      AO 65                                  DSPATR(UL)                          
+124.00 160601      A  62                                                                      
+125.00 160601      AO 65                                  DSPATR(PC)                          
+126.00 160601      A N62                                                                      
+127.00 160601      AAN65                                  DSPATR(PR)                          
+128.00 160601      A  74                                  DSPATR(RI)                          
+129.00 160601      A            SRTGBFCSS     11Y00B 17 58EDTWRD('0           -')             
+129.01 160601      A N61N74                               DSPATR(HI)                          
+129.02 160601      A  62                                                                      
+129.03 160601      AO 65                                  DSPATR(UL)                          
+130.00 160601      A  62                                                                      
+131.00 160601      AO 65                                  DSPATR(PC)                          
+132.00 160601      A N62                                                                      
+133.00 160601      AAN65                                  DSPATR(PR)                          
+134.00 160601      A  74                                  DSPATR(RI)                          
+135.00 160601      A                                 18  6'Appl Transfer  . . . . . . . . . .-
+136.00 160531      A                                       :'                                 
+137.00 160601      A            SRTGBATBS     11Y00B 18 43EDTWRD('0           -')             
+137.01 160601      A N61N75                               DSPATR(HI)                          
+137.02 160601      A  62                                                                      
+137.03 160601      AO 65                                  DSPATR(UL)                          
+138.00 160601      A  62                                                                      
+139.00 160601      AO 65                                  DSPATR(PC)                          
+140.00 160601      A N62                                                                      
+141.00 160601      AAN65                                  DSPATR(PR)                          
+142.00 160601      A  75                                  DSPATR(RI)                          
+143.00 160601      A            SRTGBATSS     11Y00B 18 58EDTWRD('0           -')             
+143.01 160601      A N61N75                               DSPATR(HI)                          
+143.02 160601      A  62                                                                      
+143.03 160601      AO 65                                  DSPATR(UL)                          
+144.00 160601      A  62                                                                      
+145.00 160601      AO 65                                  DSPATR(PC)                          
+146.00 160601      A N62                                                                      
+147.00 160601      AAN65                                  DSPATR(PR)                          
+148.00 160601      A  75                                  DSPATR(RI)                          
+149.00 160601      A                                 19  6'F/F Appl Transfer  . . . . . . . .-
+150.00 160601      A                                       :'                                 
+151.00 160601      A            SRTGBFTBS     11Y00B 19 43EDTWRD('0           -')             
+151.01 160601      A N61N76                               DSPATR(HI)                          
+151.02 160601      A  62                                                                      
+151.03 160601      AO 65                                  DSPATR(UL)                          
+152.00 160601      A  62                                                                      
+153.00 160601      AO 65                                  DSPATR(PC)                          
+154.01 160601      A N62                                                                      
+155.00 160601      AAN65                                  DSPATR(PR)                          
+156.00 160601      A  76                                  DSPATR(RI)                          
+157.00 160601      A            SRTGBFTSS     11Y00B 19 58EDTWRD('0           -')             
+157.01 160601      A N61N76                               DSPATR(HI)                          
+157.02 160601      A  62                                                                      
+157.03 160601      AO 65                                  DSPATR(UL)                          
+158.00 160601      A  62                                                                      
+159.00 160601      AO 65                                  DSPATR(PC)                          
+160.00 160601      A N62                                                                      
+161.00 160601      AAN65                                  DSPATR(PR)                          
+162.00 160601      A  76                                  DSPATR(RI)                          
+163.00 160531      A                                 22  2'F3 = Exit'                         
+164.00 160531      A  62                             22 43'F10 = Confirm'                     
+165.00 160531      A  63                             22 43'F10 = Suspend'                     
+166.00 160531      A  64                             22 43'F10 = Reactivate'                  
+166.01 160601      A  65                             22 43'F10 = Create'                      
+167.00 160527      A  60        SMSG          70A  O 24  3DSPATR(HI)                          
+168.00 160530      A*                                                                         
+169.00 160530      A*                                                                         
+170.00 160530      A*******************************************************************       
+171.00 160530      A*                PROMPT WINDOW FOR CONFIRMATION                   *       
+172.00 160530      A*******************************************************************       
+173.00 160530      A          R RRTGMNTWIN                                                    
+174.00 160530      A                                      WINDOW(18 15 5 45)                  
+175.00 160530      A                                      RMVWDW                              
+176.00 160530      A                                      USRRSTDSP                           
+177.00 160530      A                                  2  2'DO YOU CONFIRM THE CHANGE ?'       
+178.00 160530      A                                  2 36'(Y/N)'                             
+179.00 160601      A            SYESNO         1A  B  2 34DFTVAL('N')                         

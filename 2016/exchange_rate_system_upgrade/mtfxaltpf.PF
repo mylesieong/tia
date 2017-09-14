@@ -1,0 +1,40 @@
+1.00 160511       ************************************************************************  
+2.00 160822       *   REFERENCE     : CHG-0250-16 (D6250)                                *  
+3.00 160511       *   USER ID       : BI77PGM                                            *  
+4.00 160511       *   CHANGED BY    : MYLES IEONG                                        *  
+5.00 160822       *   CHANGED DATE  : 22 AUG 2016                                        *  
+6.00 160822       *   REASON        : ALERT ENTRY PF                                     *  
+7.00 160906       *                   MFATMTH- 'S' for SMS, 'M' for mail                 *  
+8.00 160905       *                   MFATFLG- 'P' for proposed, 'C' for complete        *  
+9.00 160511       ************************************************************************  
+10.00 160905      A          R RMTFXALTPF                                                    
+11.00 160907      A            MFATDT         8P 0       TEXT('DATE')                        
+12.00 160907      A            MFATTM         8P 0       TEXT('TIME')                        
+13.00 160907      A            MFATTIM       26A         TEXT('TIME STAMP')                  
+14.00 160912      A            MFATCHN        6A         TEXT('CHANNEL')                     
+15.00 160912      A            MFATCD         6A         TEXT('TELLER TRANSACTION CODE')     
+16.00 160912      A            MFATTLDS      30A         TEXT('TRANSACTION DESCIPTION')      
+17.00 160907      A            MFATACT       13P 0       TEXT('FROM A/C')                    
+18.00 160907      A            MFATCUR        3P 0       TEXT('FROM CCY')                    
+19.00 160908      A            MFATPET        3A         TEXT('FROM CCY SHORT NAME')         
+20.00 160912      A            MFATTC        15P 2       TEXT('FROM AMT')                    
+21.00 160912      A            MFATLCE       15P 2       TEXT('FROM AMT LCYE')               
+22.00 160913      A            MFATCIF       10A         TEXT('FROM CIF')                    
+23.00 160913      A            MFATAPP        2A         TEXT('FROM APPLICATION CODE')       
+24.00 160913      A            MFATTACT      13P 0       TEXT('TO A/C')                      
+25.00 160913      A            MFATTCUR       3P 0       TEXT('TO CCY')                      
+26.00 160913      A            MFATTPET       3A         TEXT('TO CCY SHORT NAME')           
+27.00 160913      A            MFATTTC       15P 2       TEXT('TO AMT')                      
+28.00 160913      A            MFATTLCE      15P 2       TEXT('TO AMT LCYE')                 
+29.00 160913      A            MFATTCIF      10A         TEXT('TO CIF')                      
+30.00 160913      A            MFATTAPP       2A         TEXT('TO APPLICATION CODE')         
+31.00 160913       *                                                                         
+32.00 160906      A            MFATMTH        1A         TEXT('ALERT METHOD')                
+33.00 160906      A            MFATFLG        1A         TEXT('ACTION FLAG')                 
+34.00 160906       *                                                                         
+35.00 160906      A            MFATUSR1       1A         TEXT('USER FIELD 1')                
+36.00 160906      A            MFATUSR2       6A         TEXT('USER FIELD 2')                
+37.00 160906      A            MFATUSR3       3P 0       TEXT('USER FIELD 3')                
+38.00 160906      A            MFATUSR4       8P 0       TEXT('USER FIELD 4')                
+39.00 160906      A            MFATUSR5      13P 0       TEXT('USER FIELD 5')                
+40.00 160905       **                                                                        

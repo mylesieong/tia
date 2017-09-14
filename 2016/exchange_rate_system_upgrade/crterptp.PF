@@ -1,0 +1,35 @@
+1.00 130903       ************************************************************************  
+2.00 150227       *   REFERENCE     : CHG-031-15                                         *  
+3.00 150227       *   USER ID       : BG24PGM                                            *  
+5.00 150227       *   CHANGED DATE  : 26/02/2015                                         *  
+6.00 150227       *   REASON        : EXCHANGE RATE REPORT                               *  
+9.00 140212       ************************************************************************  
+9.01 150304       *   REFERENCE     : CHG-031-15                                         *  
+9.02 150304       *   USER ID       : BG09PGM                                            *  
+9.03 150304       *   CHANGED DATE  : 02/03/2015                                         *  
+9.04 150304       *   REASON        : EXCHANGE RATE REPORT                               *  
+9.05 150304       ************************************************************************  
+10.00 150204      A          R RCRTERPTP                                                     
+10.01 150303      A                                                                          
+10.02 150304      A            CRTDATE        8A         TEXT('Date')                        
+10.03 150304      A            CRTTIME        6A         TEXT('Time')                        
+11.00 150227      A                                                                          
+12.00 150204      A            CRCCY          3S 0       TEXT('CCY Code')                    
+13.00 150204      A            CRCCYNME       3A         TEXT('CCY Name')                    
+14.00 140206      A                                                                          
+15.00 150204      A            CRTTBUYM      11P 7       TEXT('Bank Buy TT MOP')             
+16.00 150204      A            CRTTBUYH      11P 7       TEXT('Bank Buy TT HKD')             
+19.00 150204      A            CRTTSELM      11P 7       TEXT('Bank Sell TT MOP')            
+20.00 150204      A            CRTTSELH      11P 7       TEXT('Bank Sell TT HKD')            
+21.00 150227      A            CRODBUYM      11P 7       TEXT('Bank Buy OD MOP')             
+22.00 150227      A            CRODBUYH      11P 7       TEXT('Bank Buy OD HKD')             
+23.00 150204      A            CRODSELM      11P 7       TEXT('Bank Sell OD MOP')            
+24.00 150204      A            CRODSELH      11P 7       TEXT('Bank Sell OD HKD')            
+25.00 150204      A                                                                          
+28.00 150204      A            CRUSR1         1A         TEXT('User-Field 1')                
+29.00 150204      A            CRUSR2         3A         TEXT('User-Field 2')                
+30.00 150204      A            CRUSR3         5A         TEXT('User-Field 3')                
+31.00 150204      A            CRUSR4        10A         TEXT('User-Field 4')                
+32.00 150204      A            CRUSR5        20A         TEXT('User-Field 5')                
+33.00 150204      A            CRUSR6        30A         TEXT('User-Field 6')                
+34.00 140407      A                                                                          

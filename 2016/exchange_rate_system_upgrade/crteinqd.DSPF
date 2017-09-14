@@ -1,0 +1,128 @@
+1.00 141121      A*%%TS  SD  20141121  165455  BG24PGM     REL-V7R1M0  5770-WDS             
+2.00 110419      A******************************************************************        
+3.00 140212      A*   REFERENCE NO. : CHG-0058-14(D4058)                           *        
+4.00 130806      A*   USER ID       : BG09                                         *        
+5.00 130806      A*   USER NAME     : ALBERT AU                                    *        
+6.00 131213      A*   CHANGED DATE  : 11-Dec-2013                                  *        
+7.00 131213      A*   DESCRPITION   : Currency Exchange Rate SubFile               *        
+8.00 110419      A******************************************************************        
+9.00 150304      A*   REFERENCE NO. : CHG-0031-15(D5031)                           *        
+10.00 150304      A*   USER ID       : BG24                                         *        
+11.00 150304      A*   USER NAME     : Eric Wong                                    *        
+12.00 150304      A*   CHANGED DATE  : 20-Nov-2014                                  *        
+13.00 150304      A*   DESCRPITION   : Inquiry Exchange Rate History                *        
+14.00 150225      A******************************************************************        
+15.00 150304      A*   REFERENCE NO. : CHG-0031-15(D5031) 5031&ERIC                 *        
+16.00 150304      A*   USER ID       : BG09                                         *        
+17.00 150304      A*   USER NAME     : ALBERT AU                                    *        
+18.00 150304      A*   CHANGED DATE  : 25-Feb-2015                                  *        
+19.00 150304      A*   DESCRPITION   : New Screen Format                            *        
+20.00 150304      A******************************************************************        
+21.00 160922      A*   REFERENCE NO. : CHG-0250-16(D6250)                           *        
+22.00 160922      A*   USER ID       : BI77                                         *        
+23.00 160922      A*   USER NAME     : MYLES IEONG                                  *        
+24.00 160922      A*   CHANGED DATE  : 03-JUN-2016                                  *        
+25.00 160922      A*   DESCRPITION   : ADD GROUP AND CHANNEL OPTION FOR SELECTION   *        
+26.00 160922      A******************************************************************        
+27.00 141121      A*%%EC                                                                     
+28.00 141121      A                                      DSPSIZ(24 80 *DS3)                  
+29.00 141120      A          R SCCYRTEINF                                                    
+30.00 141120      A*%%TS  SD  20141120  161302  BG24PGM     REL-V7R1M0  5770-WDS             
+31.00 141120      A                                 23  3'F3 = Exit'                         
+32.00 141120      A                                 23 15'F5 = Refresh'                      
+33.00 150302 D5031A                                 23 30'F9 = Print'                        
+34.00 160922 D6250A                                 23 45'(* IN ONE MOP/HKD UNIT)'           
+35.00 150304 D5031A            SMSG          40   O 24  3COLOR(WHT)                          
+36.00 141120      A          R SCCYINQSF                 SFL                                 
+37.00 141120      A*%%TS  SD  20141120  151959  BG24PGM     REL-V7R1M0  5770-WDS             
+38.00 160922 D6250A*           SCCYCODE       3S 0O  7  2                                    
+39.00 160922 D6250A*           SCCYNAME       3A  O  7  6                                    
+40.00 160922 D6250A            SCCYDES        7A  O  9  2                                    
+41.00 160922 D6250A            SCCYCODE       3S 0H                                          
+42.00 160922 D6250A            SCCYNAME       3A  H                                          
+43.00 150225 D5031A*           SMTTBUY        7Y 4O  7 10EDTCDE(3)                           
+44.00 150225 D5031A*           SHTTBUY        7Y 4O  7 19EDTCDE(3)                           
+45.00 150225 D5031A*           SMODBUY        7Y 4O  7 28EDTCDE(3)                           
+46.00 150225 D5031A*           SHODBUY        7Y 4O  7 37EDTCDE(3)                           
+47.00 150225 D5031A*           SMTTSELL       7Y 4O  7 64EDTCDE(3)                           
+48.00 150225 D5031A*           SHTTSELL       7Y 4O  7 73EDTCDE(3)                           
+49.00 150225 D5031A*           SMODSELL       7Y 4O  7 46EDTCDE(3)                           
+50.00 150225 D5031A*           SHODSELL       7Y 4O  7 55EDTCDE(3)                           
+51.00 160922 D5031A* D6250     SMTTBUY        8A  O  7 10COLOR(BLU)                          
+52.00 160922 D5031A* D6250     SHTTBUY        8A  O  7 19COLOR(GRN)                          
+53.00 160922 D5031A* D6250     SMODSELL       8A  O  7 28COLOR(BLU)                          
+54.00 160922 D5031A* D6250     SHODSELL       8A  O  7 37COLOR(GRN)                          
+55.00 160922 D5031A* D6250     SMODBUY        8A  O  7 46COLOR(BLU)                          
+56.00 160922 D5031A* D6250     SHODBUY        8A  O  7 55COLOR(GRN)                          
+57.00 160922 D5031A* D6250     SMTTSELL       8A  O  7 64COLOR(BLU)                          
+58.00 160922 D5031A* D6250     SHTTSELL       8A  O  7 73COLOR(GRN)                          
+59.00 160922 D6250A            SMTTBUY        8A  O  9 10COLOR(WHT)                          
+60.00 160922 D6250A            SHTTBUY        8A  O  9 19COLOR(GRN)                          
+61.00 160922 D6250A            SMODSELL       8A  O  9 28COLOR(WHT)                          
+62.00 160922 D6250A            SHODSELL       8A  O  9 37COLOR(GRN)                          
+63.00 160922 D6250A            SMODBUY        8A  O  9 46COLOR(WHT)                          
+64.00 160922 D6250A            SHODBUY        8A  O  9 55COLOR(GRN)                          
+65.00 160922 D6250A            SMTTSELL       8A  O  9 64COLOR(WHT)                          
+66.00 160922 D6250A            SHTTSELL       8A  O  9 73COLOR(GRN)                          
+67.00 141121      A          R SRTESF                    SFLCTL(SCCYINQSF)                   
+68.00 141121      A*%%TS  SD  20141121  165455  BG24PGM     REL-V7R1M0  5770-WDS             
+69.00 141121      A                                      SFLSIZ(0300)                        
+70.00 160922 D6250A*                                     SFLPAG(0015)                        
+71.00 160922 D6250A                                      SFLPAG(0012)                        
+72.00 141121      A  50                                  SFLDSP                              
+73.00 141121      A  51                                  SFLDSPCTL                           
+74.00 141121      A  53                                  SFLCLR                              
+75.00 141121      A  52                                  SFLEND(*MORE)                       
+76.00 141121      A                                      OVERLAY                             
+77.00 141121      A                                      CF03(03 'Exit')                     
+78.00 141121      A                                      CF05(05 'Refresh')                  
+79.00 150302 D5031A                                      CF09(09 'Print')                    
+80.00 141121      A                                  1  3'BCMGPL/ZCHEXAPP'                   
+81.00 141121      A                                  1 29'BANCO COMERCIAL DE MACAU'          
+82.00 141121      A                                  1 65'Date'                              
+83.00 141121      A                                  1 70':'                                 
+84.00 141121      A                                  1 72DATE                                
+85.00 141121      A                                      EDTCDE(Y)                           
+86.00 141121      A                                  2  3USER                                
+87.00 141121      A                                  2 24'Foreign Cash Exchange Application' 
+88.00 141121      A                                  3 30'Exchange Rate Inquiry'             
+89.00 160922 D6250A*                                     DSPATR(UL)                          
+90.00 141121      A                                  2 65'Time'                              
+91.00 141121      A                                  2 70':'                                 
+92.00 141121      A                                  2 72TIME                                
+93.00 141121      A                                  3 60'ICBS Date :'                       
+94.00 141121      A            SICBSDATE      8A  O  3 72                                    
+95.00 150225 D5031A*                                 4 13'Bank Buy TT       Bank Buy OD'     
+96.00 160922 D5031A* D6250                           4 13'Bank Buy TT       Bank Sell TT'    
+97.00 160922 D6250A                                  6 13'Bank Buy TT       Bank Sell TT'    
+98.00 141121      A                                      DSPATR(HI)                          
+99.00 150225 D5031A*                                 4 49'Bank Sell TT      Bank Sell OD'    
+100.00 160922 D5031A* D6250                           4 49'Bank Buy OD       Bank Sell OD'    
+101.00 160922 D6250A                                  6 49'Bank Buy OD       Bank Sell OD'    
+102.00 141121      A                                      DSPATR(HI)                          
+103.00 160922 D6250A*                                 5  2'CCY      AG  MOP  AG  HKD  AG  MOP-
+104.00 160922 D6250A*                                       AG  HKD  AG  MOP  AG  HKD  AG  MO-
+105.00 160922 D6250A*                                     P  AG  HKD'                         
+106.00 160922 D6250A                                  7  2'CCY      AG  MOP  AG  HKD  AG  MOP-
+107.00 160922 D6250A                                        AG  HKD  AG  MOP  AG  HKD  AG  MO-
+108.00 160922 D6250A                                      P  AG  HKD'                         
+109.00 141121      A                                      DSPATR(HI)                          
+110.00 160922 D6250A*                                 6  2'-----------------------------------
+111.00 160922 D6250A*                                     ------------------------------------
+112.00 160922 D6250A*                                     ----------'                         
+113.00 160922 D6250A                                  8  2'-----------------------------------
+114.00 160922 D6250A                                      ------------------------------------
+115.00 160922 D6250A                                      ----------'                         
+116.00 141121      A                                      DSPATR(HI)                          
+117.00 160922 D6250A*                                 3  3'DateTime:'                         
+118.00 160922 D6250A                                  5  3'DateTime:'                         
+119.00 160922 D5031A* D6250     STIME          6Y 0B  3 22EDTCDE(Z)                           
+120.00 160922 D6250A            STIME          6Y 0B  5 22EDTCDE(Z)                           
+121.00 150304 D5031A  59                                  DSPATR(RI)                          
+122.00 160922 D5031A* D6250     SDATE          8Y 0B  3 13EDTCDE(Z)                           
+123.00 160922 D6250A            SDATE          8Y 0B  5 13EDTCDE(Z)                           
+124.00 150304 D5031A  58                                  DSPATR(RI)                          
+125.00 160922 D6250A                                  5 30'Group:'                            
+126.00 160922 D6250A            SGROUP         6A  B  5 37                                    
+127.00 160922 D6250A  71                                  DSPATR(RI)                          
+128.00 160922 D6250A            SCHANNEL       6A  H                                          

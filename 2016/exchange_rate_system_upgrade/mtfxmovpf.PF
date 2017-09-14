@@ -1,0 +1,26 @@
+1.00 160511       ************************************************************************  
+2.00 160909       *   REFERENCE     : CHG-0250-16 (D6250)                                *  
+3.00 160511       *   USER ID       : BI77PGM                                            *  
+4.00 160511       *   CHANGED BY    : MYLES IEONG                                        *  
+5.00 160511       *   CHANGED DATE  : 11 MAY 2016                                        *  
+6.00 160909       *   REASON        : CCY POSITION/ MOVEMENT                             *  
+7.00 160511       ************************************************************************  
+8.00 160909      A          R RMTFXMOVPF                                                    
+9.00 160512      A            MFPSDTE        8P 0       TEXT('DATE')                        
+10.00 160512      A            MFPSCHL        6A         TEXT('CHANNEL')                     
+11.00 160512      A            MFPSCUR        3P 0       TEXT('CCY')                         
+12.00 160725      A            MFPSPET        3A         TEXT('CCY SHORT NAME')              
+13.00 160512      A            MFPSAMT       15P 2       TEXT('FROM AMT')                    
+14.00 160512      A            MFPSTAMT      15P 2       TEXT('TO AMT')                      
+15.00 160512      A            MFPSLCE       15P 2       TEXT('FROM AMT LCYE')               
+16.00 160512      A            MFPSTLCE      15P 2       TEXT('TO AMT LCYE')                 
+17.00 160512       *                                                                         
+18.00 160512      A            MFPSUSRC1      1A         TEXT('USER FIELD C1')               
+19.00 160512      A            MFPSUSRC2      6A         TEXT('USER FIELD C2')               
+20.00 160512      A            MFPSUSRN1      3P 0       TEXT('USER FIELD N1')               
+21.00 160512      A            MFPSUSRN2      8P 0       TEXT('USER FIELD N2')               
+22.00 160512      A            MFPSUSRN3     15P 2       TEXT('USER FIELD N3')               
+23.00 160512      A            MFPSUSRN4     15P 2       TEXT('USER FIELD N4')               
+24.00 160512       *                                                                         
+25.00 160725      A          K MFPSDTE                                                       
+26.00 160512      A          K MFPSCUR                                                       

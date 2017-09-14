@@ -1,0 +1,29 @@
+1.00 160511       ************************************************************************  
+2.00 160913       *   REFERENCE     : CHG-0250-16 (D6250)                                *  
+3.00 160511       *   USER ID       : BI77PGM                                            *  
+4.00 160511       *   CHANGED BY    : MYLES IEONG                                        *  
+5.00 160511       *   CHANGED DATE  : 11 MAY 2016                                        *  
+6.00 160511       *   REASON        : CCY                                                *  
+7.00 160511       ************************************************************************  
+8.00 160909      A          R RMTFXCCYPF                                                    
+9.00 160512      A            MFCYDTE        8P 0       TEXT('DATE')                        
+10.00 160512      A            MFCYCUR        3P 0       TEXT('FROM CCY')                    
+11.00 160614      A            MFCYPET        3A         TEXT('FROM CCY SHORT NAME')         
+12.00 160614      A            MFCYTCUR       3P 0       TEXT('TO CCY')                      
+13.00 160614      A            MFCYTPET       3A         TEXT('TO CCY SHORT NAME')           
+14.00 160512      A            MFCYAMT       15P 2       TEXT('FROM AMT')                    
+15.00 160512      A            MFCYTAMT      15P 2       TEXT('TO AMT')                      
+16.00 160614      A            MFCYLCYE      15P 2       TEXT('LCYE')                        
+17.00 160512      A            MFCYFRT       11P 7       TEXT('FOREIGN EXCHANGE RATE')       
+18.00 160512       *                                                                         
+19.00 160512      A            MFCYUSRC1      1A         TEXT('USER FIELD C1')               
+20.00 160512      A            MFCYUSRC2      6A         TEXT('USER FIELD C2')               
+21.00 160512      A            MFCYUSRN1      3P 0       TEXT('USER FIELD N1')               
+22.00 160512      A            MFCYUSRN2      8P 0       TEXT('USER FIELD N2')               
+23.00 160512      A            MFCYUSRN3     15P 2       TEXT('USER FIELD N3')               
+24.00 160512      A            MFCYUSRN4     15P 2       TEXT('USER FIELD N4')               
+25.00 160512      A            MFCYUSRN5     11P 7       TEXT('USER FIELD N5')               
+26.00 160512       *                                                                         
+27.00 160909      A          K MFCYDTE                                                       
+28.00 160512      A          K MFCYCUR                                                       
+29.00 160512      A          K MFCYTCUR                                                      

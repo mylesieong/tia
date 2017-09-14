@@ -1,0 +1,110 @@
+1.00 160525      A*%%TS  SD  20160525  104059  BG09PGM     REL-V7R1M0  5770-WDS             
+2.00 60315      A************************************************************************  
+3.00 160525      A*   File ID.      : RTGAPPD                                            *  
+4.00 160525      A*   Description   : Exchange Rate for Customer Group Application Scn   *  
+5.00 160920      A*   Reference     : CHG-250-16                                         *  
+6.00 160525      A*   Written by    : BG09PGM Albert Au                                  *  
+7.00 160525      A*   Date written  : 25 May 2016                                        *  
+8.00 60315      A************************************************************************  
+9.00 160525      A*%%EC                                                                     
+10.00 160525      A                                      DSPSIZ(24 80 *DS3)                  
+11.00 160627      A********************************************************************      
+12.00 160627      A*                           SUB-FILE                               *      
+13.00 160627      A********************************************************************      
+14.00 150529      A          R ST001S                    SFL                                 
+15.00 150529      A*%%TS  SD  20150529  105042  BG24PGM     REL-V7R1M0  5770-WDS             
+16.00 160830      A            DOPT           1A  B 10  3VALUES('1' '2' '3' '4' '5' '6' ' ') 
+17.00 160525      A            DSTATUS        3A  O 10  6                                    
+18.00 160525      A            DCCYCDE       10A  O 10 12                                    
+19.00 160525      A            DEXCRTE       11Y 7O 10 25EDTWRD('   0.       ')              
+20.00 160525      A            DBUGRTE       11Y 7O 10 40EDTWRD('   0.       ')              
+21.00 160525      A            DSELLRTE      11Y 7O 10 55EDTWRD('   0.       ')              
+22.00 160525      A            DLSTUPD        8A  O 10 71                                    
+23.00 160525      A                                                                          
+24.00 160525      A            DRTGBBANK      3  0H                                          
+25.00 160525      A            DRTGBCODE      3  0H                                          
+26.00 160525      A            DRTGROUP       6A  H                                          
+27.00 160525      A            DRTGCHN        6A  H                                          
+28.00 160627      A*                                                                         
+29.00 160627      A********************************************************************      
+30.00 160627      A*                         CONTROL FILE                             *      
+31.00 160627      A********************************************************************      
+32.00 160525      A          R ST001                     SFLCTL(ST001S)                      
+33.00 150529      A*%%TS  SD  20150529  162237  BG24PGM     REL-V7R1M0  5770-WDS             
+34.00 160525      A                                      SFLSIZ(0999)                        
+35.00 160525      A                                      SFLPAG(0012)                        
+36.00 160525      A                                      CF03(03 'Exit')                     
+37.00 160601      A                                      CF06(06 'Create')                   
+38.00 160525      A                                      CF12(12 'Cancel')                   
+39.00 160624      A N52                                  ROLLUP(26 'ROLLUP')                 
+40.00 160624      A N52                                  ROLLDOWN(27 'ROLLDOWN')             
+41.00 160525      A                                      OVERLAY                             
+42.00 160525      A  50                                  SFLDSP                              
+43.00 160525      A  51                                  SFLDSPCTL                           
+44.00 160525      A  53                                  SFLCLR                              
+45.00 160525      A  52                                  SFLEND(*MORE)                       
+46.00 160601      A  41                                  SFLMSG('Invalid Option' 41)         
+47.00 160624      A            SRRN           4S 0H                                          
+48.00 160525      A                                  1 66'Date :'                            
+49.00 160525      A                                  1 73DATE                                
+50.00 160525      A                                      EDTWRD('  /  /  ')                  
+51.00 160525      A                                  2 66'Time :'                            
+52.00 160525      A                                  2 73TIME                                
+53.00 160525      A                                      EDTWRD('  :  :  ')                  
+54.00 160525      A                                  1 29'BANCO COMERCIAL DE MACAU'          
+55.00 160525      A                                      DSPATR(HI)                          
+56.00 160525      A                                  1  2'I700BCM/RTGAPP'                    
+57.00 160525      A                                  2  2USER                                
+58.00 160525      A                                  2 19'Exchange Rate for Customer Group A-
+59.00 160525      A                                      pplication'                         
+60.00 160525      A                                      COLOR(WHT)                          
+61.00 160525      A                                  4  2'Group'                             
+62.00 160525      A                                      COLOR(WHT)                          
+63.00 160727 MYLESA*                                 4 20'Channel'                           
+64.00 160727 MYLESA*                                     COLOR(WHT)                          
+65.00 160525      A                                  4 58'Position to CCY'                   
+66.00 160525      A                                      COLOR(WHT)                          
+67.00 160525      A                                  5  2'Type options, press Enter.'        
+68.00 160525      A                                      COLOR(BLU)                          
+69.00 160624      A                                  6  2'1=Inquiry  2=Modify  3=Suspend  4=-
+70.00 160830      A                                      Reactivate'                         
+71.00 160525      A                                      COLOR(BLU)                          
+72.00 160830      A                                  7  2'5=Susp-ccy-chns  6=React-ccy-chns' 
+73.00 160830      A                                      COLOR(BLU)                          
+74.00 160525      A                                  8  2'Opt Status CCY             Exc.Rat-
+75.00 161004 KARL A*                                     e   TT Buy Rate    TT Sell Rate    -
+75.01 161004 KARL A                                      e   OD Sell Rate    OD Buy Rate    -
+76.00 160525      A                                      Last UPD'                           
+77.00 160525      A                                      COLOR(WHT)                          
+78.00 160525      A            DGROUP         6A  B  4  8                                    
+79.00 160727 MYLESA*           DCHANNEL       6A  B  4 28                                    
+80.00 160727 MYLESA*                                     DSPATR(PR)                          
+81.00 160624      A*                                     Temp protected from input           
+82.00 160727 MYLESA            DCHANNEL       6A  H                                          
+83.00 160624      A            DPOSITION      3A  B  4 75                                    
+84.00 160627      A********************************************************************      
+85.00 160627      A*                          FOOTER FILE                             *      
+86.00 160627      A********************************************************************      
+87.00 160525      A          R ST001WN                                                       
+88.00 160525      A*%%TS  SD  20150521  100034  BG24PGM     REL-V7R1M0  5770-WDS             
+89.00 160525      A                                      CF03(03 'Exit')                     
+90.00 160601      A                                      CF06(06 'Create')                   
+91.00 160525      A                                      CF12(12 'Cancel')                   
+92.00 160525      A                                 23  2'F3 = Exit'                         
+93.00 160525      A                                      COLOR(BLU)                          
+94.00 160601      A                                 23 18'F6 = Create'                       
+95.00 160601      A                                      COLOR(BLU)                          
+96.00 160525      A                                 23 60'F12 = Cancel'                      
+97.00 160525      A                                      COLOR(BLU)                          
+98.00 160531      A            SMSG          70A  O 24  2DSPATR(HI)                          
+99.00 160830      A*******************************************************************       
+100.00 160830      A*                PROMPT WINDOW FOR CONFIRMATION                   *       
+101.00 160830      A*******************************************************************       
+102.00 160830      A          R ST001PM                                                       
+103.00 160830      A                                      WINDOW(18 15 5 45)                  
+104.00 160830      A                                      RMVWDW                              
+105.00 160830      A                                      USRRSTDSP                           
+106.00 160830      A                                  2  2'DO YOU CONFIRM THE CHANGE ?'       
+107.00 160830      A                                  2 36'(Y/N)'                             
+108.00 160830      A            SYESNO         1A  B  2 34DFTVAL('N')                         
+109.00 160830      A*                                                                         

@@ -1,0 +1,64 @@
+1.00 130801       ************************************************************************  
+2.00 160729       *   REFERENCE     : CHG-0250-16 (D6250)                                *  
+3.00 130801       *   USER ID       : BG09PGM                                            *  
+4.00 130801       *   CHANGED BY    : ALBERT AU                                          *  
+5.00 160510       *   CHANGED DATE  : 10 May 2016                                        *  
+6.00 160729       *   REASON        : GROUP EXCHANGE RATE ARRANGEMENT                    *  
+7.00 130801       ************************************************************************  
+9.00 160510      A          R RRTGVARPF                                                     
+10.00 160608      A            RTGBBANK       3P 0       TEXT('BANK NUMBER')                 
+11.00 160608      A            RTGSTAT        1A         TEXT('Status')                      
+12.00 160525       *                                     1-Active                            
+13.00 160525       *                                     0-Suspend                           
+14.00 160608      A            RTGCHN         6A         TEXT('Channel')                     
+16.00 160608      A            RTGROUP        6A         TEXT('Group')                       
+18.00 160608      A            RTGTXTYP       4A         TEXT('Function')                    
+19.00 160608      A            RTGAMT1       13P 2       TEXT('FRPM AMOUNT')                 
+20.00 160608      A            RTGAMT2       13P 2       TEXT('TO AMOUNT')                   
+21.00 160608      A            RTGCIF        10A         TEXT('CIF')                         
+23.00 160608      A            RTGBCODE       3P 0       TEXT('CURRENCY CODE')               
+24.00 160608      A            RTGBBKXR      11P 7       TEXT('BOOK EXCHANGE RATE')          
+25.00 160608       *                                     LEAVE BLANK FOR FUTURE USE          
+26.00 160510      A            RTGBVAR       11P 7       TEXT('ALLOWABLE VAR TO BOOK RAT')   
+27.00 160608       *                                     LEAVE BLANK FOR FUTURE USE          
+28.00 160510      A            RTGBTNBS      11P 7       TEXT('FX TRANSFER BUY SPREAD TO')   
+29.00 160510      A            RTGBTNSS      11P 7       TEXT('FX TRANSFER SELL SPREAD T')   
+30.00 160510      A            RTGBNOBS      11P 7       TEXT('FX NOTES BUY SPREAD TO BO')   
+31.00 160510      A            RTGBNOSS      11P 7       TEXT('FX NOTES SELL SPREAD TO B')   
+32.00 160510      A            RTGBCKBS      11P 7       TEXT('FX CHECKS BUY SPREAD TO B')   
+33.00 160510      A            RTGBCKSS      11P 7       TEXT('FX CHECKS SELL SPREAD TO ')   
+34.00 160608      A            RTGBREVR      11P 7       TEXT('REVALUATION RATE')            
+35.00 160510      A            RTGBLRXR      11P 7       TEXT('LOCAL REPORT EXCHANGE RAT')   
+36.00 160608      A            RTGBUPDT       7P 0       TEXT('TABLE UPDATE DATE')           
+37.00 160608      A            RTGBUPTM       6P 0       TEXT('TABLE TIME STAMP')            
+38.00 160608      A            RTGBTERM      10A         TEXT('TERMINAL ID')                 
+39.00 160608      A            RTGBOK1       10A         TEXT('AUTHORIZER 1')                
+40.00 160608      A            RTGBOK2       10A         TEXT('AUTHORIZER 2')                
+41.00 160608      A            RTGBOBLT      15P 2       TEXT('OVERBOUGHT LIMIT')            
+42.00 160608      A            RTGBOSLT      15P 2       TEXT('OVERSOLD LIMIT')              
+43.00 160608      A            RTGBLTDT       6P 0       TEXT('LIMIT DATE')                  
+44.00 160608      A            RTGBEFDT       7P 0       TEXT('DATE EFFECTIVE')              
+45.00 160608      A            RTGBEFTM       6P 0       TEXT('TIME EFFECTIVE')              
+46.00 160512      A            RTGBCPFC      15P 2       TEXT('FOREIGN CURRENCY POSITION')   
+47.00 160608      A            RTGBCPLC      15P 2       TEXT('LOCAL CURRENCY POSITION')     
+48.00 160608      A            RTGBATBS      11P 7       TEXT('Appl Transfer Buy Rate')      
+49.00 160608      A            RTGBATSS      11P 7       TEXT('Appl Transfer Sell Rate')     
+50.00 160608      A            RTGBFCBS      11P 7       TEXT('F/F Non-Note Buy Rate')       
+51.00 160608      A            RTGBFCSS      11P 7       TEXT('F/F Non-Note Sell Rate')      
+52.00 160512      A            RTGBFTBS      11P 7       TEXT('F/F Appl Transfer Buy Rat')   
+53.00 160512      A            RTGBFTSS      11P 7       TEXT('F/F Appl Transfer Sell Ra')   
+54.00 160512      A            RTGBCULM      15P 2       TEXT('Currency Transaction Limi')   
+59.00 160729      A*                                                                         
+60.00 160608      A            RTUSRC01       1A         TEXT('User field C1')               
+61.00 160608      A            RTUSRC02       3A         TEXT('User field C2')               
+62.00 160608      A            RTUSRC03      10A         TEXT('User field C3')               
+63.00 160608      A            RTUSRN01      11P 7       TEXT('User field N1')               
+64.00 160608      A            RTUSRN02      11P 7       TEXT('User field N2')               
+65.00 160608      A            RTUSRN03      13P 2       TEXT('User field N3')               
+66.00 160608      A            RTUSRN04      13P 2       TEXT('User field N4')               
+67.00 160520      A*                                                                         
+68.00 160520      A          K RTGBBANK                                                      
+69.00 160520      A          K RTGBCODE                                                      
+70.00 160520      A          K RTGROUP                                                       
+71.00 160608      A          K RTGCHN                                                        
+72.00 160729      A*                                                                         

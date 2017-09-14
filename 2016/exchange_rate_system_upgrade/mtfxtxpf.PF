@@ -1,0 +1,43 @@
+1.00 160511       ************************************************************************  
+2.00 160906       *   REFERENCE     : CHG-0250-16 (D6250)                                *  
+3.00 160511       *   USER ID       : BI77PGM                                            *  
+4.00 160511       *   CHANGED BY    : MYLES IEONG                                        *  
+5.00 160511       *   CHANGED DATE  : 11 MAY 2016                                        *  
+6.00 160511       *   REASON        : TRANSACTION FX PF FROM PST00101                    *  
+7.00 160511       ************************************************************************  
+8.00 160512      A          R RMTFXTXPF                                                     
+9.00 160906      A            MFTXDT         8P 0       TEXT('DATE')                        
+10.00 160906      A            MFTXTM         8P 0       TEXT('TIME')                        
+11.00 160906      A            MFTXTIM       26A         TEXT('TIME STAMP')                  
+12.00 160912      A            MFTXCHN        6A         TEXT('CHANNEL')                     
+13.00 160912      A            MFTXCD         6A         TEXT('TELLER TRANSACTION CODE')     
+14.00 160912      A            MFTXTLDS      30A         TEXT('TRANSACTION DESCIPTION')      
+15.00 160512      A            MFTXACT       13P 0       TEXT('FROM A/C')                    
+16.00 160512      A            MFTXCUR        3P 0       TEXT('FROM CCY')                    
+17.00 160614      A            MFTXPET        3A         TEXT('FROM CCY SHORT NAME')         
+18.00 160912      A            MFTXTC        15P 2       TEXT('FROM AMT')                    
+19.00 160912      A            MFTXLCE       15P 2       TEXT('FROM AMT LCYE')               
+20.00 160912      A            MFTXCIF       10A         TEXT('FROM CIF')                    
+21.00 160912      A            MFTXAPP        2A         TEXT('FROM APPLICATION CODE')       
+22.00 160913      A            MFTXTACT      13P 0       TEXT('TO A/C')                      
+23.00 160913      A            MFTXTCUR       3P 0       TEXT('TO CCY')                      
+24.00 160913      A            MFTXTPET       3A         TEXT('TO CCY SHORT NAME')           
+25.00 160913      A            MFTXTTC       15P 2       TEXT('TO AMT')                      
+26.00 160913      A            MFTXTLCE      15P 2       TEXT('TO AMT LCYE')                 
+27.00 160913      A            MFTXTCIF      10A         TEXT('TO CIF')                      
+28.00 160913      A            MFTXTAPP       2A         TEXT('TO APPLICATION CODE')         
+29.00 160913       *                                                                         
+30.00 160909      A            MFTXFCCY       1A         TEXT('EXTRACT CCY FLAG')            
+31.00 160909      A            MFTXFMOV       1A         TEXT('EXTRACT MOV FLAG')            
+32.00 160909      A            MFTXFALT       1A         TEXT('EXTRACT ALT FLAG')            
+33.00 160512       *                                                                         
+34.00 160512      A            MFTXUSRC1      1A         TEXT('USER FIELD C1')               
+35.00 160512      A            MFTXUSRC2      6A         TEXT('USER FIELD C2')               
+36.00 160512      A            MFTXUSRN1      3P 0       TEXT('USER FIELD N1')               
+37.00 160512      A            MFTXUSRN2      8P 0       TEXT('USER FIELD N2')               
+38.00 160512      A            MFTXUSRN3     13P 0       TEXT('USER FIELD N3')               
+39.00 160512      A            MFTXUSRN4     15P 2       TEXT('USER FIELD N4')               
+40.00 160512      A            MFTXUSRN5     15P 2       TEXT('USER FIELD N5')               
+41.00 160906       *                                                                         
+42.00 160906      A          K MFTXTIM                                                       
+43.00 160906       **                                                                        

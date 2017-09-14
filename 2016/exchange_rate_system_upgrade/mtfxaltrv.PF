@@ -1,0 +1,23 @@
+1.00 120917      A****************************************************************          
+2.00 160906      A*   REFERENCE     : CHG-250-16 (D6250)                         *          
+3.00 160906      A*   AUTHOR        : MYLES IEONG                                *          
+4.00 160906      A*   USER ID       : BI77PGM                                    *          
+5.00 160906      A*   DATE WRITTEN  : 06 SEP 2016                                *          
+6.00 160906      A*   DESCRIPTION   : MONITOR FX ALERT RECEIVER LIST             *          
+7.00 120917      A****************************************************************          
+8.00 160906      A          R RMTFXALTRV                                                    
+9.00 160906      A            MFRVTYP       20A         TEXT('TYPE')                        
+10.00 160906      A            MFRVPH        12A         TEXT('PHONE NUMBER')                
+11.00 160906      A            MFRVML        40A         TEXT('EMAIL ADDRESS')               
+12.00 160906      A            MFRVCIF       10A         TEXT('CIF')                         
+13.00 160906      A            MFRVNM        40A         TEXT('NAME')                        
+14.00 160906      A            MFRVSID        3A         TEXT('STAFF ID')                    
+15.00 160906      A            MFRVUSR1       5A         TEXT('USER DEFINE FIELD 5 CHAR')    
+16.00 160906      A            MFRVUSR2      10A         TEXT('USER DEFINE FIELD 10 CHAR')   
+17.00 160906      A            MFRVUSR3      20A         TEXT('USER DEFINE FIELD 20 CHAR')   
+18.00 160906      A            MFRVUSR4      20A         TEXT('USER DEFINE FIELD 20 CHAR')   
+19.00 160906      A            MFRVUSR5      40A         TEXT('USER DEFINE FIELD 40 CHAR')   
+20.00 160906      A            MFRVUSR6      40A         TEXT('USER DEFINE FIELD 40 CHAR')   
+21.00 141022       *                                                                         
+22.00 160906      A          K MFRVTYP                                                       
+23.00 160906       **                                                                        

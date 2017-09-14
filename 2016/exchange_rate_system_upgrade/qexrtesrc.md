@@ -8,7 +8,7 @@ In this project, several sub-projects are involved. They are:
 1. CRTEINQ: A update to realtime rate viewer
 
 ## MTFX: Monitor Transaction Screen Application 
-```json
+```
 {
 	    src:i700bcm/qexrtesrc,
 		cl:	mtfxcl
@@ -39,7 +39,7 @@ In this project, several sub-projects are involved. They are:
 		src:    i700bcm/qexrtesrc
 		rpg:    ggrprate
 		cl:     ggrpratecl
-        test:   ymyles1/qrtgvarsrc(bbtexcifgp)
+        test:   bbtexcifgp x bbtexcif
 }
 ```
 
@@ -49,7 +49,7 @@ In this project, several sub-projects are involved. They are:
 		src:    i700bcm/qexrtesrc,
 		rpg:    gexcifgrp
 		cl:     gexcifgpcl
-	    test:   bbtexcifgp
+	    test:   bbtgprte x bbtgrprate
 }
 ```
 
@@ -82,3 +82,4 @@ In this project, several sub-projects are involved. They are:
 		dtaara: CRTERPTDTA
 }
 ```
+
