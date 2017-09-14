@@ -1,0 +1,23 @@
+1.00 130801       ************************************************************************                      
+2.00 170328       *   REFERENCE     : CHG-100-17                                         *                      
+3.00 160817       *   USER ID       : BI77PGM                                            *                      
+4.00 160817       *   CHANGED BY    : MYLES IEONG                                        *                      
+5.00 170328       *   CHANGED DATE  : 28 MAR 2017                                        *                      
+6.00 170320       *   REASON        : ECSD ACCOUNT RELATIONSHIP FILE                     *                      
+7.00 130801       ************************************************************************                      
+8.00 170320      A          R RECSDREL                                                                          
+9.00 170320      A            ERXREL         3A         TEXT('ACCOUNT RELATIONSHIP')                            
+10.00 170320      A            ERFLGP         1A         TEXT('FLAG OF PRESENTATION')                            
+11.00 170320      A            ERFLGV         1A         TEXT('FLAG OF VIP STMT-OPT SYNC')                       
+12.00 160817      A*                                                                                             
+13.00 170320      A            ERUSR01        1A         TEXT('User field 01')                                   
+14.00 170320      A            ERUSR02        1A         TEXT('User field 02')                                   
+15.00 170320      A            ERUSR03        1A         TEXT('User field 03')                                   
+16.00 170320      A            ERUSR04        1A         TEXT('User field 04')                                   
+17.00 170320      A            ERUSR05        1A         TEXT('User field 05')                                   
+18.00 170320      A            ERUSR06       10A         TEXT('User field 06')                                   
+19.00 170320      A            ERUSR07       10A         TEXT('User field 07')                                   
+20.00 170320      A            ERUSR08       10A         TEXT('User field 08')                                   
+21.00 170320      A*                                                                                             
+22.00 170320      A          K ERXREL                                                                            
+23.00 170320      A**                                                                                            

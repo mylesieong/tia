@@ -1,0 +1,138 @@
+1.00 60315      A************************************************************************                      
+2.00 160817      A*   File ID.      : ECSDAPPD                                           *                      
+3.00 170328      A*   Description   : Electronic Customer Statement App Screen           *                      
+4.00 170328      A*   Reference     : CHG-100-17                                         *                      
+5.00 160817      A*   Written by    : BI77PGM MYLES IEONG                                *                      
+6.00 170328      A*   Date written  : 28 MAR 2017                                        *                      
+7.00 160818      A*   Indicator list:    *IN61- Opt-in screen                            *                      
+8.00 160818      A*                      *IN62- Opt-out screen                           *                      
+9.00 160607      A*                      *IN63- Enquiry screen                           *                      
+10.00 170119      A*                      *IN67- Credit Card Record                       *                      
+11.00 170119      A*                                                                      *                      
+12.00 170119      A*                      *IN96- Create screen                            *                      
+13.00 160615      A*                                                                      *                      
+14.00 160615      A*                      *IN70- General err indicator (*ON-alert)        *                      
+15.00 160615      A*                      *IN71- Currency input error (*ON-alert)         *                      
+16.00 160615      A*                      *IN72- Frequency error (*ON-alert)              *                      
+17.00 160615      A*                      *IN73- Min Amount error (*ON-alert)             *                      
+18.00 160615      A*                      *IN74- effective date error (*ON-alert)         *                      
+19.00 160615      A*                      *IN75- end date error (*ON-alert)               *                      
+20.00 160615      A*                      *IN76- Rate error (*ON-alert)                   *                      
+21.00 160616      A*                      *IN77- Record duplication error (*ON-alert)     *                      
+22.00 160615      A*                                                                      *                      
+23.00 160607      A*                      *IN80- File error                               *                      
+24.00 60315      A************************************************************************                      
+25.00 170818      A*   REFERENCE     : CHG-0278-17 (D7278)                              *                        
+26.00 170731      A*   CHANGED BY    : MYLES IEONG                                      *                        
+27.00 170731      A*   USER ID       : BI77PGM                                          *                        
+28.00 170731      A*   DATE CHANGED  : 31 JUL 2017                                      *                        
+29.00 170731      A*   DESCRIPTION   : ADD F9 ESTATEMENT ALL FEATURE                    *                        
+30.00 170731      A*                                                                    *                        
+31.00 170731      A**********************************************************************                        
+32.00 160607      A                                      DSPSIZ(24 80 *DS3)                                      
+33.00 160613      A********************************************************************                          
+34.00 160613      A*                        SUB-FILE DEFINITION                       *                          
+35.00 160613      A********************************************************************                          
+36.00 160830      A          R ECSD00SFL                 SFL                                                     
+37.00 170328      A            DOPT           1A  B 12  3VALUES('1' '2' '3' ' ')                                 
+38.00 170328      A  67                                  DSPATR(ND)                                              
+39.00 170328      A  67                                  DSPATR(PR)                                              
+40.00 170328      A            DEMAPPCODE     2A  O 12  6                                                        
+41.00 170328      A            DEMKEY        20A  O 12 10                                                        
+42.00 170328      A            DEMCLASS       5A  O 12 31                                                        
+43.00 170328      A            DEMTYPE        5A  O 12 37                                                        
+44.00 170328      A            DEMSUTYPE      2A  O 12 43                                                        
+45.00 170328      A            DDESC         20A  O 12 47                                                        
+46.00 170328      A            DEMOP1         1A  O 12 69                                                        
+47.00 170328      A            DCUXREL        3A  O 12 72                                                        
+48.00 160607      A********************************************************************                          
+49.00 160607      A*                    CONTROL-FILE DEFINITION                       *                          
+50.00 160607      A********************************************************************                          
+51.00 160901      A          R ECSD00                    SFLCTL(ECSD00SFL)                                       
+52.00 160525      A                                      SFLSIZ(0999)                                            
+53.00 170119      A                                      SFLPAG(0009)                                            
+54.00 160525      A                                      CF03(03 'Exit')                                         
+55.00 160607      A                                      CF06(06 'Create')                                       
+56.00 170818 D7278A                                      CF09(09 'Estatement All')                               
+57.00 160525      A                                      CF12(12 'Cancel')                                       
+58.00 160525      A                                      OVERLAY                                                 
+59.00 160525      A  50                                  SFLDSP                                                  
+60.00 160525      A  51                                  SFLDSPCTL                                               
+61.00 160525      A  53                                  SFLCLR                                                  
+62.00 160525      A  52                                  SFLEND(*MORE)                                           
+63.00 161129      A            SRRN           4S 0H                                                              
+64.00 160525      A                                  1 66'Date :'                                                
+65.00 160525      A                                  1 73DATE                                                    
+66.00 160525      A                                      EDTWRD('  /  /  ')                                      
+67.00 160525      A                                  2 66'Time :'                                                
+68.00 160525      A                                  2 73TIME                                                    
+69.00 160525      A                                      EDTWRD('  :  :  ')                                      
+70.00 160829      A                                  1 18'B A N C O  C O M E R C I A L  D E -                    
+71.00 160829      A                                       M A C A U'                                             
+72.00 160829      A                                  1  2'<ECSDAPP>'                                             
+73.00 160525      A                                  2  2USER                                                    
+74.00 160829      A                                  2 15'Electronic Customer Statement Deli-                    
+75.00 160818      A                                      very Application'                                       
+76.00 160829      A                                      DSPATR(HI)                                              
+77.00 160829      A                                  4  2'Application Code:'                                     
+78.00 160829      A                                  4 33'CIF/Account No:'                                       
+79.00 160829      A                                  5  2'Search A/C Level:'                                     
+80.00 160829      A                                  5 22'(Y/N)'                                                 
+81.00 160829      A                                  5 33'Name:'                                                 
+82.00 170328      A                                  6  2'Ebank Status:'                                         
+83.00 170328      A                                  8  2'Type options, press Enter.'                            
+84.00 160818      A                                      COLOR(BLU)                                              
+85.00 170328      A                                  9  2'1 = Enquiry   2 = E-Statement Only-                    
+86.00 170328      A                                      (Y)   3 = E-Statement and Physical(-                    
+87.00 170328      A                                      B)'                                                     
+88.00 170328      A                                      COLOR(BLU)                                              
+89.00 170328      A                                 11  2'Opt'                                                   
+90.00 170328      A                                      COLOR(WHT)                                              
+91.00 170328      A                                 11  6'App'                                                   
+92.00 170328      A                                      COLOR(WHT)                                              
+93.00 170328      A                                 11 10'Account'                                               
+94.00 170328      A                                      COLOR(WHT)                                              
+95.00 170328      A                                 11 31'Class'                                                 
+96.00 170328      A                                      COLOR(WHT)                                              
+97.00 170328      A                                 11 37'Type'                                                  
+98.00 170328      A                                      COLOR(WHT)                                              
+99.00 170328      A                                 11 43'Sub'                                                   
+100.00 170328      A                                      COLOR(WHT)                                              
+101.00 170328      A                                 11 47'Description'                                           
+102.00 160607      A                                      COLOR(WHT)                                              
+103.00 170328      A                                 11 68'Opt'                                                   
+104.00 170328      A                                      COLOR(WHT)                                              
+105.00 170328      A                                 11 72'Rel'                                                   
+106.00 170328      A                                      COLOR(WHT)                                              
+107.00 170328      A            SAPP           2A  B  4 20                                                        
+108.00 170328      A            SKEY          20A  B  4 49                                                        
+109.00 170328      A            SACCLVL        1A  B  5 20VALUES('Y' 'N' ' ')                                     
+110.00 170328      A            SNAME         40A  O  5 39                                                        
+111.00 170328      A            SEBANK        10A  O  6 16                                                        
+112.00 170328      A                                                                                              
+113.00 170818 D7278A*******************************************************************                           
+114.00 170818 D7278A*                PROMPT WINDOW FOR CONFIRM YES/NO                 *                           
+115.00 170818 D7278A*******************************************************************                           
+116.00 170818 D7278A          R ECSD00CFM                                                                         
+117.00 170818 D7278A                                      WINDOW(18 15 5 45)                                      
+118.00 170818 D7278A                                      RMVWDW                                                  
+119.00 170818 D7278A                                      USRRSTDSP                                               
+120.00 170818 D7278A                                  2  2'Do You Confirm The Change ?'                           
+121.00 170818 D7278A                                  2 36'(Y/N)'                                                 
+122.00 170818 D7278A            SYESNO         1A  B  2 34VALUES('Y' 'N' ' ')                                     
+123.00 170818 D7278A            SFILTER        1A  H                                                              
+124.00 170818 D7278A                                                                                              
+125.00 160607      A********************************************************************                          
+126.00 160613      A*                          FUNCTION KEYS                           *                          
+127.00 160607      A********************************************************************                          
+128.00 160830      A          R ECSD00FK                                                                          
+129.00 160616      A                                 23  2'F3 = Exit'                                             
+130.00 160525      A                                      COLOR(BLU)                                              
+131.00 160616      A                                 23 15'F6 = Create'                                           
+132.00 160615      A                                      COLOR(BLU)                                              
+133.00 170818 D7278A                                 23 30'F9 = E-State All'                                      
+134.00 170818 D7278A                                      COLOR(BLU)                                              
+135.00 160616      A                                 23 60'F12 = Cancel'                                          
+136.00 160525      A                                      COLOR(BLU)                                              
+137.00 160616      A            SMSG          70A  O 24  2COLOR(WHT)                                              
+138.00 160901      A**                                                                                            

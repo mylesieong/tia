@@ -1,0 +1,23 @@
+1.00 130801       ************************************************************************                      
+2.00 170328       *   REFERENCE     : CHG-100-17                                         *                      
+3.00 160817       *   USER ID       : BI77PGM                                            *                      
+4.00 160817       *   CHANGED BY    : MYLES IEONG                                        *                      
+5.00 170328       *   CHANGED DATE  : 28 MAR 2017                                        *                      
+6.00 170328       *   REASON        : ECSD Configuration PF                              *                      
+7.00 130801       ************************************************************************                      
+8.00 160817      A          R RECSDCONF                                                                         
+9.00 160817      A            ECCLASS       10A         TEXT('CLASS')                                           
+10.00 160817      A            ECTYPE        10A         TEXT('TYPE')                                            
+11.00 160817      A            ECSUTYPE       2A         TEXT('SUB TYPE')                                        
+12.00 160817      A            ECDESC        30A         TEXT('DESCRIPTION')                                     
+13.00 160817      A            ECCOMT        10A         TEXT('COMMENT')                                         
+14.00 160817      A            ECSTATUS       1A         TEXT('ACTIVE')                                          
+15.00 160817      A*                                                                                             
+16.00 160817      A            ECUSR01        1A         TEXT('User field 01')                                   
+17.00 160817      A            ECUSR02        3A         TEXT('User field 02')                                   
+18.00 160817      A            ECUSR03       10A         TEXT('User field 03')                                   
+19.00 160729      A*                                                                                             
+20.00 160817      A          K ECCLASS                                                                           
+21.00 160817      A          K ECTYPE                                                                            
+22.00 160817      A          K ECSUTYPE                                                                          
+23.00 160817      A*                                                                                             

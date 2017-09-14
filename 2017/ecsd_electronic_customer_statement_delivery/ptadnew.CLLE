@@ -1,0 +1,173 @@
+1.00 0  /*¬          PTADNEW - Tran New Account Setup                       */                             
+2.00 0  /*¬                                                                 */                             
+3.00 0  /*¬¬------------------------ CHANGE LOG ----------------------------*/                             
+4.00 0  /*        PROB NBR  PGMR  PROBLEM DESCRIPTION                       */                             
+5.00 0  /*          R205    MJB   Brands/Labels                             */                             
+6.00 0  /*¬¬----------------------------------------------------------------*/                             
+7.00 81020 /* REFERENCE    : CHG-276-08 (C8276)                                    */                          
+8.00 80825 /* CHANGED BY   : Kylie Leong (B729PGM)                                 */                          
+9.00 80825 /* CHANGED DATE : 14-Aug-2008                                           */                          
+10.00 80825 /* DESCRIPTION  : START User Account Defined Field                      */                          
+11.00 80825 /************************************************************************/                          
+12.00 110406 /* REFERENCE    : CHG-024-11 (D1024)                                    */                          
+13.00 110223 /* CHANGED BY   : Karl H.JR (BA55PGM)                                   */                          
+14.00 110223 /* CHANGED DATE : 23-FEB-2011                                           */                          
+15.00 110223 /* DESCRIPTION  : START Incomplete Customer Information Inquiry         */                          
+16.00 110223 /************************************************************************/                          
+17.00 140618 /* REFERENCE    : CHG-0230-14 (D4230)                                   */                          
+18.00 140401 /* CHANGED BY   : Albert Au (BG09PGM)                                   */                          
+19.00 140401 /* CHANGED DATE : 01-Apr-2014                                           */                          
+20.00 140401 /* DESCRIPTION  : FATCA Reference Maintenance Program                   */                          
+21.00 140401 /************************************************************************/                          
+22.00 170328 /* REFERENCE    : CHG-0100-17 (D7100)                                   */                          
+23.00 161025 /* CHANGED BY   : Myles Ieong (BI77PGM)                                 */                          
+24.00 170328 /* CHANGED DATE : 28-Mar-2017                                           */                          
+25.00 161025 /* DESCRIPTION  : Electronic Customer Statement Delivery Program        */                          
+26.00 161025 /************************************************************************/                          
+27.00 0  PTADNEW:    PGM                                                                                    
+28.00 0              DCL        VAR(&REPLY)  TYPE(*CHAR) LEN(1)                                             
+29.00 0              DCL        VAR(&CTYPE) TYPE(*CHAR) LEN(1) VALUE(' ')                                   
+30.00 0              DCL        VAR(&NAMES) TYPE(*CHAR) LEN(100)                                            
+31.00 0              DCL        VAR(&SHRT) TYPE(*CHAR) LEN(18)                                              
+32.00 0              DCL        VAR(&RTN) TYPE(*CHAR) LEN(1)                                                
+33.00 0              DCL        VAR(&BNK) TYPE(*DEC) LEN(3 0)                                               
+34.00 0              DCL        VAR(&APPL) TYPE(*DEC) LEN(2 0)                                              
+35.00 0              DCL        VAR(&AREC) TYPE(*DEC) LEN(2 0)                                              
+36.00 0              DCL        VAR(&ACCT20) TYPE(*CHAR) LEN(20)                                            
+37.00 81020  /*C8276*/   DCL        VAR(&CIF) TYPE(*CHAR) LEN(10)                                               
+38.00 0              DCL        VAR(&BANK) TYPE(*CHAR) LEN(3)                                               
+39.00 0              DCL        VAR(&FLAG) TYPE(*CHAR) LEN(1) VALUE('0')                                    
+40.00 0              DCL        VAR(&PROGRAM) TYPE(*CHAR) LEN(10) +                                         
+41.00 0                           VALUE('PTADNEW   ')                                                       
+42.00 0              DCL        VAR(&CALLER) TYPE(*CHAR) LEN(10) +                                          
+43.00 0                           VALUE('          ')                                                       
+44.00 110622  /*D1024*/   DCL        VAR(&ICIFLG) TYPE(*CHAR) LEN(1) VALUE('Y')                                  
+45.00 110622  /*D1024*/   DCL        VAR(&APPC) TYPE(*CHAR) LEN(2) VALUE('90')                                   
+46.00 110622  /*D1024*/   DCL        VAR(&ICIACT) TYPE(*CHAR) LEN(12)                                            
+47.00 110622  /*D1024*/   DCL        VAR(&CIFLIB) TYPE(*CHAR) LEN(10) VALUE('ZCIFLIB')                           
+48.00 110622  /*D1024*/   DCL        VAR(&RMVLIB) TYPE(*CHAR) LEN(1) VALUE('Y')                                  
+49.00 110622  /*D1024*/   DCL        VAR(&IMODUL) TYPE(*CHAR) LEN(10) VALUE('IMODULE')                           
+50.00 110622  /*D1024*/   DCL        VAR(&RMVIMO) TYPE(*CHAR) LEN(1) VALUE('Y')                                  
+51.00 170328  /*D7100*/   DCL        VAR(&PCHANNEL) TYPE(*CHAR) LEN(3) VALUE('   ')                              
+52.00 170328  /*D7100*/   DCL        VAR(&PACTCODE) TYPE(*CHAR) LEN(4) VALUE('    ')                             
+53.00 170328  /*D7100*/   DCL        VAR(&PACTTYPE) TYPE(*CHAR) LEN(4) VALUE('    ')                             
+54.00 170328  /*D7100*/   DCL        VAR(&PEMAPPCODE) TYPE(*CHAR) LEN(2) VALUE('  ')                             
+55.00 170328  /*D7100*/   DCL        VAR(&PEMKEY) TYPE(*CHAR) LEN(20) +                                          
+56.00 161025                           VALUE('                    ')                                             
+57.00 170328  /*D7100*/   DCL        VAR(&PEMCLASS) TYPE(*CHAR) LEN(10) VALUE('          ')                      
+58.00 170328  /*D7100*/   DCL        VAR(&PEMTYPE) TYPE(*CHAR) LEN(10) VALUE('          ')                       
+59.00 170328  /*D7100*/   DCL        VAR(&PEMSUTYPE) TYPE(*CHAR) LEN(2) VALUE('  ')                              
+60.00 170328  /*D7100*/   DCL        VAR(&PEMOP1) TYPE(*CHAR) LEN(1) VALUE(' ')                                  
+61.00 170328  /*D7100*/   DCL        VAR(&PEMOP2) TYPE(*CHAR) LEN(1) VALUE(' ')                                  
+62.00 170328  /*D7100*/   DCL        VAR(&PEMOP3) TYPE(*CHAR) LEN(2) VALUE('  ')                                 
+63.00 170328  /*D7100*/   DCL        VAR(&PEMDATE) TYPE(*DEC) LEN(8 0) VALUE(0)                                  
+64.00 170328  /*D7100*/   DCL        VAR(&PEMTIME) TYPE(*DEC) LEN(6 0) VALUE(0)                                  
+65.00 170328  /*D7100*/   DCL        VAR(&PEMSRUPD) TYPE(*CHAR) LEN(10) VALUE('          ')                      
+66.00 170328  /*D7100*/   DCL        VAR(&PEMREL) TYPE(*CHAR) LEN(10) VALUE('          ')                        
+67.00 170328  /*D7100*/   DCL        VAR(&PICBSSTS) TYPE(*CHAR) LEN(1) VALUE(' ')                                
+68.00 170328  /*D7100*/   DCL        VAR(&PSTS) TYPE(*CHAR) LEN(10) VALUE('          ')                          
+69.00 170328  /*D7100*/   DCL        VAR(&PMOMENT) TYPE(*CHAR) LEN(26) +                                         
+70.00 161025                           VALUE('                          ')                                       
+71.00 140401                                                                                                     
+72.00 140618  /*D4230*/   DCL        VAR(&PEVENT)  TYPE(*CHAR) LEN(6)  VALUE('CRTACC')                           
+73.00 140618  /*D4230*/   DCL        VAR(&PCALL)   TYPE(*CHAR) LEN(1)  VALUE(' ')                                
+74.00 140618  /*D4230*/   DCL        VAR(&PMSG)    TYPE(*CHAR) LEN(40) VALUE(' ')                                
+75.00 140618  /*D4230*/   DCL        VAR(&PSTATUS) TYPE(*CHAR) LEN(1)  VALUE(' ')                                
+76.00 140618  /*D4230*/   DCL        VAR(&PACCTTY) TYPE(*CHAR) LEN(2)  VALUE('  ')                               
+77.00 140618  /*D4230*/   DCL        VAR(&PACCTNO) TYPE(*CHAR) LEN(20) VALUE(' ')                                
+78.00 140618  /*D4230*/   DCL        VAR(&INOPT)   TYPE(*CHAR) LEN(1)  VALUE('L')                                
+79.00 140618  /*D4230*/   DCL        VAR(&CIFLST)  TYPE(*CHAR) LEN(100) VALUE(' ')                               
+80.00 140610                                                                                                     
+81.00 140610                                                                                                     
+82.00 110622  /*D1024*/   ADDLIBLE   LIB(&CIFLIB)                                                                
+83.00 110622  /*D1024*/   MONMSG     MSGID(CPF2103) EXEC(CHGVAR VAR(&RMVLIB) VALUE('N'))                         
+84.00 110622  /*D1024*/   ADDLIBLE   LIB(&IMODUL)                                                                
+85.00 110622  /*D1024*/   MONMSG     MSGID(CPF2103) EXEC(CHGVAR VAR(&RMVIMO) VALUE('N'))                         
+86.00 0                                                                                                     
+87.00 0              CALL       PGM(PCALLER) PARM(&PROGRAM &CALLER)                                         
+88.00 0              IF         COND(&CALLER *NE 'CU1520    ') THEN(DO)                                     
+89.00 0  CU0040:     CALL       PGM(CU0040) PARM(&CTYPE &NAMES &SHRT &RTN)                                  
+90.00 0              IF         COND(&RTN *EQ '3') THEN(RETURN)                                             
+91.00 0              IF         COND(&RTN *EQ 'C') THEN(RETURN)                                             
+92.00 0              CHGDTAARA  DTAARA(*LDA (4 100)) VALUE(&NAMES)                                          
+93.00 0              CHGDTAARA  DTAARA(*LDA (120 18)) VALUE(&SHRT)                                          
+94.00 0              ENDDO                                                                                  
+95.00 0              IF         COND(&CALLER *EQ 'CU1520    ') THEN(DO)                                     
+96.00 0              CHGVAR     VAR(&NAMES) VALUE(%SST(*LDA 4 100))                                         
+97.00 0              CHGVAR     VAR(&SHRT)  VALUE(%SST(*LDA 120 18))                                        
+98.00 0              ENDDO                                                                                  
+99.00 0              IF         COND(%SST(*LDA 4 1) *EQ ' ') THEN(IF +                                      
+100.00 0                           COND(%SST(*LDA 140 1) *NE 'Y') THEN(RETURN))                              
+101.00 0              IF         COND(%SST(*LDA 4 1) *EQ ' ') THEN(DO)                                       
+102.00 0              SNDUSRMSG  MSGID(TA05004) MSGF(TAMSGF) +                                               
+103.00 0                         VALUES('C') MSGRPY(&REPLY)                                                  
+104.00 0              GOTO       CMDLBL(ENDPGM)                                                              
+105.00 0              ENDDO                                                                                  
+106.00 0 /*  TA0042:     CALL       PGM(TA0042) PARM('D')            */                                      
+107.00 0  TA0032:     CALL       PGM(TA0042) PARM(D &FLAG)                                                   
+108.00 0                                                                                                     
+109.00 0              IF         COND(%SST(*LDA 139 1) *EQ 'A') THEN(RETURN)                                 
+110.00 0              CHGVAR     VAR(&BNK) VALUE(%SST(*LDA 1 3))                                             
+111.00 0              CHGVAR     VAR(&APPL) VALUE(%SST(*LDA 116 2))                                          
+112.00 0              CHGVAR     VAR(&ACCT20) VALUE(%SST(*LDA 104 12))                                       
+113.00 0              CHGVAR     VAR(&AREC) VALUE(0)                                                         
+114.00 0              CHGVAR     VAR(&RTN) VALUE(' ')                                                        
+115.00 0  CU0071:     IF         COND(%SST(*LDA 138 1) *EQ 'A') THEN(CALL +                                  
+116.00 0                           PGM(PCU0071) PARM(&BNK &APPL &ACCT20 +                                    
+117.00 0                           &AREC &RTN))                                                              
+118.00 0                                                                                                     
+119.00 0   /* Present Combined Statment Screens if TA0042 returns '1' in flag */                             
+120.00 0              IF         COND(&FLAG *EQ '1') THEN(CALL PGM(CU0200) +                                 
+121.00 0                           PARM('NEW'))                                                              
+122.00 0                                                                                                     
+123.00 0   /* Loan Offset Relationship    */                                                                 
+124.00 0 /*Q310*/     IF         COND(%SST(*LDA 151 1) *EQ 'Y') THEN( +                                      
+125.00 0 /*Q310*/     CALL       PGM(LN0106A))                                                               
+126.00 0                                                                                                     
+127.00 0 /*P385*/     CHGVAR     VAR(&BANK) VALUE(%SST(*LDA 1 3))                                            
+128.00 0 /*P385*/     IF         COND(%SST(*LDA 141 1) *EQ 'Y') THEN(CALL +                                  
+129.00 0                           PGM(EF0070) PARM(&BANK &NAMES))                                           
+130.00 0                                                                                                     
+131.00 981214   /* Multi-Brand Update          */                                                                 
+132.00 981214              IF         COND(%SST(*LDA 153 1) *EQ 'Y') THEN( +                                      
+133.00 981214              CALL       PGM(CU0065))                                                                
+134.00 981214                                                                                                     
+135.00 81020   /* C8276 Account Defined Field     */                                                             
+136.00 140610   /*C8276*/  CHGVAR     VAR(&CIF) VALUE(%SST(*LDA 4 10))                                            
+137.00 81020   /*C8276*/  CALL       PGM(CACUSRDF) PARM(&BNK &CIF &APPL &ACCT20 +                                
+138.00 80825                           &SHRT &RTN)                                                               
+139.00 80825                                                                                                     
+140.00 110622   /*D1024* Incomplete Customer Information Inquiry */                                               
+141.00 110622   /*D1024*/  CHGVAR     VAR(&ICIACT) VALUE(&CIF)                                                    
+142.00 110622   /*D1024*/  CALL       PGM(&CIFLIB/ICIINQ) PARM(&APPC &ICIACT &ICIFLG)                             
+143.00 110223                                                                                                     
+144.00 140618   /*D4230* FATCA Reference Maintenance Program  */                                                  
+145.00 140618   /*D4230*/  CHGVAR     VAR(&CIFLST)  VALUE(%SST(*LDA 4 100))                                       
+146.00 140618   /*D4230*/  CHGVAR     VAR(&PACCTTY) VALUE(&APPL)                                                  
+147.00 140618   /*D4230*/  CHGVAR     VAR(&PACCTNO) VALUE(%SST(&ACCT20 3 17))                                     
+148.00 140618   /*D4230*/  CALL       PGM(&CIFLIB/FATCACL) PARM(&INOPT &CIFLST &PACCTTY &PACCTNO +                
+149.00 140618   /*D4230*/                 &PEVENT &PCALL &PMSG &PSTATUS)                                          
+150.00 161025                                                                                                     
+151.00 170328   /*D7100* ECSD Call Module to Create Record */                                                     
+152.00 170328   /*D7100*/  CHGVAR     VAR(&PACTCODE) VALUE('CRT ')                                                
+153.00 170328   /*D7100*/  CHGVAR     VAR(&PEMAPPCODE) VALUE('20')                                                
+154.00 170328   /*D7100*/  CHGVAR     VAR(&PEMKEY) VALUE(%SST(&ACCT20 3 10))                                      
+155.00 170328   /*D7100*/  CHGVAR     VAR(&PEMCLASS) VALUE('ACCT      ')                                          
+156.00 170328   /*D7100*/  CHGVAR     VAR(&PEMTYPE)  VALUE('STMT      ')                                          
+157.00 170328   /*D7100*/  CHGVAR     VAR(&PEMOP1) VALUE('B')                                                     
+158.00 170328   /*D7100*/  CALL       PGM(ECSDACTCL) PARM(&PCHANNEL &PACTCODE &PACTTYPE +                         
+159.00 161025                           &PEMAPPCODE &PEMKEY &PEMCLASS &PEMTYPE &PEMSUTYPE +                       
+160.00 161025                           &PEMOP1 &PEMOP2 &PEMOP3 &PEMDATE +                                        
+161.00 161025                           &PEMTIME &PEMSRUPD &PEMREL +                                              
+162.00 161025                           &PICBSSTS &PSTS &PMOMENT )                                                
+163.00 161025                                                                                                     
+164.00 170328   /*D7100* ECSD Launch Management Screen */                                                         
+165.00 170328   /*D7100*/  CHGVAR     VAR(&PEMAPPCODE) VALUE('90')                                                
+166.00 170328   /*D7100*/  CHGVAR     VAR(&PEMKEY) VALUE(%SST(*LDA 4 10))                                         
+167.00 170328   /*D7100*/  CALL       PGM(ECSDAPPCL) PARM(&PEMAPPCODE &PEMKEY)                                    
+168.00 140610                                                                                                     
+169.00 0  ENDPGM:                                                                                            
+170.00 110622  /*D1024*/   IF         COND(&RMVLIB *EQ 'Y') THEN(RMVLIBLE LIB(&CIFLIB))                           
+171.00 110622  /*D1024*/   IF         COND(&RMVIMO *EQ 'Y') THEN(RMVLIBLE LIB(&IMODUL))                           
+172.00 0              RCLRSC                                                                                 
+173.00 0              ENDPGM                                                                                 

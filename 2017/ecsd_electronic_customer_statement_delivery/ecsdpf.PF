@@ -1,0 +1,31 @@
+1.00 130801       ************************************************************************                      
+2.00 170328       *   REFERENCE     : CHG-100-17                                                                
+3.00 160817       *   USER ID       : BI77PGM                                            *                      
+4.00 160817       *   CHANGED BY    : MYLES IEONG                                        *                      
+5.00 170328       *   CHANGED DATE  : 28 MAR 2017                                        *                      
+6.00 170328       *   REASON        : ECSD Master File PF                                *                      
+7.00 130801       ************************************************************************                      
+8.00 160817      A          R RECSDPF                                                                           
+9.00 160817      A            EMAPPCODE      2A         TEXT('APP CODE')                                        
+10.00 160817      A            EMKEY         20A         TEXT('KEY')                                             
+11.00 170328      A            EMSTAT        10A         TEXT('STATUS')                                          
+12.00 161028      A            EMCLASS       10A         TEXT('CLASS')                                           
+13.00 161028      A            EMTYPE        10A         TEXT('TYPE')                                            
+14.00 161028      A            EMSUTYPE       2A         TEXT('SUB TYPE')                                        
+15.00 160817      A            EMOP1          1A         TEXT('OPT-IN OPTION')                                   
+16.00 160817      A            EMOP2          1A         TEXT('OPTION2')                                         
+17.00 160817      A            EMOP3          2A         TEXT('OPTION3')                                         
+18.00 160817      A            EMDATE         8S 0       TEXT('DATE')                                            
+19.00 160817      A            EMTIME         6S 0       TEXT('TIME')                                            
+20.00 160817      A            EMSRUPD       10A         TEXT('SOURCE OF UPDATE')                                
+21.00 160817      A            EMREL         10A         TEXT('RELATIONSHIP')                                    
+22.00 160817      A*                                                                                             
+23.00 160817      A            EMUSR01        1A         TEXT('USER FIELD 01')                                   
+24.00 160817      A            EMUSR02        1A         TEXT('USER FIELD 02')                                   
+25.00 160817      A            EMUSR03        3A         TEXT('USER FIELD 03')                                   
+26.00 160817      A            EMUSR04       10A         TEXT('USER FIELD 04')                                   
+27.00 160817      A            EMUSR05       12S 0       TEXT('USER FIELD 05')                                   
+28.00 160817      A*                                                                                             
+29.00 160818      A          K EMAPPCODE                                                                         
+30.00 160818      A          K EMKEY                                                                             
+31.00 170328      A*                                                                                             

@@ -1,0 +1,150 @@
+1.00 60315      A************************************************************************                      
+2.00 170328      A*   File ID.      : ECSDAPPMND                                         *                      
+3.00 170328      A*   Description   : ECSD App Maintenance Screen                        *                      
+4.00 170328      A*   Reference     : CHG-100-17                                         *                      
+5.00 160817      A*   Written by    : BI77PGM MYLES IEONG                                *                      
+6.00 170328      A*   Date written  : 28 MAR 2017                                        *                      
+7.00 160818      A*   Indicator list:    *IN61- Opt-in screen                            *                      
+8.00 160818      A*                      *IN62- Opt-out screen                           *                      
+9.00 160607      A*                      *IN63- Enquiry screen                           *                      
+10.00 160902      A*                                                                      *                      
+11.00 160902      A*                      *IN96- Create screen                            *                      
+12.00 160615      A*                                                                      *                      
+13.00 160902      A*                      *IN70- GENERAL ERR (*ON:FAIL)                   *                      
+14.00 160902      A*                      *IN71- USER NOT CONFIRM ERR                     *                      
+15.00 161028      A*                      *IN72- RECORD NOT FOUND                         *                      
+16.00 161028      A*                      *IN73- RECORD DUPLICATED                        *                      
+17.00 160902      A*                      *IN74- INPUT PARM ERR                           *                      
+18.00 161028      A*                      *IN75- INVALID ACC/CUS IN ICBS                  *                      
+19.00 161028      A*                      *IN76- INVALID STATEMENT CLASS/TYPE             *                      
+20.00 160902      A*                                                                      *                      
+21.00 160607      A*                      *IN80- File error                               *                      
+22.00 60315      A************************************************************************                      
+23.00 160607      A                                      DSPSIZ(24 80 *DS3)                                      
+24.00 160607      A********************************************************************                          
+25.00 160613      A*                          FUNCTION KEYS                           *                          
+26.00 160607      A********************************************************************                          
+27.00 160902      A          R ECSD10FK                                                                          
+28.00 160616      A                                 23  2'F3 = Exit'                                             
+29.00 160525      A                                      COLOR(BLU)                                              
+30.00 160616      A                                 23 15'F6 = Create'                                           
+31.00 160615      A                                      COLOR(BLU)                                              
+32.00 160616      A                                 23 60'F12 = Cancel'                                          
+33.00 160525      A                                      COLOR(BLU)                                              
+34.00 160616      A            SMSG          70A  O 24  2COLOR(WHT)                                              
+35.00 160607      A                                                                                              
+36.00 160607      A********************************************************************                          
+37.00 160607      A*                        OPTION SCREEN                             *                          
+38.00 160607      A********************************************************************                          
+39.00 160830      A          R ECSD10                                                                            
+40.00 160607      A                                      CF03(03 'Exit')                                         
+41.00 160607      A                                      CF10(10 'Confirm')                                      
+42.00 160607      A                                  1 66'Date :'                                                
+43.00 160607      A                                  1 73DATE                                                    
+44.00 160607      A                                      EDTWRD('  /  /  ')                                      
+45.00 160607      A                                  2 66'Time :'                                                
+46.00 160607      A                                  2 73TIME                                                    
+47.00 160607      A                                      EDTWRD('  :  :  ')                                      
+48.00 160829      A                                  1 18'B A N C O  C O M E R C I A L  D E -                    
+49.00 160829      A                                       M A C A U'                                             
+50.00 160829      A                                  1  2'<ECSDAPP>'                                             
+51.00 160829      A                                  2  2USER                                                    
+52.00 160829      A                                  2 15'Electronic Customer Statement Deli-                    
+53.00 160829      A                                      very Application'                                       
+54.00 160829      A                                      DSPATR(HI)                                              
+55.00 160818      A  61                              3 37'Opt-in'                                                
+56.00 160613      A                                      COLOR(WHT)                                              
+57.00 160818      A  62                              3 37'Opt-out'                                               
+58.00 160613      A                                      COLOR(WHT)                                              
+59.00 160613      A  63                              3 36'Enquiry'                                               
+60.00 160613      A                                      COLOR(WHT)                                              
+61.00 161028      A  96                              3 37'Create'                                                
+62.00 160613      A                                      COLOR(WHT)                                              
+63.00 160829      A                                  5  2'Application Code ... :'                                
+64.00 161028      A            SEMAPPCODE     2A  B  5 25VALUES('20' '26' '90')                                  
+65.00 161028      A N63                                                                                          
+66.00 161028      AAN72N73N75                            DSPATR(HI)                                              
+67.00 161028      A  96                                  DSPATR(UL)                                              
+68.00 161028      A  96                                  DSPATR(PC)                                              
+69.00 161028      A N96                                  DSPATR(PR)                                              
+70.00 161028      A  72                                                                                          
+71.00 161028      AO 73                                                                                          
+72.00 161028      AO 75                                  DSPATR(RI)                                              
+73.00 161117      A            SEMKEY        20A  B  5 29                                                        
+74.00 161028      A N63                                                                                          
+75.00 161028      AAN72N73N75                            DSPATR(HI)                                              
+76.00 161028      A  96                                  DSPATR(UL)                                              
+77.00 161028      A  96                                  DSPATR(PC)                                              
+78.00 161028      A N96                                  DSPATR(PR)                                              
+79.00 161028      A  72                                                                                          
+80.00 161028      AO 73                                                                                          
+81.00 161028      AO 75                                  DSPATR(RI)                                              
+82.00 161117      A                                  7  2'Class/ Type/ Sub-type:'                                
+83.00 160829      A            SEMCLASS      10A  B  7 25                                                        
+84.00 160616      A N63                                                                                          
+85.00 161028      AAN72N73N76                            DSPATR(HI)                                              
+86.00 160902      A  96                                  DSPATR(UL)                                              
+87.00 160902      A  96                                  DSPATR(PC)                                              
+88.00 160902      A N96                                  DSPATR(PR)                                              
+89.00 161028      A  72                                                                                          
+90.00 161028      AO 73                                                                                          
+91.00 161028      AO 76                                  DSPATR(RI)                                              
+92.00 161116      A            SEMTYPE       10A  B  7 36                                                        
+93.00 161028      A N63                                                                                          
+94.00 161028      AAN72N73N76                            DSPATR(HI)                                              
+95.00 161028      A  96                                  DSPATR(UL)                                              
+96.00 161028      A  96                                  DSPATR(PC)                                              
+97.00 161028      A N96                                  DSPATR(PR)                                              
+98.00 161028      A  72                                                                                          
+99.00 161028      AO 73                                                                                          
+100.00 161028      AO 76                                  DSPATR(RI)                                              
+101.00 161116      A            SEMSUTYPE      2A  B  7 47                                                        
+102.00 160818      A N63                                                                                          
+103.00 161028      AAN72N73N76                            DSPATR(HI)                                              
+104.00 160902      A  96                                  DSPATR(UL)                                              
+105.00 160902      A  96                                  DSPATR(PC)                                              
+106.00 161028      A N96                                  DSPATR(PR)                                              
+107.00 161028      A  72                                                                                          
+108.00 161028      AO 73                                                                                          
+109.00 161028      AO 76                                  DSPATR(RI)                                              
+110.00 161117      A                                  9  2'Description ........ :'                                
+111.00 161117      A            SECDESC       30A  O  9 25                                                        
+112.00 161117      A N63                                  DSPATR(HI)                                              
+113.00 161117      A                                 11  2'Delivery Option .... :'                                
+114.00 170117      A            SEMOP1         1A  B 11 25VALUES('Y' 'B')                                         
+115.00 161028      A N63                                                                                          
+116.00 161028      AAN74                                  DSPATR(HI)                                              
+117.00 161028      A  96                                  DSPATR(UL)                                              
+118.00 161028      A  96                                  DSPATR(PC)                                              
+119.00 160902      A N96                                  DSPATR(PR)                                              
+120.00 161028      A  74                                  DSPATR(RI)                                              
+121.00 161117      A                                 13  2'(Y - E-Statement only  B - E-State-                    
+122.00 161117      A                                      ment and Physical)'                                     
+123.00 170328      A                                 18  2'Create Date/Time ...... :'                             
+124.00 170328      A            SELDATEC       8  0O 18 28EDTWRD('    /  /  ')                                    
+125.00 170328      A            SELTIMEC       6  0O 18 39EDTWRD('  :  :  ')                                      
+126.00 170328      A                                 18 49'Create User ...... :'                                  
+127.00 170328      A            SELUSERC      10A  O 18 70                                                        
+128.00 170328      A                                 20  2'Last Modified Date/Time :'                             
+129.00 170328      A            SELDATEM       8  0O 20 28EDTWRD('    /  /  ')                                    
+130.00 170328      A            SELTIMEM       6  0O 20 39EDTWRD('  :  :  ')                                      
+131.00 170328      A                                 20 49'Last Modified User :'                                  
+132.00 170328      A            SELUSERM      10A  O 20 70                                                        
+133.00 170328      A                                 22  2'F3 = Exit'                                             
+134.00 160817      A                                      COLOR(BLU)                                              
+135.00 160817      A N63                             22 60'F10 = Confirm'                                         
+136.00 160607      A                                      COLOR(BLU)                                              
+137.00 160616      A            SDMSG         70A  O 23  2COLOR(WHT)                                              
+138.00 160616      A                                                                                              
+139.00 160616      A*                                                                                             
+140.00 160613      A*******************************************************************                           
+141.00 160613      A*                PROMPT WINDOW FOR CONFIRMATION                   *                           
+142.00 160613      A*******************************************************************                           
+143.00 160830      A          R ECSD10CFM                                                                         
+144.00 160613      A                                      WINDOW(18 15 5 45)                                      
+145.00 160613      A                                      RMVWDW                                                  
+146.00 160613      A                                      USRRSTDSP                                               
+147.00 160613      A                                  2  2'DO YOU CONFIRM THE CHANGE ?'                           
+148.00 160613      A                                  2 36'(Y/N)'                                                 
+149.00 160613      A            SYESNO         1A  B  2 34DFTVAL('N')                                             
+150.00 160613      A*                                                                                             

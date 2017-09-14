@@ -1,0 +1,42 @@
+1.00 130801       ************************************************************************                      
+2.00 170328       *   REFERENCE     : CHG-100-17                                         *                      
+3.00 160817       *   USER ID       : BI77PGM                                            *                      
+4.00 160817       *   CHANGED BY    : MYLES IEONG                                        *                      
+5.00 170328       *   CHANGED DATE  : 28 MAR 2017                                        *                      
+6.00 170328       *   REASON        : ECSD Application Logging PF                        *                      
+7.00 130801       ************************************************************************                      
+8.00 161024      A          R RECSDLOG                                                                          
+9.00 161124      A*                                                                                             
+10.00 160817      A            ELUSER        10A         TEXT('USER')                                            
+11.00 161124      A            ELACTDATE      8S 0       TEXT('ACTION DATE')                                     
+12.00 161124      A            ELACTTIME      6S 0       TEXT('ACTION TIME')                                     
+13.00 160817      A            ELACTION      10A         TEXT('ACTION')                                          
+14.00 160817      A            ELSTATUS       1A         TEXT('STATUS')                                          
+15.00 161124      A*                                                                                             
+16.00 161124      A            ELAPPCODE      2A         TEXT('APP CODE')                                        
+17.00 161124      A            ELKEY         20A         TEXT('KEY')                                             
+18.00 160817      A            ELCLASS       10A         TEXT('CLASS')                                           
+19.00 160817      A            ELTYPE        10A         TEXT('TYPE')                                            
+20.00 160817      A            ELSUTYPE       2A         TEXT('SUB TYPE')                                        
+21.00 160817      A            ELOP1          1A         TEXT('OPTION1')                                         
+22.00 160817      A            ELOP2          1A         TEXT('OPTION2')                                         
+23.00 160817      A            ELOP3          2A         TEXT('OPTION3')                                         
+24.00 161124      A            ELDATE         8S 0       TEXT('DATE')                                            
+25.00 161124      A            ELTIME         6S 0       TEXT('TIME')                                            
+26.00 161124      A            ELSRUPD       10A         TEXT('SOURCE OF UPDATE')                                
+27.00 160817      A            ELREL         10A         TEXT('RELATIONSHIP')                                    
+28.00 161124      A*                                                                                             
+29.00 160817      A            ELRESULT      10A         TEXT('RESULT')                                          
+30.00 160817      A            ELIMAGE       10A         TEXT('AFTER IMAGE')                                     
+31.00 160817      A*                                                                                             
+32.00 160817      A            ELUSR01        1A         TEXT('USER FIELD 01')                                   
+33.00 160817      A            ELUSR02        1A         TEXT('USER FIELD 02')                                   
+34.00 160817      A            ELUSR03        3A         TEXT('USER FIELD 03')                                   
+35.00 160817      A            ELUSR04       10A         TEXT('USER FIELD 04')                                   
+36.00 160817      A            ELUSR05       12S 0       TEXT('USER FIELD 05')                                   
+37.00 160729      A*                                                                                             
+38.00 161028      A          K ELAPPCODE                                                                         
+39.00 161028      A          K ELKEY                                                                             
+40.00 161124      A          K ELACTDATE                                                                         
+41.00 161124      A          K ELACTTIME                                                                         
+42.00 160817      A*                                                                                             
