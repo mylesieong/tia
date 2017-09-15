@@ -1,0 +1,18 @@
+1.00 140729       *************************************************************                                 
+2.00 160317       *   FILE      : SCAPPARM                                    *                                 
+3.00 160401       *   REFERENCE : CHG-069-16                                  *                                 
+4.00 140729       *   USER      : BG58 WINE CHAN                              *                                 
+5.00 160317       *   DATE      : 17 Mar 2016                                 *                                 
+6.00 160317       *   PURPOSE   : Security Check On Application Parm File     *                                 
+7.00 140729       *************************************************************                                 
+15.00 160318      A          R RSCAPPARM                                                                         
+15.01 160321      A            SPUSER        10A         TEXT('User ID')                                         
+15.02 160321      A            SPAPP         10A         TEXT('Application Code')                                
+15.03 160321      A            SPOPT         10A         TEXT('Class')                                           
+15.04 160321      A            SPACT          3A         TEXT('Action Code')                                     
+15.05 160321      A            SPDESC        30A         TEXT('Desc.')                                           
+15.06 160321      A            SPBRN          5A         TEXT('Branch')                                          
+36.00 140730       *                                                                                             
+37.00 160321      A          K SPUSER                                                                            
+37.01 160330      A          K SPOPT                                                                             
+38.00 160321      A          K SPACT                                                                             

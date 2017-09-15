@@ -1,0 +1,8 @@
+1.00 710      A**  ACCESS MASTER FOR SECURITY                                            
+2.00 900427      A**                                                                        
+3.00 710      A          R RSECACC                                                       
+4.00 710      A            APROFIL       10A         TEXT('USER PROFILE')                
+4.01 710      A            AROLE         15A         TEXT('ROLE ID')                     
+5.00 900427      A**                                                                        
+5.01 710      A          K APROFIL                                                       
+6.00 710      A          K AROLE                                                         

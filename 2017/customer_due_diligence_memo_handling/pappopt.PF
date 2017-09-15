@@ -1,0 +1,18 @@
+1.00 30809      A*----------------------------------------------------------------------*                                          
+2.00 30809      A* Reference No.   : C3102 (CHG-102-03)                                 *                                          
+3.00 30809      A* Author          : B460PGM, Vicky Tou                                 *                                          
+4.00 30809      A* Date            : 09 August 2003                                     *                                          
+5.00 30809      A*----------------------------------------------------------------------*                                          
+6.00 930210      A**                                                                                                                
+7.00 30731      A** Option List for BCM In-house Application                                                                       
+8.00 930210      A**                                                                                                                
+9.00 30731      A          R RAPPOP                                                                                                
+10.00 30731      A**                                                                                                                
+11.00 30731      A            AOMOPT         6A         TEXT('MAIN OPTION')                                                         
+12.00 30731      A            AOLEVEL        1A         TEXT('LEVEL')                                                               
+13.00 30731      A            AOOPT          2A         TEXT('OPTION ID')                                                           
+14.00 30802      A            AODESC        50A         TEXT('DESCRIPTION')                                                         
+15.00 930210      A**                                                                                                                
+16.00 30731      A          K AOMOPT                                                                                                
+17.00 30731      A          K AOLEVEL                                                                                               
+18.00 30731      A          K AOOPT                                                                                                 

@@ -1,0 +1,12 @@
+1.00 910819      A**  USER AUTHORITY FILE                                                   
+2.00 910819      A**                                                                        
+3.00 910819      A                                      UNIQUE                              
+4.00 910819      A          R RUSRID                    TEXT('USER ID.')                    
+5.00 910819      A            UUSRID         4A         TEXT('USER ID.')                    
+6.00 910819      A            UUSRGP         1A         TEXT('USER GROUP')                  
+7.00 920901      A            UAUTLV         1S 0       TEXT('AUTHORITY LEVEL')             
+8.00 920901      A            UBRNCD         2S 0       TEXT('USER BRANCH CODE')            
+9.00 910819      A**                                                                        
+10.00 910819      A**  KEY: USER ID.                                                         
+11.00 910819      A**                                                                        
+12.00 910819      A          K UUSRID                                                        

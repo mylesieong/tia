@@ -1,0 +1,88 @@
+1.00 150603 ***********************************************************************         
+2.00 150604       * REFERENCE NO. : CHG-0183-15 (D5183)                                     
+3.00 150603       * AUTHOR        : TOMMY TONG                                              
+4.00 150603       * USER ID.      : BH90PGM                                                 
+5.00 150603       * DATE WRITTEN  : 28 MAY 2015                                             
+6.00 150603       * DESCRPITION   : OPG AND CUSTOMER POSITION MAINTENANCE                   
+7.00 150603       *                                                                         
+8.00 150603       * INDICATOR     : *IN03 = LEAVE THE APPLICATION                           
+9.00 150603       *                 *IN06 = ADD USER ID                                     
+10.00 150603       *                 *IN09 = MODIFY USER ID                                  
+11.00 150603       *                 *IN11 = DELETE USER ID                                  
+12.00 150603       *                 *IN12 = CLEAR INPUT VALUE                               
+13.00 150603       *                                                                         
+14.00 150603 ***********************************************************************         
+15.00 170420       * REFERENCE NO. : CHG-0096-17 (D7096)                                     
+16.00 170330       * AUTHOR        : MYLES IEONG                                             
+17.00 170330       * USER ID.      : BI77PGM                                                 
+18.00 170330       * DATE WRITTEN  : 30 MAR 2017                                             
+19.00 170330       * DESCRPITION   : ADD MEMO/TICKLER AUTHORITY MAINTENANCE                  
+20.00 170330       **************************************************************            
+21.00 150603      A*%%TS  SD  20150528  152006  BH90PGM     REL-V7R1M0  5770-WDS             
+22.00 150528      A*%%EC                                                                     
+23.00 150528      A                                      DSPSIZ(24 80 *DS3)                  
+24.00 150528      A          R OGCPINF                                                       
+25.00 150528      A*%%TS  SD  20150528  145101  BH90PGM     REL-V7R1M0  5770-WDS             
+26.00 150528      A                                      TEXT('OGCP SYSTEM MAIN SCREEN')     
+27.00 150528      A                                      CF03(03 'Exit')                     
+28.00 150528      A                                      CF06(06 'Create')                   
+29.00 150528      A                                      CF09(09 'Modify')                   
+30.00 150528      A                                      CF11(11 'Delete')                   
+31.00 150528      A                                      CF12(12 'Cancel')                   
+32.00 150604      A                                  1  3'BCMGPL-OGCPDSP'                    
+33.00 150528      A                                  1 29'BANCO COMERCIAL DE MACAU'          
+34.00 150528      A                                      DSPATR(HI)                          
+35.00 150604      A                                  2  3USER                                
+36.00 150604      A                                      DSPATR(HI)                          
+37.00 150528      A                                  2 22'OPG and Customer Position Maintena-
+38.00 150528      A                                      nce'                                
+39.00 150528      A                                      DSPATR(HI)                          
+40.00 150603      A                                  5 16' App Code  :'                      
+41.00 170420 D7096A*                                 5 45'(OPG/CUS)'                         
+42.00 170420 D7096A                                  5 45'(OPG/CUS/MENTIC)'                  
+43.00 150603      A                                  7 16'  User ID  :'                      
+44.00 150603      A                                  9 16'OPG Group  :'                      
+45.00 150603      A                                  9 46'Branch :'                          
+46.00 150603      A                                 11 16' CUS Role  :'                      
+47.00 170420 D7096A                                 13 12'MENTIC Option  :'                  
+48.00 170420 D7096A                                 13 46'Action  :'                         
+49.00 170420 D7096A*                                13  8'Copy From User ID  :'              
+50.00 170420 D7096A                                 15  8'Copy From User ID  :'              
+51.00 150529      A  38                                  DSPATR(ND)                          
+52.00 150528      A                                  1 68DATE                                
+53.00 150604      A                                      EDTCDE(Y)                           
+54.00 150528      A                                  2 68TIME                                
+55.00 150603      A            DAPPCODE       6A  B  5 29                                    
+56.00 150602      A  39                                  DSPATR(PR)                          
+57.00 150609      A  40                                  ERRMSG('Invalid App Code!')         
+58.00 150602      A            DUSRID        10A  B  7 29                                    
+59.00 150602      A  39                                  DSPATR(PR)                          
+60.00 150528      A            DGROUP         1A  B  9 29                                    
+61.00 150603         41                                  DSPATR(PR)                          
+62.00 150528      A            DBRANCH        2S 0B  9 57                                    
+63.00 150603      A  41                                  DSPATR(PR)                          
+64.00 150528      A            DROLE         15A  B 11 29                                    
+65.00 150603      A  42                                  DSPATR(PR)                          
+66.00 170420 D7096A            DMENOPT       10A  B 13 29                                    
+67.00 170420 D7096A  43                                  DSPATR(PR)                          
+68.00 170420 D7096A            DMENMORE       1A  O 13 41                                    
+69.00 170420 D7096A            DMENACT        3A  B 13 57                                    
+70.00 170420 D7096A  43                                  DSPATR(PR)                          
+71.00 170420 D7096A*           DCPUSRID      10A  B 13 29                                    
+72.00 170420 D7096A            DCPUSRID      10A  B 15 29                                    
+73.00 150529      A  38                                  DSPATR(ND)                          
+74.00 150528      A                                 23  3'F3 = Exit'                         
+75.00 150528      A                                 23 15'F6 = Create'                       
+76.00 150528      A                                 23 29'F9 = Modify'                       
+77.00 150528      A                                 23 43'F11 = Delete'                      
+78.00 150528      A                                 23 58'F12 = Cancel'                      
+79.00 150528      A            DSPMSG        30A    15 25                                    
+80.00 150528      A          R SELECTYN                                                      
+81.00 150528      A*%%TS  SD  20150528  152006  BH90PGM     REL-V7R1M0  5770-WDS             
+82.00 150528      A                                      WINDOW(14 20 5 40)                  
+83.00 150528      A                                      RMVWDW                              
+84.00 150528      A            SLYNMSG       30A  O  2  1                                    
+85.00 150528      A                                  4 12'YES/NO'                            
+86.00 150528      A                                  4 19':'                                 
+87.00 150528      A            SWNFLG         1A  B  4 21VALUES('Y' 'N')                     
+88.00 150528      A                                      DSPATR(HI)                          

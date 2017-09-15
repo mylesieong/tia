@@ -1,0 +1,15 @@
+1.00 930210      A**                                                                        
+2.00 990404      A** User Authority file for BCM In-house Application                       
+3.00 930210      A**                                                                        
+4.00 990404      A          R RAPPUR                    TEXT('User Authority file')         
+5.00 930210      A**                                                                        
+6.00 990404      A            AUSER         10A         TEXT('USER ID')                     
+7.00 731      A            AMOPT          6A         TEXT('MAIN OPTION ID')              
+8.00 527      A            ALEVEL         1A         TEXT('LEVEL')                       
+9.00 990404      A            AOPT           2A         TEXT('OPTION ID')                   
+10.00 623      A            ABRN           3A         TEXT('BRANCH NUMBER')               
+11.00 623      A            AIBRN          3A         TEXT('IHM BRANCH NUMBER')           
+12.00 623      A            ABNAME        30A         TEXT('BRANCH NAME')                 
+13.00 970506      A**                                                                        
+14.00 990404      A          K AUSER                                                         
+15.00 930512      A**                                                                        

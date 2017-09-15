@@ -1,0 +1,31 @@
+1.00 130903       ************************************************************************  
+2.00 150604       *   REFERENCE     : CHG-0183-15 (D5183)                                *  
+3.00 150601       *   USER ID       : BH90PGM                                            *  
+4.00 150603       *   WRITTEN BY    : TOMMY TONG                                         *  
+5.00 150603       *   WRITTEN DATE  : 01 JUN 2015                                        *  
+6.00 150601       *   REASON        : OPG AND CUSTOMER POSITION MAINTENANCE LOG          *  
+7.00 130918       *                                                                      *  
+8.00 130918       *   REMARK        : LOGACTION value                                    *  
+9.00 130918       *                   'A' - Create New User ID Record                    *  
+10.00 130918       *                   'M' - Modify User ID Record                        *  
+11.00 130918       *                   'D' - Delete User Id Record                        *  
+12.00 130903       ************************************************************************  
+13.00 170420       * REFERENCE NO. : CHG-0096-17 (D7096)                                     
+14.00 170405       * AUTHOR        : MYLES IEONG                                             
+15.00 170405       * USER ID.      : BI77PGM                                                 
+16.00 170405       * DATE WRITTEN  : 05 APR 2017                                             
+17.00 170405       * DESCRPITION   : ADD LOG FIELD FOR MENTIC                                
+18.00 170405       **************************************************************            
+19.00 150601      A          R ROGCPLOG                                                      
+20.00 130903      A            LOGDATE        8A         TEXT('Log Date')                    
+21.00 130903      A            LOGTIME        6S 0       TEXT('Log Time')                    
+22.00 130903      A            LOGUSR        10A         TEXT('Log User')                    
+23.00 130903      A            LOGACTION      1A         TEXT('Action Code')                 
+24.00 150604      A            LOGAPPCODE     6A         TEXT('APP CODE')                    
+25.00 150601      A            LOGUSRID      10A         TEXT('OPG/CUS User ID')             
+26.00 150601      A            LOGOPGGROP     1A         TEXT('OPG User GROUP')              
+27.00 150601      A            LOGOPGBRCH     2S         TEXT('OPG USER BRANCH')             
+28.00 150601      A            LOGCUSROLE    15A         TEXT('CUS USER ROLE')               
+29.00 170420 D7096A            LOGMENOPT     10A         TEXT('MENTIC OPTION')               
+30.00 170420 D7096A            LOGMENACT      3A         TEXT('MENTIC ACTION')               
+31.00 150601      A            LOGCPUSRID    10A         TEXT('OPG/CUS USER ID COPIED FROM') 

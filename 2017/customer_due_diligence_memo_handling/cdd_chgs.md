@@ -17,20 +17,6 @@
     test:   ymyles1/bbtfciu NEW
 }
 
-## Weekly Scan CIF process (scan + dispatch + report)
-**For the part !!!REVERSE!!! Cancel**
-{
-    src:    iprod/icinfsrc
-    cl:     ICINFCL REF      * General CL
-            ICINFPT1 REF
-            ICEXTDTA REF     * Part 1 SQL and RPG
-            ICINFPT2 MOD
-            ICCRTMEMO REF    * Part 2 SQL and RPG
-            ICINFPT3 MOD 
-            ICMNTDLTAC REF
-            ICCIFMIS REF / ICCIFCOM/ ICACCMIS/ ICACCCOM * Part 3 SQL, RPG and Queries.               1   
-}
-
 ## Add CDD override authority maintenance screen
 Involve program: 
     * OPG and Customer Position Maintenance 
@@ -57,7 +43,7 @@ Logic between:
     pf:     BCMGPL/OGCPUSRLOG MOD            * log file for both opts
             ZOPGLIB/OGUSRID REF              *for select OPG in (OPG/CUS)
             ZCUSPRO/SECACC REF               *for select CUS in (OPG/CUS)
-            I700bcm/SCAPPGRP REF             *not new pf but newly add to rpg
+            I700bcm/SCAPGRP REF              *not new pf but newly add to rpg
             I700bcm/SCAPPARM REF             *not new pf but newly add to rpg
     #I700bcm/qrpgsrc(scapchk) is using scapparm & scapgrp #
     # and PS1002 is using this to auth #
