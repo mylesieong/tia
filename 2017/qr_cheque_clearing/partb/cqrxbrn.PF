@@ -1,0 +1,18 @@
+1.00 170224       ************************************************************************                      
+2.00 170906       *   REFERENCE     : CHG-266-17                                         *                      
+3.00 170224       *   USER ID       : BI77PGM                                            *                      
+4.00 170224       *   CHANGED BY    : MYLES IEONG                                        *                      
+5.00 170224       *   CHANGED DATE  : 23 FEB 2017                                        *                      
+6.00 170228       *   REASON        : CHEQUE QR EXTRACTION BRANCH STATUS                 *                      
+7.00 170224       ************************************************************************                      
+8.00 170228      A          R RCQRXBRN                                                                          
+9.00 170301      A            CXBBRN         5P 0       TEXT('BRANCH')                                          
+10.00 170302      A            CXBMBR        10A         TEXT('FILE MEMBER NAME')                                
+11.00 170228      A            CXBSTS         1A         TEXT('STATUS')                                          
+12.00 170227      A*                                                                                             
+13.00 170228      A            CXBUSR1        1A         TEXT('USER DEFINED FIELD1')                             
+14.00 170301      A            CXBUSR2        5P 0       TEXT('USER DEFINED FIELD2')                             
+15.00 170301      A            CXBUSR3       13P 0       TEXT('USER DEFINED FIELD3')                             
+16.00 170228      A*                                                                                             
+17.00 170302      A          K CXBBRN                                                                            
+18.00 170224      A**                                                                                            

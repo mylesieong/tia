@@ -1,0 +1,52 @@
+1.00 170224       ************************************************************************                      
+2.00 170906       *   REFERENCE     : CHG-266-17                                         *                      
+3.00 170224       *   USER ID       : BI77PGM                                            *                      
+4.00 170224       *   CHANGED BY    : MYLES IEONG                                        *                      
+5.00 170224       *   CHANGED DATE  : 23 FEB 2017                                        *                      
+6.00 170227       *   REASON        : CHEQUE QR EXTRACTION MASTER FILE                   *                      
+7.00 170224       ************************************************************************                      
+8.00 170224      A          R RCQRXPF                                                                           
+9.00 170706       *   Info From Cheuque                                                                         
+10.00 170706      A            CXOBNK         3S 0       TEXT('Other Bank Code')                                 
+11.00 170706      A            CXTYP          3A         TEXT('Cheque Type')                                     
+12.00 170706      A            CXCPET         3A         TEXT('Cheque Ccy Short Name')                           
+13.00 170706      A            CXCHQ         20A         TEXT('Cheque Number')                                   
+14.00 170706      A            CXAMT         15S 2       TEXT('Cheque Amount')                                   
+15.00 170706      A            CXONAM        90A         TEXT('Other Bank Account Name')                         
+16.00 170706      A            CXOACT        20A         TEXT('Other Bank Account')                              
+17.00 170706      A            CXENV         20A         TEXT('Cheque Envelope')                                 
+18.00 170706       *   Extraction status                                                                         
+19.00 170706      A            CXSTS          1A         TEXT('Status')                                          
+20.00 170706       *                                     'M' - Matched                                           
+21.00 170706       *                                     '1' - Found CQRXCHQ, Not found CQRXSYS                  
+22.00 170706       *                                     '2' - Found CQRXSYS, Not found CQRXCHQ                  
+23.00 170706       *                                     '-' - Non QR Cheque                                     
+24.00 170706       *   Info From Branch Teller (BT)                                                              
+25.00 170704      A            CXTLTTIM      26A         TEXT('TIME')                                            
+26.00 170704      A            CXTLTBRN       5S 0       TEXT('BRANCH')                                          
+27.00 170704      A            CXTLTCUR       3S 0       TEXT('Cheque Ccy Code')                                 
+28.00 170704      A            CXTLTTC       15S 2       TEXT('Transaction Amount')                              
+29.00 170704      A            CXTLTAL1      40A         TEXT('ALPHABETIC DATA 1')                               
+30.00 170704      A            CXTLTUSR      10A         TEXT('USER ID')                                         
+31.00 170704      A            CXTLTWS       10A         TEXT('WORKSTATION ID')                                  
+32.00 170704      A            CXTLTAPP       2A         TEXT('APPLICATION CODE')                                
+33.00 170704      A            CXTLTACT      13S 0       TEXT('ACCOUNT')                                         
+34.00 170704      A            CXTLTTIL       4S 0       TEXT('TILL NUMBER')                                     
+35.00 170704      A            CXTLTSSN       3S 0       TEXT('SESSION NUMBER')                                  
+36.00 170704      A            CXTLTNBR       4S 0       TEXT('CASHIER NUMBER')                                  
+37.00 170704      A            CXTLTBSQ       5S 0       TEXT('TRANSACTION SEQUENCE NUM')                        
+38.00 170704      A            CXTLTCOR       1A         TEXT('CORRECTION FLAG')                                 
+39.00 170704      A            CXTLTCSQ       5S 0       TEXT('CORRECTION SEQUENCE')                             
+40.00 170906      A            CXTLTCD        6A         TEXT('TELLER TRANSACTION CODE')                         
+41.00 170706       *                                                                                             
+42.00 170228      A            CXUSR1         1A         TEXT('USER DEFINED FIELD1')                             
+43.00 170228      A            CXUSR2         1A         TEXT('USER DEFINED FIELD2')                             
+44.00 170228      A            CXUSR3         3A         TEXT('USER DEFINED FIELD3')                             
+45.00 170228      A            CXUSR4         3A         TEXT('USER DEFINED FIELD4')                             
+46.00 170224      A            CXUSR5        13S 2       TEXT('USER DEFINED FIELD5')                             
+47.00 170706       *                                                                                             
+48.00 170228      A          K CXOBNK                                                                            
+49.00 170227      A          K CXTYP                                                                             
+50.00 170302      A          K CXCPET                                                                            
+51.00 170302      A          K CXCHQ                                                                             
+52.00 170706       **                                                                                            

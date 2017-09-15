@@ -1,0 +1,23 @@
+1.00 170615       ************************************************************************                      
+2.00 170814       *   REFERENCE     : CHG-266-17                                         *                      
+3.00 170615       *   USER ID       : BI77PGM                                            *                      
+4.00 170615       *   CHANGED BY    : MYLES IEONG                                        *                      
+5.00 170615       *   CHANGED DATE  : 09 JUN 2017                                        *                      
+6.00 170728       *   REASON        : CHEQUE BOOK ORDER EXTRACTION PF                    *                      
+7.00 170615       ************************************************************************                      
+8.00 170616      A          R RCQNOUT                                                                           
+9.00 170616      A            CQNOBK         3S 0       TEXT('Bank Code')                                       
+10.00 170616      A            CQNOTYP        3A         TEXT('Cheque Type')                                     
+11.00 170616      A            CQNOCCY        3A         TEXT('Currency Type')                                   
+12.00 170616      A            CQNOACCT      12S 0       TEXT('Account Number')                                  
+13.00 170616      A            CQNOCQN       10S 0       TEXT('Cheque Number')                                   
+14.00 170616      A            CQNONAM       90A         TEXT('Account Name')                                    
+15.00 170620      A            CQNOBRH       40A         TEXT('Cheque Branch')                                   
+16.00 170620      A            CQNOBRHNO      3A         TEXT('Cheque Branch Code')                              
+17.00 170616      A            CQNOBRHC      40A         TEXT('Collection Branch')                               
+18.00 170620      A            CQNOBRHCNO     3A         TEXT('Collection Branch Code')                          
+19.00 170616      A            CQNOQTY        3S 0       TEXT('Number of Cheque Book')                           
+20.00 170616      A            CQNOPER        3S 0       TEXT('Number of Cheques')                               
+21.00 170616      A            CQNOLG         2A         TEXT('Logo')                                            
+22.00 170616      A            CQNODORD       7S 0       TEXT('Date Ordered - Julian')                           
+23.00 170609      A**                                                                                            

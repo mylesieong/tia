@@ -1,0 +1,14 @@
+1.00 170224       ************************************************************************                      
+2.00 170906       *   REFERENCE     : CHG-266-17                                                                
+3.00 170224       *   USER ID       : BI77PGM                                            *                      
+4.00 170224       *   CHANGED BY    : MYLES IEONG                                        *                      
+5.00 170224       *   CHANGED DATE  : 23 FEB 2017                                        *                      
+6.00 170906       *   REASON        : CHEQUE QR INCOMING GENERATE NON-QR AMCM FORMAT     *                      
+7.00 170224       ************************************************************************                      
+8.00 170719      A          R RCQRIGENN                                                                         
+9.00 170317      A            CINOBNK        5S 0       TEXT('OTHER BANK CODE')                                 
+10.00 170317      A            CINBNK         5S 0       TEXT('BANK CODE')                                       
+11.00 170317      A            CINCPET        3A         TEXT('CURRENCY CODE')                                   
+12.00 170317      A            CINQTY         5S 0       TEXT('TOTAL QUANTITY')                                  
+13.00 170317      A            CINAMT        15S 2       TEXT('TOTAL AMOUNT')                                    
+14.00 170224      A**                                                                                            

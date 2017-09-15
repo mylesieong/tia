@@ -1,0 +1,21 @@
+1.00 170615       ************************************************************************                      
+2.00 170814       *   REFERENCE     : CHG-266-17                                         *                      
+3.00 170615       *   USER ID       : BI77PGM                                            *                      
+4.00 170615       *   CHANGED BY    : MYLES IEONG                                        *                      
+5.00 170615       *   CHANGED DATE  : 09 JUN 2017                                        *                      
+6.00 170615       *   REASON        : CHEQUE NUMBER AND ACCOUNT MASTER FILE              *                      
+7.00 170615       ************************************************************************                      
+8.00 170609      A          R RCQNACCPF                                                                         
+9.00 170609      A            CQNACCT       12S 0       TEXT('Account Number')                                  
+10.00 170616      A            CQNCQN        10S 0       TEXT('Cheque Number')                                   
+11.00 170616      A            CQNUSR1        1A         TEXT('User Defined Field1')                             
+12.00 170616      A            CQNUSR2        1A         TEXT('User Defined Field2')                             
+13.00 170616      A            CQNUSR3        1A         TEXT('User Defined Field3')                             
+14.00 170616      A            CQNUSR4        5S 0       TEXT('User Defined Field4')                             
+15.00 170616      A            CQNUSR5       10A         TEXT('User Defined Field5')                             
+16.00 170616      A            CQNUSR6       10A         TEXT('User Defined Field6')                             
+17.00 170616      A            CQNUSR7       10A         TEXT('User Defined Field7')                             
+18.00 130305      A*                                                                                             
+19.00 170609      A          K CQNACCT                                                                           
+20.00 170609      A          K CQNCQN                                                                            
+21.00 170609      A**                                                                                            

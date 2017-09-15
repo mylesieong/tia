@@ -1,0 +1,32 @@
+1.00 170224       ************************************************************************                      
+2.00 170906       *   REFERENCE     : CHG-266-17                                                                
+3.00 170224       *   USER ID       : BI77PGM                                            *                      
+4.00 170224       *   CHANGED BY    : MYLES IEONG                                        *                      
+5.00 170224       *   CHANGED DATE  : 23 FEB 2017                                        *                      
+6.00 170228       *   REASON        : CHEQUE QR EXTRACTION DATA FROM SYSTEM              *                      
+7.00 170224       ************************************************************************                      
+8.00 170228      A          R RCQRXSYS                                                                          
+9.00 170706       *   Info from Branch Teller (BT)                                                              
+10.00 170706      A            CXSTLTTIM     26A         TEXT('Time')                                            
+11.00 170706      A            CXSTLTBRN      5S 0       TEXT('Branch')                                          
+12.00 170706      A            CXSTLTCUR      3S 0       TEXT('Cheque Ccy Code')                                 
+13.00 170706      A            CXSTLTTC      15S 2       TEXT('Transaction Amount')                              
+14.00 170706      A            CXSTLTAL1     40A         TEXT('Alphabetic Data 1')                               
+15.00 170706      A            CXSTLTUSR     10A         TEXT('User ID')                                         
+16.00 170706      A            CXSTLTWS      10A         TEXT('Workstation ID')                                  
+17.00 170706      A            CXSTLTAPP      2A         TEXT('Application Code')                                
+18.00 170706      A            CXSTLTACT     13S 0       TEXT('Account')                                         
+19.00 170706      A            CXSTLTTIL      4S 0       TEXT('Till Number')                                     
+20.00 170706      A            CXSTLTSSN      3S 0       TEXT('Session Number')                                  
+21.00 170706      A            CXSTLTNBR      4S 0       TEXT('Cashier Number')                                  
+22.00 170706      A            CXSTLTBSQ      5S 0       TEXT('Transaction Sequence Num')                        
+23.00 170706      A            CXSTLTCOR      1A         TEXT('Correction Flag')                                 
+24.00 170706      A            CXSTLTCSQ      5S 0       TEXT('Correction Sequence')                             
+25.00 170906      A            CXSTLTCD       6A         TEXT('TELLER TRANSACTION CODE')                         
+26.00 170706       *   User Defined Fields                                                                       
+27.00 170706      A            CXSUSR1        1A         TEXT('User Defined Field1')                             
+28.00 170706      A            CXSUSR2        1A         TEXT('User Defined Field2')                             
+29.00 170706      A            CXSUSR3        3A         TEXT('User Defined Field3')                             
+30.00 170706      A            CXSUSR4        3A         TEXT('User Defined Field4')                             
+31.00 170706      A            CXSUSR5       13S 2       TEXT('User Defined Field5')                             
+32.00 170706       **                                                                                            

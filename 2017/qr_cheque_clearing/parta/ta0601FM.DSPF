@@ -1,0 +1,99 @@
+1.00 0      A*¬      TA0601FM - Create Cheque Book Order                                                   
+2.00 0      A*¬                                                                                            
+3.00 0      A*¬¬------------------- CHANGE LOG ------------------------------*                             
+4.00 0      A*   PROB NBR  PGMR  PROBLEM DESCRIPTION                         *                             
+5.00 0      A*     X999    XXX   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX *                             
+6.00 0      A*¬¬-------------------------------------------------------------*                             
+7.00 170814       *   Reference No. : CHG-0266-17 (D7266)                         *                             
+8.00 170609       *   User ID       : BI77                                        *                             
+9.00 170609       *   User Name     : Myles Ieong                                 *                             
+10.00 170609       *   Changed Date  : 09-Jun-2017                                 *                             
+11.00 170609       *   Changes       : Update the wording for cheque requisition   *                             
+12.00 170609       *                   new process                                 *                             
+13.00 170609       ****************************************************************                              
+14.00 0      A                                      DSPSIZ(24 80 *DS3)                                      
+15.00 0      A                                      REF(*LIBL/TAREFF TAREFF1)                               
+16.00 0      A                                      PRINT                                                   
+17.00 0      A                                      ERRSFL                                                  
+18.00 0      A          R T26010                                                                            
+19.00 0      A                                      CF03(03 'EXIT')                                         
+20.00 0      A N97                                  CF04(04 'LIST')                                         
+21.00 0      A                                      CF12(12 'CANCEL')                                       
+22.00 0      A                                      BLINK                                                   
+23.00 0      A                                      OVERLAY                                                 
+24.00 0      A                                      CHANGE(55)                                              
+25.00 0      A                                      RTNCSRLOC(&RCD &FLD)                                    
+26.00 0      A            RCD           10A  H      TEXT('RETURN RECORD NAME')                              
+27.00 0      A            FLD           10A  H      TEXT('RETURN FIELD NAME')                               
+28.00 0      A                                  1  2'20-0601-0'                                             
+29.00 0      A                                  1 27'Create Cheque Book Order'                              
+30.00 0      A                                      DSPATR(HI)                                              
+31.00 0      A                                  3  2'Account number  . . . . :'                             
+32.00 0      A            DMACCT    R     Y  O  3 30                                                        
+33.00 0      A            DMSHRT    R     A  O  3 43                                                        
+34.00 0      A                                  5  2'Provide information on new cheque -                    
+35.00 0      A                                      book order, then press Enter.'                          
+36.00 0      A                                      COLOR(BLU)                                              
+37.00 0      A                                  7  4'Cheque book style . . .'                               
+38.00 0      A            DRCBST    R     A  B  7 30                                                        
+39.00 0      A  97                                  DSPATR(PR)                                              
+40.00 0      A  20                                  ERRMSGID(TA05011 *LIBL/TAMSGF)                          
+41.00 0      A                                  7 46'F4=List'                                               
+42.00 0      A                                  8  4'Number of books . . . .'                               
+43.00 0      A            DRORDR    R     Y  B  8 30CHECK(RB)                                               
+44.00 0      A                                      EDTCDE(4)                                               
+45.00 0      A  97                                  DSPATR(PR)                                              
+46.00 0      A  21                                  ERRMSGID(TA05012 *LIBL/TAMSGF)                          
+47.00 0      A  23                                  ERRMSGID(TA05018 *LIBL/TAMSGF)                          
+48.00 0      A                                  9  4'Starting Number . . . .'                               
+49.00 0      A            SCSTAR    R     Y  B  9 30REFFLD(DRFRNG)                                          
+50.00 0      A                                      CHECK(RB)                                               
+51.00 0      A                                      EDTCDE(4)                                               
+52.00 0      A  96                                                                                          
+53.00 0      AO 97                                  DSPATR(PR)                                              
+54.00 0      A  22                                  ERRMSGID(TA05020 *LIBL/TAMSGF)                          
+55.00 0      A  23                                  ERRMSGID(TA05018 *LIBL/TAMSGF)                          
+56.00 0      A                                 10  4'Delivery option . . . .'                               
+57.00 0      A            DRCDSP    R     Y  B 10 30                                                        
+58.00 0      A  97                                  DSPATR(PR)                                              
+59.00 0      A  24                                  ERRMSGID(TA05014 *LIBL/TAMSGF)                          
+60.00 0      A                                      CHECK(RZ)                                               
+61.00 0      A                                 10 46'0=Post/Mail, 1=Branch Pickup'                          
+62.00 0      A                                 11  4'Order fee . . . . . . .'                               
+63.00 0      A            SCBFEE        13Y 0B 11 30CHECK(RB)                                               
+64.00 0      A                                      EDTCDE(4)                                               
+65.00 0      A  97                                  DSPATR(PR)                                              
+66.00 0      A  25                                  ERRMSGID(TA05019 *LIBL/TAMSGF)                          
+67.00 170814 D7266A*                                11 46'(.00)'                                                 
+68.00 170814 D7266A                                 11 46'(Branch No.)'                                          
+69.00 0      A                                 12  4'Tax . . . . . . . . . .'                               
+70.00 0      A            SCBTAX        13Y 0B 12 30CHECK(RB)                                               
+71.00 0      A                                      EDTCDE(4)                                               
+72.00 0      A  97                                  DSPATR(PR)                                              
+73.00 0      A  26                                  ERRMSGID(TA05019 *LIBL/TAMSGF)                          
+74.00 170814 D7266A*                                12 46'(.00)'                                                 
+75.00 170814 D7266A                                 12 46'(Image No.)'                                           
+76.00 0      A                                 23  2'F3=Exit'                                               
+77.00 0      A                                      COLOR(BLU)                                              
+78.00 0      A N97                             23 13'F4=List'                                               
+79.00 0      A                                      COLOR(BLU)                                              
+80.00 0      A N97                             23 24'F12=Cancel'                                            
+81.00 0      A                                      COLOR(BLU)                                              
+82.00 0      A  97                             23 13'F12=Cancel'                                            
+83.00 0      A                                      COLOR(BLU)                                              
+84.00 0      A          R SFLMSG                    SFL                                                     
+85.00 0      A                                      TEXT('MESSAGE SUBFILE')                                 
+86.00 0      A                                      SFLMSGRCD(24)                                           
+87.00 0      A            MSGK                      SFLMSGKEY                                               
+88.00 0      A            MSGQ                      SFLPGMQ                                                 
+89.00 0      A          R SFLCTLM                   SFLCTL(SFLMSG)                                          
+90.00 0      A                                      TEXT('MESSAGE SUBFILE CONTROL')                         
+91.00 0      A                                      CF03(03)                                                
+92.00 0      A                                      CF12(12)                                                
+93.00 0      A                                      OVERLAY                                                 
+94.00 0      A                                      SFLDSP                                                  
+95.00 0      A                                      SFLDSPCTL                                               
+96.00 0      A N50                                  SFLINZ                                                  
+97.00 0      A                                      SFLSIZ(0010)                                            
+98.00 0      A                                      SFLPAG(0001)                                            
+99.00 0      A            MSGQ                      SFLPGMQ                                                 

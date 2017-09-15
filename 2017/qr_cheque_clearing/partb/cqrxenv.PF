@@ -1,0 +1,24 @@
+1.00 170224       ************************************************************************                      
+2.00 170906       *   REFERENCE     : CHG-266-17                                                                
+3.00 170224       *   USER ID       : BI77PGM                                            *                      
+4.00 170224       *   CHANGED BY    : MYLES IEONG                                        *                      
+5.00 170719       *   CHANGED DATE  : 19 JUL 2017                                        *                      
+6.00 170719       *   REASON        : CHEQUE QR EXTRACTION ENVELOPE NUMBER PF            *                      
+7.00 170224       ************************************************************************                      
+8.00 170719      A          R RCQRXENV                                                                          
+9.00 170719      A            CXEENV        20A         TEXT('Cheque Envelope')                                 
+10.00 170828      A            CXEOBNK        3S 0       TEXT('Other Bank Code')                                 
+11.00 170828      A            CXETYP         3A         TEXT('Cheque Type')                                     
+12.00 170828      A            CXECPET        3A         TEXT('Cheque CCY Short Name')                           
+13.00 170828      A            CXECHQ        20A         TEXT('Cheque Number')                                   
+14.00 170828      A            CXEAMT        15S 2       TEXT('Cheque Amount')                                   
+15.00 170828      A            CXEONAM       90A         TEXT('Other Bank Account Name')                         
+16.00 170828      A            CXEOACT       20A         TEXT('Other Bank Account')                              
+17.00 170828      A            CXESTS         1A         TEXT('Status')                                          
+18.00 170227      A*                                                                                             
+19.00 170719      A            CXEUSR1        1A         TEXT('User Defined Field1')                             
+20.00 170719      A            CXEUSR2        5P 0       TEXT('User Defined Field2')                             
+21.00 170719      A            CXEUSR3       13P 0       TEXT('User Defined Field3')                             
+22.00 170228      A*                                                                                             
+23.00 170719      A          K CXEENV                                                                            
+24.00 170224      A**                                                                                            

@@ -1,0 +1,99 @@
+1.00 170621      A*%%TS  SD  20170621  091618  B323PGM     REL-V7R1M0  5770-WDS                                 
+2.00 0      A*¬      TA0602FM - Change Cheque Book Order                                                   
+3.00 0      A*¬                                                                                            
+4.00 0      A*¬¬------------------- CHANGE LOG ------------------------------*                             
+5.00 0      A*   PROB NBR  PGMR  PROBLEM DESCRIPTION                         *                             
+6.00 0      A*     X999    XXX   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX *                             
+7.00 0      A*¬¬-------------------------------------------------------------*                             
+8.00 170621      A*%%EC                                                                                         
+9.00 170814       *   Reference No. : CHG-0266-17 (D7266)                         *                             
+10.00 170728       *   User ID       : BI77                                        *                             
+11.00 170728       *   User Name     : Myles Ieong                                 *                             
+12.00 170728       *   Changed Date  : 09-Jun-2017                                 *                             
+13.00 170728       *   Changes       : Update the wording for cheque requisition   *                             
+14.00 170728       *                   new process                                 *                             
+15.00 170728       ****************************************************************                              
+16.00 170621      A                                      DSPSIZ(24 80 *DS3)                                      
+17.00 170621      A                                      REF(*LIBL/TAREFF TAREFF1)                               
+18.00 170621      A                                      PRINT                                                   
+19.00 170621      A                                      ERRSFL                                                  
+20.00 170621      A                                      INDARA                                                  
+21.00 170621      A          R T26020                                                                            
+22.00 170621      A*%%TS  SD  20170621  091618  B323PGM     REL-V7R1M0  5770-WDS                                 
+23.00 170621      A                                      CF03(03 'EXIT')                                         
+24.00 170621      A                                      CF04(04 'LIST')                                         
+25.00 170621      A                                      CF05(05 'REFRESH')                                      
+26.00 170621      A                                      CF12(12 'CANCEL')                                       
+27.00 170621      A                                      OVERLAY                                                 
+28.00 170621      A                                      BLINK                                                   
+29.00 170621      A                                      CHANGE(55)                                              
+30.00 170621      A                                      RTNCSRLOC(&RCD &FLD)                                    
+31.00 170621      A            RCD           10A  H      TEXT('RETURN RECORD NAME')                              
+32.00 170621      A            FLD           10A  H      TEXT('RETURN FIELD NAME')                               
+33.00 170621      A                                  1  2'20-0602-0'                                             
+34.00 170621      A                                  1 27'Change Cheque Book Order'                              
+35.00 170621      A                                      DSPATR(HI)                                              
+36.00 170621      A                                  3  2'Account number  . . . . :'                             
+37.00 170621      A            DMACCT    R     Y  O  3 30                                                        
+38.00 170621      A            DMSHRT    R     A  O  3 43                                                        
+39.00 170621      A                                  4  2'Order number  . . . . . :'                             
+40.00 170621      A            DRORDN    R     S  O  4 30                                                        
+41.00 170621      A                                  6  2'Make required changes, then press -                    
+42.00 170621      A                                      Enter.'                                                 
+43.00 170621      A                                      COLOR(BLU)                                              
+44.00 170621      A                                  8  4'Cheque book style . . .'                               
+45.00 170621      A            DRCBST    R     A  B  8 30                                                        
+46.00 170621      A  20                                  ERRMSGID(TA05011 *LIBL/TAMSGF)                          
+47.00 170621      A                                  8 46'F4=List'                                               
+48.00 170621      A                                  9  4'Number of books . . . .'                               
+49.00 170621      A            DRORDR    R     Y  B  9 30CHECK(RB)                                               
+50.00 170621      A                                      EDTCDE(4)                                               
+51.00 170621      A  21                                  ERRMSGID(TA05012 *LIBL/TAMSGF)                          
+52.00 170814 D7266A                                      DSPATR(PR)                                              
+53.00 170621      A                                 10  4'From range  . . . . . .'                               
+54.00 170621      A            DRFRNG    R     Y  B 10 30CHECK(RB)                                               
+55.00 170621      A                                      EDTCDE(4)                                               
+56.00 170621      A  22                                  ERRMSGID(TA05021 *LIBL/TAMSGF)                          
+57.00 170621      A  23                                  ERRMSGID(TA05018 *LIBL/TAMSGF)                          
+58.00 170621      A  27                                  ERRMSGID(TA05028 *LIBL/TAMSGF 27)                       
+59.00 170814 D7266A                                      DSPATR(PR)                                              
+60.00 170621      A                                 11  4'To range  . . . . . . .'                               
+61.00 170621      A            DRTRNG    R     Y  O 11 30EDTCDE(4)                                               
+62.00 170621      A                                 12  4'Delivery option . . . .'                               
+63.00 170621      A            DRCDSP    R     Y  B 12 30                                                        
+64.00 170621      A  24                                  ERRMSGID(TA05014 *LIBL/TAMSGF)                          
+65.00 170621      A                                 12 46'0=Post/Mail, 1=Branch Pickup'                          
+66.00 170621      A                                 13  4'Order fee . . . . . . .'                               
+67.00 170621      A            SCBFEE        13Y 0B 13 30CHECK(RB)                                               
+68.00 170621      A                                      EDTCDE(4)                                               
+69.00 170621      A  25                                  ERRMSGID(TA05019 *LIBL/TAMSGF)                          
+70.00 170621      A                                 13 46'(.00)'                                                 
+71.00 170621      A                                 14  4'Tax . . . . . . . . . .'                               
+72.00 170621      A            SCBTAX        13Y 0B 14 30CHECK(RB)                                               
+73.00 170621      A                                      EDTCDE(4)                                               
+74.00 170621      A  26                                  ERRMSGID(TA05019 *LIBL/TAMSGF)                          
+75.00 170621      A                                 14 46'(.00)'                                                 
+76.00 170621      A                                 23  3'F3=Exit'                                               
+77.00 170621      A                                      COLOR(BLU)                                              
+78.00 170621      A                                 23 14'F4=List'                                               
+79.00 170621      A                                      COLOR(BLU)                                              
+80.00 170621      A                                 23 25'F5=Refresh'                                            
+81.00 170621      A                                      COLOR(BLU)                                              
+82.00 170621      A                                 23 39'F12=Cancel'                                            
+83.00 170621      A                                      COLOR(BLU)                                              
+84.00 0      A          R SFLMSG                    SFL                                                     
+85.00 0      A                                      TEXT('MESSAGE SUBFILE')                                 
+86.00 0      A                                      SFLMSGRCD(24)                                           
+87.00 0      A            MSGK                      SFLMSGKEY                                               
+88.00 0      A            MSGQ                      SFLPGMQ                                                 
+89.00 0      A          R SFLCTLM                   SFLCTL(SFLMSG)                                          
+90.00 0      A                                      TEXT('MESSAGE SUBFILE CONTROL')                         
+91.00 0      A                                      CF03(03)                                                
+92.00 0      A                                      CF12(12)                                                
+93.00 0      A                                      OVERLAY                                                 
+94.00 0      A                                      SFLDSP                                                  
+95.00 0      A                                      SFLDSPCTL                                               
+96.00 0      A N50                                  SFLINZ                                                  
+97.00 0      A                                      SFLSIZ(0010)                                            
+98.00 0      A                                      SFLPAG(0001)                                            
+99.00 0      A            MSGQ                      SFLPGMQ                                                 

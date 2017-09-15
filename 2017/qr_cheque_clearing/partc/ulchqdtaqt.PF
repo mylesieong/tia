@@ -1,0 +1,17 @@
+1.00 170224       ************************************************************************  
+2.00 170906       *   REFERENCE     : CHG-266-17                                         *  
+3.00 170224       *   USER ID       : BI77PGM                                            *  
+4.00 170224       *   CHANGED BY    : MYLES IEONG                                        *  
+5.00 170804       *   CHANGED DATE  : 04 AUG 2017                                        *  
+6.00 170906       *   REASON        : UPLOAD FILE OF GENERATE BCM POSTING INCOME QRC TEMP*  
+7.00 170224       ************************************************************************  
+8.00 170818      A          R RULCHQQT                                                      
+9.00 170818      A            CLTOBNK        3A         TEXT('Other Bank Code')             
+10.00 170818      A            CLTTYP         3A         TEXT('Cheque Type')                 
+11.00 170818      A            CLTCPET        3A         TEXT('Cheque Ccy Short Name')       
+12.00 170818      A            CLTCHQ        10A         TEXT('Cheque Number')               
+13.00 170818      A            CLTAMT        20A         TEXT('Cheque Amount')               
+14.00 170818      A            CLTONAM       90A         TEXT('Other Bank Account Name')     
+15.00 170818      A            CLTOACT       50A         TEXT('Other Bank Account')          
+16.00 170818      A            CLTENV        20A         TEXT('Cheque Envelope')             
+17.00 170706       **                                                                        

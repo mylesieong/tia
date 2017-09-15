@@ -1,0 +1,66 @@
+1.00 0      A*¬      TA0603FM - Delete Cheque Book Order                                                   
+2.00 0      A*¬                                                                                            
+3.00 0      A*¬¬------------------- CHANGE LOG ------------------------------*                             
+4.00 0      A*   PROB NBR  PGMR  PROBLEM DESCRIPTION                         *                             
+5.00 0      A*     X999    XXX   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX *                             
+6.00 0      A*¬¬-------------------------------------------------------------*                             
+7.00 170814       *   Reference No. : CHG-0266-17 (D7266)                                                       
+8.00 170620       *   User ID       : BI77                                        *                             
+9.00 170620       *   User Name     : Myles Ieong                                 *                             
+10.00 170620       *   Changed Date  : 20-Jun-2017                                 *                             
+11.00 170620       *   Changes       : Update the wording for cheque requisition   *                             
+12.00 170620       *                   new process                                 *                             
+13.00 170620       ****************************************************************                              
+14.00 0      A                                      DSPSIZ(24 80 *DS3)                                      
+15.00 0      A                                      REF(*LIBL/TAREFF TAREFF1)                               
+16.00 0      A                                      PRINT                                                   
+17.00 0      A                                      ERRSFL                                                  
+18.00 0      A          R T26030                                                                            
+19.00 0      A                                      CF03(03 'EXIT')                                         
+20.00 0      A                                      CF12(12 'CANCEL')                                       
+21.00 0      A                                      CF14(14 'LIST')                                         
+22.00 0      A                                      BLINK                                                   
+23.00 0      A            DSCDT          9Y 0O  1  2EDTWRD('   -  -    ')                                   
+24.00 0      A                                  1 65'20-0603-00'                                            
+25.00 0      A                                  1 27'Delete Cheque Book Order'                              
+26.00 0      A                                  2  3TIME                                                    
+27.00 0      A            SCID          10A  O  2 65                                                        
+28.00 0      A                                  4  3'Account number . . . . .:'                             
+29.00 0      A            DMACCT    R     Y 0O  4 30DSPATR(HI)                                              
+30.00 0      A            DMSHRT    R     A  O  4 42                                                        
+31.00 0      A                                  5  3'Order number . . . . . .:'                             
+32.00 0      A            DRORDN    R        O  5 30DSPATR(HI)                                              
+33.00 0      A                                      EDTCDE(3)                                               
+34.00 0      A                                  7  3'Press F14 to delete record.'                           
+35.00 0      A                                  9  5'Cheque book style . . :'                               
+36.00 0      A            DRCBST    R        O  9 34                                                        
+37.00 0      A                                      DSPATR(HI)                                              
+38.00 0      A                                 10  5'Number of books . . . :'                               
+39.00 0      A            DRORDR    R        O 10 39EDTCDE(3)                                               
+40.00 0      A                                      DSPATR(HI)                                              
+41.00 0      A                                 11  5'From range. . . . . . :'                               
+42.00 0      A            DRFRNG    R        O 11 37EDTCDE(3)                                               
+43.00 0      A                                      DSPATR(HI)                                              
+44.00 0      A                                 12  5'To range. . . . . . . :'                               
+45.00 0      A            DRTRNG    R        O 12 37EDTCDE(3)                                               
+46.00 0      A                                      DSPATR(HI)                                              
+47.00 0      A                                 13  5'Delivery option . . . :'                               
+48.00 0      A            DRCDSP    R        O 13 43EDTCDE(3)                                               
+49.00 0      A                                      DSPATR(HI)                                              
+50.00 0      A                                 13 46'0=Post/Mail, 1=Branch Pickup'                          
+51.00 0      A                                 14  5'Order fee . . . . . . :'                               
+52.00 170814 D7266A*           DRBFEE    R        O 14 30EDTCDE(3)                                               
+53.00 170814 D7266A            DRBFEE    R        O 14 31EDTCDE(Z)                                               
+54.00 0      A                                      DSPATR(HI)                                              
+55.00 170814 D7266A                                 14 46'Branch No.'                                            
+56.00 0      A                                 15  5'Tax . . . . . . . . . :'                               
+57.00 170814 D7266A*           DRBTAX    R        O 15 30EDTCDE(3)                                               
+58.00 170814 D7266A            DRBTAX    R        O 15 31EDTCDE(Z)                                               
+59.00 0      A                                      DSPATR(HI)                                              
+60.00 170814 D7266A                                 15 46'Image No.'                                             
+61.00 0      A                                 23  3'F3=Exit'                                               
+62.00 0      A                                      COLOR(BLU)                                              
+63.00 0      A                                 23 14'F12=Cancel'                                            
+64.00 0      A                                      COLOR(BLU)                                              
+65.00 0      A                                 23 27'F14=Delete'                                            
+66.00 0      A                                      COLOR(BLU)                                              

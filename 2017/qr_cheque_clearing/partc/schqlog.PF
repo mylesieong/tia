@@ -1,0 +1,23 @@
+1.00 140408       *************************************************************             
+2.00 140408       *   FILE      : SCHQLOG                                     *             
+3.00 140902       *   REFERENCE : CHG-179-14                                  *             
+4.00 140408       *   USER      : BG58 Wine Chan                              *             
+5.00 140408       *   DATE      : 08 Apr 2014                                 *             
+6.00 140408       *   PURPOSE   : Get The Clearing Cheque Info Log File       *             
+7.00 140408       *                                                           *             
+8.00 140408       *************************************************************             
+9.00 170906       *   REFERENCE : CHG-266-17 (D7266)                          *             
+10.00 170824       *   USER      : BI77 Myles Ieong                            *             
+11.00 170824       *   DATE      : 24 Aug 2017                                 *             
+12.00 170824       *   PURPOSE   : Add Amount Field for QR Cheque              *             
+13.00 170824       *                                                           *             
+14.00 170824       *************************************************************             
+15.00 140408      A          R RSCHQLOG                                                      
+16.00 140409      A            LSCHACCNUM    10S 0       TEXT('Account Number')              
+17.00 140422      A            LSCHCHQNUM     7S 0       TEXT('Cheque Number')               
+18.00 170906 D7266A            LSCHAMT       15S 2       TEXT('Cheque Amount')               
+19.00 140408      A            LSCHDATE       8S 0       TEXT('Income Date')                 
+20.00 140408      A            LSCHTIME       6S 0       TEXT('Income Time')                 
+21.00 140408      A            LSCHSTATUS     1A         TEXT('Status')                      
+22.00 140408      A            LSCHREASON    40A         TEXT('Reason')                      
+23.00 140410      A            LSCHBATNO     10A         TEXT('Batch Number')                
