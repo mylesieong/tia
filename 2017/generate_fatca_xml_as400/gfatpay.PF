@@ -1,0 +1,19 @@
+1.00 130801       ************************************************************************                      
+2.00 170104       *   REFERENCE     : CHG-XXXX-16                                        *                      
+3.00 160817       *   USER ID       : BI77PGM                                            *                      
+4.00 170104       *   CREATED BY    : Myles Ieong                                        *                      
+5.00 170104       *   CREATED DATE  : 04/01/17                                           *                      
+6.00 170104       *   REASON        : Generate FATCA Account Payment PF                  *                      
+7.00 130801       ************************************************************************                      
+8.00 170104      A          R RGFATPAY                                                                          
+9.00 170105 MYLESA            GYDMACCT      12S 0       TEXT('Account Number')                                  
+10.00 170105 MYLESA            GYTYP         50A         TEXT('Type')                                            
+11.00 170104      A            GYCURCDE       3A         TEXT('CurrCode')                                        
+12.00 170104      A            GYPAYAMT      13S 2       TEXT('PaymentAmnt')                                     
+13.00 161114      A*                                                                                             
+14.00 170104      A            GYUSRFLD1      1A         TEXT('User Defined Field 1')                            
+15.00 170104      A            GYUSRFLD2      1A         TEXT('User Defined Field 2')                            
+16.00 170104      A            GYUSRFLD3      1A         TEXT('User Defined Field 3')                            
+17.00 160818      A*                                                                                             
+18.00 170104      A          K GYDMACCT                                                                          
+19.00 161101      A**                                                                                            

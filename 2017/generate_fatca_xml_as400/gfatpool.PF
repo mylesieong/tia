@@ -1,0 +1,24 @@
+1.00 130801       ************************************************************************                      
+2.00 160930       *   REFERENCE     : CHG-XXXX-16                                                               
+3.00 160817       *   USER ID       : BI77PGM                                            *                      
+4.00 170104       *   CREATED BY    : Myles Ieong                                        *                      
+5.00 161114       *   CREATED DATE  : 14/11/16                                           *                      
+6.00 170104       *   REASON        : Generate FATCA Pool Report Info PF                 *                      
+7.00 130801       ************************************************************************                      
+8.00 161115      A          R RGFATPOOL                                                                         
+9.00 170105 MYLESA            GPDOCTYP      50A         TEXT('DocTypeIndic')                                    
+10.00 170104      A            GPDOCREF      50A         TEXT('DocRefID')                                        
+11.00 170104      A            GPCORMSG      50A         TEXT('CorrMessageRefID')                                
+12.00 170104      A            GPCORREF      50A         TEXT('CorrDocRefID')                                    
+13.00 161114      A*                                                                                             
+14.00 170105 MYLESA            GPACTCNT       8S 0       TEXT('AccountCount')                                    
+15.00 170105 MYLESA            GPACTPRPT     50A         TEXT('AccountPoolReportType')                           
+16.00 170104      A            GPCURCDE       3A         TEXT('CurrCode')                                        
+17.00 170104      A            GPPBAL        13S 2       TEXT('PoolBalance')                                     
+18.00 161114      A*                                                                                             
+19.00 170104      A            GPUSRFLD1      1A         TEXT('User Defined Field 1')                            
+20.00 170104      A            GPUSRFLD2     10A         TEXT('User Defined Field 2')                            
+21.00 170104      A            GPUSRFLD3     20A         TEXT('User Defined Field 3')                            
+22.00 161115      A*                                                                                             
+23.00 161115      A          K GPCURCDE                                                                          
+24.00 161101      A**                                                                                            

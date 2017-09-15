@@ -1,0 +1,47 @@
+1.00 130801       ************************************************************************                      
+2.00 160930       *   REFERENCE     : CHG-XXXX-16                                                               
+3.00 160817       *   USER ID       : BI77PGM                                            *                      
+4.00 170104       *   CREATED BY    : Myles Ieong                                        *                      
+5.00 161114       *   CREATED DATE  : 14/11/16                                           *                      
+6.00 170104       *   REASON        : Generate FATCA Customer Information PF             *                      
+7.00 130801       ************************************************************************                      
+8.00 170220      A          R RGFATCUST                                                                         
+9.00 170220      A            GCCUNBR       10A         TEXT('CIF')                                             
+10.00 170220      A            GCRESCDE       3A         TEXT('ResCountryCode')                                  
+11.00 170220      A            GCTIN         50A         TEXT('TIN')                                             
+12.00 170220      A            GCISUBY        3A         TEXT('IssuedBy')                                        
+13.00 170220      A            GCPRETTL      20A         TEXT('PrecedingTitle')                                  
+14.00 170220      A            GCTTL         20A         TEXT('Title')                                           
+15.00 170220      A            GCFTNAM       50A         TEXT('FirstName')                                       
+16.00 170220      A            GCMDNAM       50A         TEXT('MiddleName')                                      
+17.00 170220      A            GCNAMPRE      50A         TEXT('NamePrefix')                                      
+18.00 170220      A            GCLTNAM       50A         TEXT('LastName')                                        
+19.00 170220      A            GCGENIDT      20A         TEXT('GenerationIdentifier')                            
+20.00 170220      A            GCSUF         20A         TEXT('Suffix')                                          
+21.00 170220      A            GCGENSUF      20A         TEXT('GeneralSuffix')                                   
+22.00 170220      A            GCCNTYCDE      3A         TEXT('CountryCode')                                     
+23.00 170220 MYLESA            GCSTRT       100A         TEXT('Street')                                          
+24.00 170220 MYLESA            GCBLDIDT     100A         TEXT('BuildingIdentifier')                              
+25.00 170220      A            GCSUTIDT      20A         TEXT('SuiteIdentifier')                                 
+26.00 170220      A            GCFLRIDT      20A         TEXT('FloorIdentifier')                                 
+27.00 170220      A            GCDSTNAM      20A         TEXT('DistrictName')                                    
+28.00 170220      A            GCPOB         20A         TEXT('POB')                                             
+29.00 170220      A            GCPSTCDE      20A         TEXT('PostCode')                                        
+30.00 170220      A            GCADDCTY      20A         TEXT('Address:City')                                    
+31.00 170220      A            GCCNTYSUBE    20A         TEXT('CountrySubentity')                                
+32.00 170220      A            GCADDFREE    200A         TEXT('AddressFree')                                     
+33.00 170220      A            GCBTHDTE      10A         TEXT('Birthdate')                                       
+34.00 170104      A            GCBTHCTY      20A         TEXT('BirthInfo:City')                                  
+35.00 170104      A            GCCTYCUBE     20A         TEXT('CitySubentity')                                   
+36.00 161114      A*                                                                                             
+37.00 170104      A            GCUSRFLD1      1A         TEXT('User Defined Field 1')                            
+38.00 170104      A            GCUSRFLD2      1A         TEXT('User Defined Field 2')                            
+39.00 170104      A            GCUSRFLD3     10A         TEXT('User Defined Field 3')                            
+40.00 170104      A            GCUSRFLD4     10A         TEXT('User Defined Field 4')                            
+41.00 170104      A            GCUSRFLD5     20A         TEXT('User Defined Field 5')                            
+42.00 170104      A            GCUSRFLD6     20A         TEXT('User Defined Field 6')                            
+43.00 170104      A            GCUSRFLD7     50A         TEXT('User Defined Field 7')                            
+44.00 170104      A            GCUSRFLD8     50A         TEXT('User Defined Field 8')                            
+45.00 161115      A*                                                                                             
+46.00 161115      A          K GCCUNBR                                                                           
+47.00 161115      A**                                                                                            

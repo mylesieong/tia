@@ -1,0 +1,27 @@
+1.00 130801       ************************************************************************                      
+2.00 160930       *   REFERENCE     : CHG-XXXX-16                                                               
+3.00 160817       *   USER ID       : BI77PGM                                            *                      
+4.00 170104       *   CREATED BY    : Myles Ieong                                        *                      
+5.00 161114       *   CREATED DATE  : 14/11/16                                           *                      
+6.00 170104       *   REASON        : Generate FATCA Account Information PF              *                      
+7.00 130801       ************************************************************************                      
+8.00 161115      A          R RGFATACCT                                                                         
+9.00 170104      A            GACUX1AP       2S 0       TEXT('Application Code')                                
+10.00 170104      A            GAACTTYP       3A         TEXT('Account Type')                                    
+11.00 170104      A            GADMACCT      12S 0       TEXT('Account Number')                                  
+12.00 170105 MYLESA*           GAACTNBR      14A         TEXT('AccountNumber')                                   
+13.00 170105 MYLESA            GAACTNBR      50A         TEXT('AccountNumber')                                   
+14.00 170105 MYLESA*           GADOCTYP       6A         TEXT('DocTypeIndic')                                    
+15.00 170105 MYLESA            GADOCTYP      50A         TEXT('DocTypeIndic')                                    
+16.00 170104      A            GADOCREF      50A         TEXT('DcoRefID')                                        
+17.00 170104      A            GACORMSG      50A         TEXT('CorrMessageRefID')                                
+18.00 170104      A            GACORREF      50A         TEXT('CorrDocRefID')                                    
+19.00 170104      A            GACURCDE       3A         TEXT('CurrCode')                                        
+20.00 170104      A            GAACTBAL      13S 2       TEXT('AccountBalance')                                  
+21.00 161114      A*                                                                                             
+22.00 170104      A            GAUSRFLD1      1A         TEXT('User Defined Field 1')                            
+23.00 170104      A            GAUSRFLD2      1A         TEXT('User Defined Field 2')                            
+24.00 170104      A            GAUSRFLD3      1A         TEXT('User Defined Field 3')                            
+25.00 160818      A*                                                                                             
+26.00 161115      A          K GADMACCT                                                                          
+27.00 161101      A**                                                                                            

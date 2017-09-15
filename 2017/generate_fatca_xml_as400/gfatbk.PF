@@ -1,0 +1,47 @@
+1.00 130801       ************************************************************************                      
+2.00 160930       *   REFERENCE     : CHG-XXXX-16                                                               
+3.00 160817       *   USER ID       : BI77PGM                                            *                      
+4.00 170104       *   CREATED BY    : Myles Ieong                                        *                      
+5.00 161114       *   CREATED DATE  : 14/11/16                                           *                      
+6.00 170104       *   REASON        : Generate FATCA Bank Info PF                        *                      
+7.00 130801       ************************************************************************                      
+8.00 161115      A          R RGFATBK                                                                           
+9.00 170105 MYLESA            GBCMPIN       50A         TEXT('SendingCompanyIN')                                
+10.00 170105 MYLESA            GBTSMCNTY      3A         TEXT('TransmittingCountry')                             
+11.00 170105 MYLESA            GBRCVCNTY      3A         TEXT('ReceivingCountry')                                
+12.00 170105 MYLESA            GBMSGTYP      50A         TEXT('MessageType')                                     
+13.00 170105 MYLESA            GBWNG         50A         TEXT('Warning')                                         
+14.00 170105 MYLESA            GBCTT         50A         TEXT('Contact')                                         
+15.00 170104      A            GBMSGREF      50A         TEXT('MessageRefID')                                    
+16.00 170104      A            GBRPGPRD      10A         TEXT('ReportingPeriod')                                 
+17.00 170104      A            GBTMSTP       19A         TEXT('Timestamp')                                       
+18.00 170105 MYLESA            GBRESCDE       3A         TEXT('ResCountryCode')                                  
+19.00 170105 MYLESA            GBISUBY        3A         TEXT('IssuedBy')                                        
+20.00 170105 MYLESA            GBTIN         50A         TEXT('Tin')                                             
+21.00 170104      A            GBNAM         50A         TEXT('Name')                                            
+22.00 170105 MYLESA            GBCNTYCDE      3A         TEXT('CountryCode')                                     
+23.00 170104      A            GBSTRT        50A         TEXT('Street')                                          
+24.00 170104      A            GBBLDIDT      20A         TEXT('BuildingIdentifier')                              
+25.00 170105 MYLESA            GBSUTIDT      20A         TEXT('SuiteIdentifier')                                 
+26.00 170105 MYLESA            GBFLRIDT      20A         TEXT('FloorIdentifier')                                 
+27.00 170104      A            GBDSTNAM      20A         TEXT('DistrictName')                                    
+28.00 161114      A            GBPOB         20A         TEXT('POB')                                             
+29.00 170105 MYLESA            GBPSTCDE      20A         TEXT('PostCode')                                        
+30.00 170104      A            GBCTY         20A         TEXT('City')                                            
+31.00 170105 MYLESA            GBCNTYSUBE     3A         TEXT('CountrySubentity')                                
+32.00 170105 MYLESA            GBADDFREE    200A         TEXT('AddressFree')                                     
+33.00 170105 MYLESA            GBDOCTYP      50A         TEXT('DocTypeIndic')                                    
+34.00 170105 MYLESA            GBDOCREF      50A         TEXT('DocRefID')                                        
+35.00 170105 MYLESA            GBCORMSG      50A         TEXT('CorrMessageRefID')                                
+36.00 170105 MYLESA            GBCORREF      50A         TEXT('CorrDocRefID')                                    
+37.00 161114      A*                                                                                             
+38.00 170104      A            GBUSRFLD1      1A         TEXT('User Defined Field 1')                            
+39.00 170104      A            GBUSRFLD2      1A         TEXT('User Defined Field 2')                            
+40.00 170104      A            GBUSRFLD3     10A         TEXT('User Defined Field 3')                            
+41.00 170104      A            GBUSRFLD4     10A         TEXT('User Defined Field 4')                            
+42.00 170104      A            GBUSRFLD5     20A         TEXT('User Defined Field 5')                            
+43.00 170104      A            GBUSRFLD6     20A         TEXT('User Defined Field 6')                            
+44.00 170104      A            GBUSRFLD7     50A         TEXT('User Defined Field 7')                            
+45.00 170104      A            GBUSRFLD8     50A         TEXT('User Defined Field 8')                            
+46.00 161114      A*                                                                                             
+47.00 161114      A**                                                                                            

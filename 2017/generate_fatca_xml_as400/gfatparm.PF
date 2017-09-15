@@ -1,0 +1,23 @@
+1.00 130801       ************************************************************************                      
+2.00 161013       *   REFERENCE     : CHG-XXX-16 (D6XXX)                                 *                      
+3.00 160817       *   USER ID       : BI77PGM                                            *                      
+4.00 170104       *   CREATED BY    : Myles Ieong                                        *                      
+5.00 161013       *   CREATED DATE  : 13/10/16                                           *                      
+6.00 170104       *   REASON        : Generate FATCA Parameter PF                        *                      
+7.00 130801       ************************************************************************                      
+8.00 161013      A          R RGFATPARM                                                                         
+9.00 170104      A            GMCAT         10A         TEXT('Category')                                        
+10.00 170104      A            GMBKSEQ        3S 0       TEXT('Block Sequence')                                  
+11.00 170104      A            GMLNSEQ        3S 0       TEXT('Line Sequence')                                   
+12.00 170104      A            GMFLAG         1A         TEXT('Flag of Content')                                 
+13.00 170104      A            GMIND          3S 0       TEXT('Field Indent')                                    
+14.00 170104      A            GMFLD        100A         TEXT('Field Format')                                    
+15.00 170104      A            GMFLDE       100A         TEXT('Field Empty Tag')                                 
+16.00 170104      A            GMFLDV1       10A         TEXT('Field Value Mapping 1')                           
+17.00 170104      A            GMFLDV2       10A         TEXT('Field Value Mapping 2')                           
+18.00 170104      A            GMFLDV3       10A         TEXT('Field Value Mapping 3')                           
+19.00 161013      A*                                                                                             
+20.00 161104      A          K GMCAT                                                                             
+21.00 161115      A          K GMBKSEQ                                                                           
+22.00 161115      A          K GMLNSEQ                                                                           
+23.00 160817      A*                                                                                             

@@ -1,0 +1,12 @@
+1.00 130801       ************************************************************************                      
+2.00 161013       *   REFERENCE     : CHG-XXX-16 (D6XXX)                                 *                      
+3.00 160817       *   USER ID       : BI77PGM                                            *                      
+4.00 170104       *   CREATED BY    : Myles Ieong                                        *                      
+5.00 161013       *   CREATED DATE  : 13/10/16                                           *                      
+6.00 170104       *   REASON        : Generate FATCA XML Document                        *                      
+7.00 130801       ************************************************************************                      
+8.00 161013      A          R RGFATXML                                                                          
+9.00 170104      A            GXCAT         10A         TEXT('Categoru')                                        
+10.00 170104      A            GXSEQ          5S 0       TEXT('Sequence')                                        
+11.00 170104      A            GXDATA      1024A         TEXT('Data')                                            
+12.00 160817      A*                                                                                             

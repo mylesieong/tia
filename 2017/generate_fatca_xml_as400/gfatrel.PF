@@ -1,0 +1,20 @@
+1.00 130801       ************************************************************************                      
+2.00 161118       *   REFERENCE     : CHG-XXXX-16                                        *                      
+3.00 160817       *   USER ID       : BI77PGM                                            *                      
+4.00 170104       *   CREATED BY    : Myles Ieong                                        *                      
+5.00 161114       *   CREATED DATE  : 14/11/16                                           *                      
+6.00 170104       *   REASON        : Generate FATCA Account Information PF              *                      
+7.00 130801       ************************************************************************                      
+8.00 161115      A          R RGFATREL                                                                          
+9.00 170104      A            GRCUX1AP       2S 0       TEXT('App Code')                                        
+10.00 170104      A            GRCUX1AC      12S 0       TEXT('Account Number')                                  
+11.00 170104      A            GRCUX1CS      10A         TEXT('Customer Numebr')                                 
+12.00 170104      A            GRCUXREL       3A         TEXT('Relationship')                                    
+13.00 161115      A*                                                                                             
+14.00 170104      A            GRUSRFLD1      1A         TEXT('User Defined Field 1')                            
+15.00 170104      A            GRUSRFLD2      2A         TEXT('User Defined Field 2')                            
+16.00 170104      A            GRUSRFLD3     10A         TEXT('User Defined Field 3')                            
+17.00 160818      A*                                                                                             
+18.00 161115      A          K GRCUX1AC                                                                          
+19.00 170106 MYLESA          K GRCUXREL                                                                          
+20.00 161101      A**                                                                                            
