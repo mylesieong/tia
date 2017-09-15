@@ -1,0 +1,41 @@
+1.00 170120     /************************************************************************/                      
+2.00 170120     /*   DESCRIPTION   : Support master file extraction                     */                      
+3.00 170126     /*   REFERENCE     : CHG-048-17 (D7048)                                 */                      
+4.00 170120     /*   AUTHOR        : Myles Ieong                                        */                      
+5.00 170120     /*   USER ID       : BI77PGM                                            */                      
+6.00 170120     /*   DATE WRITTEN  : 20/01/2017                                         */                      
+7.00 170120     /************************************************************************/                      
+8.00 170120                                                                                                     
+9.00 170209 /* Generate EMPSTKACC master file */                                                                
+10.00 170209 INSERT INTO EMPSTKACC (EACUNBR, EACUNA1, EACUTEN1,                                                  
+11.00 170209     EADMACCT, EACUXREL, EACUMARK, EACUBRCH, EACUPOFF, EACURSPF,                                     
+12.00 170209     EACUBHVF, EACUTHI2, EADMCMCN, EADMCBAL)                                                         
+13.00 170120 SELECT C03.CUNBR, CUNA1, CUTEN1, DMACCT, CUXREL, CUMARK, CUBRCH,                                    
+14.00 170120     CUPOFF, CURSPF, CUBHVF, CUTHI2, DMCMCN, DMCBAL                                                  
+15.00 170120 FROM ISTKSUBACC, TAP00201, CUP00901,                                                                
+16.00 170120     CUP00301 C03, CUP02701 C27                                                                      
+17.00 170120 WHERE RSTKSTS = 'ACTIVE' AND RSACC = DMACCT AND DMSTAT NOT IN                                       
+18.00 170120     ('2','4') AND CUX1AP = 20 AND SUBSTR(DIGITS(CUX1AC),3,10) =                                     
+19.00 170120     DMACCT AND CUX1CS = C03.CUNBR AND C03.CUNBR = C27.CUNBR                                         
+20.00 170120     AND SUBSTR(C27.CUTEN1,1,1) IN ('B');                                                            
+21.00 170120                                                                                                     
+22.00 170209 /* Generate EMPSTKPRF master file */                                                                
+23.00 170209 INSERT INTO EMPSTKPRF (EPCUNBR, EPCUNA1, EPCUTEN1, EPDMACCT,                                        
+24.00 170209     EPCUXREL, EPCUMARK, EPCUBRCH, EPCUPOFF, EPCURSPF, EPCUBHVF,                                     
+25.00 170209     EPCUTHI2, EPDMCMCN, EPDMCBAL, EPCSSTKCCY, EPCSMKTCDE, EPCSSTKCDE,                               
+26.00 170209     EPCSSTKNM, EPCSUNIT)                                                                            
+27.00 170209 SELECT EACUNBR, EACUNA1, EACUTEN1, EADMACCT, EACUXREL, EACUMARK, EACUBRCH,                          
+28.00 170209     EACUPOFF, EACURSPF, EACUBHVF, EACUTHI2, EADMCMCN, EADMCBAL, CSSTKCCY,                           
+29.00 170120     CSMKTCDE, CSSTKCDE, CSSTKNM, CSUNIT                                                             
+30.00 170209 FROM EMPSTKACC                                                                                      
+31.00 170209 LEFT JOIN ICUSTSTK ON EADMACCT = CSACCT;                                                            
+32.00 170120                                                                                                     
+33.00 170209 /* Generate EMPSTKTX master file */                                                                 
+34.00 170209 INSERT INTO EMPSTKTX (ETCUNBR, ETCUNA1, ETCUTEN1, ETDMACCT,                                         
+35.00 170209     ETCUXREL, ETIBSSREF, ETEFFDATE, ETSTKCODE, ETSTKDESC,                                           
+36.00 170209     ETTXNAMT, ETACCY, ETSIGN)                                                                       
+37.00 170209 SELECT EACUNBR, EACUNA1, EACUTEN1, EADMACCT, EACUXREL,                                              
+38.00 170209     DGIBSSREF, DGEFFDATE, DGSTKCDE, SSTKDESC, DGTXNAMT,                                             
+39.00 170209     DGACCY, DGSIGN                                                                                  
+40.00 170209 FROM EMPSTKACC, IMTRANSB, ISTKINFO                                                                  
+41.00 170209 WHERE EADMACCT = DGACCT AND DGSTKCDE = SSTKCODE;                                                    

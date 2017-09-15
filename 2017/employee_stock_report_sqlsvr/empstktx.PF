@@ -1,0 +1,24 @@
+1.00 170120       ************************************************************************                      
+2.00 170126       *   REFERENCE     : CHG-0048-17 (D7048)                                *                      
+3.00 170120       *   USER ID       : BI77PGM                                            *                      
+4.00 170120       *   CHANGED BY    : MYLES IEONG                                        *                      
+5.00 170120       *   CHANGED DATE  : 20 JAN 2017                                        *                      
+6.00 170210       *   REASON        : Employee Stock Transaction Master File             *                      
+7.00 170120       *                                                                      *                      
+8.00 170120       ************************************************************************                      
+9.00 170209      A          R REMPSTKTX                                                                         
+10.00 170120      A*                                                                                             
+11.00 170209      A            ETCUNBR       10          TEXT('Customer Number')                                 
+12.00 170209      A            ETCUNA1       40          TEXT('Name Address Line 1')                             
+13.00 170209      A            ETCUTEN1      10          TEXT('User Fld 1_Length 10')                            
+14.00 170209      A            ETDMACCT      10S 0       TEXT('Account Nbr')                                     
+15.00 170209      A            ETCUXREL       3          TEXT('Relationship')                                    
+16.00 170210      A            ETIBSSREF     24          TEXT('Deal Reference')                                  
+17.00 170210      A            ETINPUSR      24          TEXT('BSS:Input User')                                  
+18.00 170210      A            ETEFFDATE      8  0       TEXT('Effective Date')                                  
+19.00 170210      A            ETSTKCODE     10          TEXT('Stock Code')                                      
+20.00 170210      A            ETSTKDESC     28          TEXT('Stock Description')                               
+21.00 170210      A            ETTXNAMT      13  2       TEXT('Transaction Amount')                              
+22.00 170210      A            ETACCY         3          TEXT('Account Currency')                                
+23.00 170210      A            ETSIGN         1          TEXT('Net Amount Sign')                                 
+24.00 170120      A**                                                                                            

@@ -1,0 +1,34 @@
+1.00 170120       ************************************************************************                      
+2.00 170126       *   REFERENCE     : CHG-0048-17 (D7048)                                *                      
+3.00 170120       *   USER ID       : BI77PGM                                            *                      
+4.00 170120       *   CHANGED BY    : MYLES IEONG                                        *                      
+5.00 170120       *   CHANGED DATE  : 20 JAN 2017                                        *                      
+6.00 170210       *   REASON        : Employee Stock Portfolio Master File               *                      
+7.00 170120       *                                                                      *                      
+8.00 170120       ************************************************************************                      
+9.00 170209      A          R REMPSTKPRF                                                                        
+10.00 170120      A*                                                                                             
+11.00 170209      A            EPCUNBR       10          TEXT('Customer Number')                                 
+12.00 170209      A            EPCUNA1       40          TEXT('Name Address Line 1')                             
+13.00 170209      A            EPCUTEN1      10          TEXT('User Fld 1_Length 10')                            
+14.00 170209      A            EPDMACCT      10S 0       TEXT('Account Nbr')                                     
+15.00 170209      A            EPCUXREL       3          TEXT('Relationship')                                    
+16.00 170209      A            EPCUMARK       5          TEXT('Market Seqment')                                  
+17.00 170209      A            EPCUBRCH       3  0       TEXT('Branch Number')                                   
+18.00 170209      A            EPCUPOFF       3          TEXT('Primary Officer Number')                          
+19.00 170209      A            EPCURSPF       3          TEXT('Responsiveness Flag')                             
+20.00 170209      A            EPCUBHVF       3          TEXT('Behavioural Type Flag')                           
+21.00 170209      A            EPCUTHI2      30          TEXT('User Fld 2_Length 30')                            
+22.00 170209      A            EPDMCMCN       3  0       TEXT('Currency Code')                                   
+23.00 170209      A            EPDMCBAL      13  2       TEXT('Current Balance')                                 
+24.00 170209      A            EPCSSTKCCY     3          TEXT('Stock Currency')                                  
+25.00 170120      A                                      ALWNULL                                                 
+26.00 170209      A            EPCSMKTCDE     6          TEXT('Market Code')                                     
+27.00 170120      A                                      ALWNULL                                                 
+28.00 170209      A            EPCSSTKCDE    10          TEXT('Stock Code')                                      
+29.00 170120      A                                      ALWNULL                                                 
+30.00 170209      A            EPCSSTKNM     40          TEXT('Stock Name')                                      
+31.00 170120      A                                      ALWNULL                                                 
+32.00 170209      A            EPCSUNIT      13S 2       TEXT('Units on Hand')                                   
+33.00 170120      A                                      ALWNULL                                                 
+34.00 170120      A**                                                                                            

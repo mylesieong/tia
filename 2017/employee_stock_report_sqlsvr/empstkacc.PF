@@ -1,0 +1,24 @@
+1.00 170120       ************************************************************************                      
+2.00 170126       *   REFERENCE     : CHG-0048-17 (D7048)                                *                      
+3.00 170120       *   USER ID       : BI77PGM                                            *                      
+4.00 170120       *   CHANGED BY    : MYLES IEONG                                        *                      
+5.00 170120       *   CHANGED DATE  : 20 JAN 2017                                        *                      
+6.00 170210       *   REASON        : Employee Stock Account Master File                 *                      
+7.00 170120       *                                                                      *                      
+8.00 170120       ************************************************************************                      
+9.00 170209      A          R REMPSTKACC                                                                        
+10.00 170120      A*                                                                                             
+11.00 170209      A            EACUNBR       10          TEXT('Customer Number')                                 
+12.00 170209      A            EACUNA1       40          TEXT('Name Address Line 1')                             
+13.00 170209      A            EACUTEN1      10          TEXT('User Fld 1_Length 10')                            
+14.00 170209      A            EADMACCT      10S 0       TEXT('Account Nbr')                                     
+15.00 170209      A            EACUXREL       3          TEXT('Relationship')                                    
+16.00 170209      A            EACUMARK       5          TEXT('Market Seqment')                                  
+17.00 170209      A            EACUBRCH       3  0       TEXT('Branch Number')                                   
+18.00 170209      A            EACUPOFF       3          TEXT('Primary Officer Number')                          
+19.00 170209      A            EACURSPF       3          TEXT('Responsiveness Flag')                             
+20.00 170209      A            EACUBHVF       3          TEXT('Behavioural Type Flag')                           
+21.00 170209      A            EACUTHI2      30          TEXT('User Fld 2_Length 30')                            
+22.00 170209      A            EADMCMCN       3  0       TEXT('Currency Code')                                   
+23.00 170209      A            EADMCBAL      13  2       TEXT('Current Balance')                                 
+24.00 170120      A**                                                                                            
